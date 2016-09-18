@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapfile &#8212; MapServer 7.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/mapserver.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../about.html" />
+    <link rel="top" title="MapServer 7.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+<table width="100%" style="width: 100%; background-color: white;">
+  <tr>
+    <td rowspan="2" style="padding: 10px 0px 10px 10px;">
+      <a href="../index.html" title="Home"><img src="../_static/banner.png" alt="MapServer banner" border="0" /></a>
+    </td>
+    <td style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="../index.html" title="Home">Home</a> |
+      <a href="../products.html" title="Products (MapServer core, MapCache, TinyOWS">Products</a> |
+      <a href="https://github.com/mapserver/mapserver/issues/" title="Issue Tracker (MapServer core)">Issue Tracker</a> |
+      <a href="../faq.html" title="FAQ">FAQ</a> |
+      <a href="../download.html" title="Download">Download </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 10px 0px 0px; text-align: right; vertical-align: bottom;">
+        
+          
+            <a href="../../mapfile/index.html"><img src="../_static/flagicons/en.png" alt="en" title="en" border="0" /></a>
+          
+        
+        <img src="../_static/flagicons/de.png" alt="de" title="de" border="0" width="18px" height="13px"/>
+        
+          
+            <a href="../../es/mapfile/index.html"><img src="../_static/flagicons/es.png" alt="es" title="es" border="0" /></a>
+          
+        
+        
+          
+            <a href="../../zh_cn/mapfile/index.html"><img src="../_static/flagicons/zh_cn.png" alt="zh_cn" title="zh_cn" border="0" /></a>
+          
+        
+
+    </td>
+  </tr>
+</table>
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mapfile">
+<span id="id1"></span><h1>Mapfile<a class="headerlink" href="#mapfile" title="Link zu dieser Überschrift">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Steve Lime</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Contact:</th><td class="field-body">steve.lime at dnr.state.mn.us</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Jeff McKenna</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Contact:</th><td class="field-body">jmckenna at gatewaygeomatics.com</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Jean-François Doyon</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Contact:</th><td class="field-body">jdoyon at ccrs.nrcan.gc.ca</td>
+</tr>
+</tbody>
+</table>
+<p>Das Mapfile ist die Zentrale vom MapServer. Hier werden die Beziehungen
+zwischen den Objekten definiert, dem MapServer gesagt wo er welche Daten findet
+und mitgeteilt wie diese gezeichnet werden sollen.</p>
+<p>Es gibt einige wichtige Sachverhalte die für eine zuverlässige Konfiguration
+des MapServers duch Mapfiles verstanden werden müssen. Der Sachverhalt wird
+durch <a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a> beschrieben. Ein Layer ist die Kombination von Daten und
+ihrer Ausprägung (Styling). Daten, in der Form von Attributen und Geometrie,
+können durch die Benutzung von <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a> und <a class="reference internal" href="style.html#style"><span class="std std-ref">STYLE</span></a> Direktiven
+dargestellt werden.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last"><a class="reference internal" href="../introduction.html#introduction"><span class="std std-ref">Einführung zum MapServer</span></a> for &#8220;An Introduction to the Mapfile&#8221;</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="class.html">CLASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expressions.html">Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature.html">FEATURE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fontset.html">FONTSET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid.html">GRID</a></li>
+<li class="toctree-l1"><a class="reference internal" href="join.html">JOIN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label.html">LABEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layer.html">LAYER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legend.html">LEGEND</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputformat.html">OUTPUTFORMAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projection.html">PROJECTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querymap.html">QUERYMAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">REFERENCE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scalebar.html">SCALE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style.html">STYLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbol.html">SYMBOL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbology/construction.html">Konstruktion von kartographischen Signaturen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbology/examples.html">Signaturbeispiele</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Templating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variable_sub.html">Variable Substitution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">WEB</a></li>
+</ul>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Im Mapfile wird NICHT zwischen Groß- und Kleinschreibung unterschieden.</p>
+</li>
+<li><p class="first">Zeichenketten mit alphanumerischen Zeichen oder MapServer Schlüsselwörter
+SOLLTEN in Anführungszeichen stehen. Es wird empfohlen ALLE Zeichenketten
+in doppelte Anführungszeichen zu setzen.</p>
+</li>
+<li><p class="first">Für MapServer Versionen &lt; 5 gab es ein Maximum von 200 Layer pro Mapfile
+(für MapServer &gt;= 5 gibt es keine Begrenzung). Dies kann in der Datei map.h
+geändert werden in dem der Wert von MS_MAXLAYERS entsprechend angepasst wird.
+Anschließend muss MapServer neu übersetzt werden.
+Weitere Begrenzungen für Versionen &lt; 5:</p>
+<ul class="simple">
+<li>MAXCLASSES 250 (set in map.h)</li>
+<li>MAXSTYLES 5 (set in map.h)</li>
+<li>MAXSYMBOLS 64 (set in mapsymbol.h)</li>
+</ul>
+<p>MapServer Versionen &gt;= 5 besitzen keine Begrenzungen für Klassen, Style,
+Symbole, oder Layer.</p>
+</li>
+<li><p class="first">Pfadangaben können als absolute Angaben oder relativ zur Position des
+Mapfiles gemacht werden. Zusätzlich können Datenquellen relativ zum
+SHAPEPATH angegeben werden.</p>
+</li>
+<li><p class="first">Das Mapfile ist hierarchich aufgebaut und beginnt mit dem MAP Objekt als
+Wurzel. Alle anderen Objekte sind dem Map objekt untergeordnet.</p>
+</li>
+<li><p class="first">Kommentare beginnen mit einem #.</p>
+</li>
+<li><p class="first">Attribute werden nach folgender Syntax beschrieben: [ATTRIBUTENAME] ...
+Dabei wird bei den Angaben zwischen den eckigen Klammern zwischen
+GROß- UND KLEINSCHREIBUNG UNTERSCHIEDEN. Allgemein sind in Shapefiles von
+ESRI erzeugten Produkten die Namen der Attributspalten (.dbf Spaltennamen)
+immer in Großbuchstaben und für PostGIS sollte <em>IMMER</em> Kleinschreibung
+benutzt werden.</p>
+</li>
+<li><p class="first">MapServer reguläre Ausdrücke werden durch die C Bibliothek des
+Betriebssystems zur Verfügung gestellt. Für Informationen wie reguläre
+Ausdrücke benutzt und erstellt werden, wird empfohlen die Dokumentation
+der C Bibliothek zu lesen. Für Linux ist dies GLibC und die Handbuchseite
+ist über &#8220;man 7 regex&#8221; erreichbar. Dieses Handbuch sollte ebenso auf vielen
+UNIX-Systemen verfügbar sein. Da die regulären Ausdrücke kompatibel zum
+POSIX Standard sind, sollten sie unter Windows ebenso funktionieren. Somit
+können Windowsnutzer im Internet nach &#8220;man 7 regex&#8221; suchen da die Handbücher
+im Internet verfügbar sind.</p>
+</li>
+<li><p class="first">In der deutschen Übersetzung gibt es einige Wörter die nicht übersetzt
+wurden, da der englische Begriff bereits große Verbreitung gefunden hat bzw
+vielsagender ist.
+Diese sind im folgenden mit ihrer Bedeutung/Übersetzung aufgelistet:</p>
+<ul class="simple">
+<li>mapfile      - Mapfile, Mapdatei</li>
+<li>layer        - Ebene, Layer</li>
+<li>shapefile    - Shapefile, Shapedatei</li>
+<li>feature      - Objekt, Feature</li>
+<li>expression   - Ausdruck, Expression</li>
+<li>annotation   - Anmerkung, Beschriftung, Annotation</li>
+<li>lookup table - Lookup-Tabelle</li>
+<li>join         - (Datenbank-)Verknüpfung, Join</li>
+<li>tile index   - Tileindex/Kachelindex</li>
+<li>extent       - Extent, Ausdehnung</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Navigation</h3>
+<p>
+<a href="../about.html" title="About">About</a><br>
+<a href="../products.html" title="Products">Products</a><br>
+<a href="../community/index.html" title="Community">Community</a><br>
+<a href="../development/index.html" title="Development">Development</a><br>
+<a href="../download.html" title="Downloads">Downloads</a><br>
+<a href="../documentation.html" title="Documentation">Documentation</a><br>
+<a href="../faq.html" title="FAQ">FAQ</a>
+</p>
+  <h3>Current Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Mapfile</a><ul>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Los" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Open Source Geospatial Foundation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

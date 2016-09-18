@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OUTPUTFORMAT &#8212; MapServer 7.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/mapserver.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../about.html" />
+    <link rel="top" title="MapServer 7.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+<table width="100%" style="width: 100%; background-color: white;">
+  <tr>
+    <td rowspan="2" style="padding: 10px 0px 10px 10px;">
+      <a href="../index.html" title="Home"><img src="../_static/banner.png" alt="MapServer banner" border="0" /></a>
+    </td>
+    <td style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="../index.html" title="Home">Home</a> |
+      <a href="../products.html" title="Products (MapServer core, MapCache, TinyOWS">Products</a> |
+      <a href="https://github.com/mapserver/mapserver/issues/" title="Issue Tracker (MapServer core)">Issue Tracker</a> |
+      <a href="../faq.html" title="FAQ">FAQ</a> |
+      <a href="../download.html" title="Download">Download </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 10px 0px 0px; text-align: right; vertical-align: bottom;">
+        
+          
+            <a href="../../mapfile/outputformat.html"><img src="../_static/flagicons/en.png" alt="en" title="en" border="0" /></a>
+          
+        
+        <img src="../_static/flagicons/de.png" alt="de" title="de" border="0" width="18px" height="13px"/>
+        
+          
+            <a href="../../es/mapfile/outputformat.html"><img src="../_static/flagicons/es.png" alt="es" title="es" border="0" /></a>
+          
+        
+        
+          
+            <a href="../../zh_cn/mapfile/outputformat.html"><img src="../_static/flagicons/zh_cn.png" alt="zh_cn" title="zh_cn" border="0" /></a>
+          
+        
+
+    </td>
+  </tr>
+</table>
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="outputformat">
+<span id="id1"></span><h1>OUTPUTFORMAT<a class="headerlink" href="#outputformat" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Ein Mapfile kann null, eine oder mehrere Ausgabeformate (OUTPUTFORMAT)
+Objekte beinhalten, die verfügbare Ausgabeformate wie PNG, GIF, JPEG, GeoTIFF
+und Flash (SWF) definieren.</p>
+<p>Wird kein OUTPUTFORMAT Block im Mapfile gefunden, werden folgende Formate
+implizit deklariert. Dabei sind nur die Formate verfügbar die bei der
+Kompilierung angegeben wurden. GeoTIFF hängt dabei von GDAL Unterstützung ab
+und für Flash (SWF) wird die MING Bibliothek benötigt.</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">OUTPUTFORMAT</span>
+  <span class="k">NAME</span> <span class="err">aggpng</span><span class="mi">24</span>
+  <span class="k">DRIVER</span> <span class="nb">AGG</span><span class="o">/</span><span class="nb">PNG</span>
+  <span class="k">MIMETYPE</span> <span class="s">&quot;image/png&quot;</span>
+  <span class="k">IMAGEMODE</span> <span class="nb">RGB</span>
+  <span class="k">EXTENSION</span> <span class="s">&quot;png&quot;</span>
+<span class="k">END</span>
+<span class="k">OUTPUTFORMAT</span>
+  <span class="k">NAME</span> <span class="nb">gif</span>
+  <span class="k">DRIVER</span> <span class="s">&quot;GD/GIF&quot;</span>
+  <span class="k">MIMETYPE</span> <span class="s">&quot;image/gif&quot;</span>
+  <span class="k">IMAGEMODE</span> <span class="nb">PC256</span>
+  <span class="k">EXTENSION</span> <span class="s">&quot;gif&quot;</span>
+<span class="k">END</span>
+<span class="k">OUTPUTFORMAT</span>
+  <span class="k">NAME</span> <span class="nb">png</span>
+  <span class="k">DRIVER</span> <span class="s">&quot;GD/PNG&quot;</span>
+  <span class="k">MIMETYPE</span> <span class="s">&quot;image/png&quot;</span>
+  <span class="k">IMAGEMODE</span> <span class="nb">PC256</span>
+  <span class="k">EXTENSION</span> <span class="s">&quot;png&quot;</span>
+<span class="k">END</span>
+<span class="k">OUTPUTFORMAT</span>
+  <span class="k">NAME</span> <span class="nb">jpeg</span>
+  <span class="k">DRIVER</span> <span class="s">&quot;GD/JPEG&quot;</span>
+  <span class="k">MIMETYPE</span> <span class="s">&quot;image/jpeg&quot;</span>
+  <span class="k">IMAGEMODE</span> <span class="nb">RGB</span>
+  <span class="k">EXTENSION</span> <span class="s">&quot;jpg&quot;</span>
+<span class="k">END</span>
+<span class="k">OUTPUTFORMAT</span>
+  <span class="k">NAME</span> <span class="nb">wbmp</span>
+  <span class="k">DRIVER</span> <span class="s">&quot;GD/WBMP&quot;</span>
+  <span class="k">MIMETYPE</span> <span class="s">&quot;image/wbmp&quot;</span>
+  <span class="k">IMAGEMODE</span> <span class="nb">PC256</span>
+  <span class="k">EXTENSION</span> <span class="s">&quot;wbmp&quot;</span>
+<span class="k">END</span>
+<span class="k">OUTPUTFORMAT</span>
+  <span class="k">NAME</span> <span class="nb">swf</span>
+  <span class="k">DRIVER</span> <span class="s">&quot;SWF&quot;</span>
+  <span class="k">MIMETYPE</span> <span class="s">&quot;application/x-shockwave-flash&quot;</span>
+  <span class="k">EXTENSION</span> <span class="s">&quot;swf&quot;</span>
+  <span class="k">IMAGEMODE</span> <span class="nb">PC256</span>
+  <span class="k">FORMATOPTION</span> <span class="s">&quot;OUTPUT_MOVIE=SINGLE&quot;</span>
+<span class="k">END</span>
+<span class="k">OUTPUTFORMAT</span>
+  <span class="k">NAME</span> <span class="nb">GTiff</span>
+  <span class="k">DRIVER</span> <span class="s">&quot;GDAL/GTiff&quot;</span>
+  <span class="k">MIMETYPE</span> <span class="s">&quot;image/tiff&quot;</span>
+  <span class="k">IMAGEMODE</span> <span class="nb">RGB</span>
+  <span class="k">EXTENSION</span> <span class="s">&quot;tif&quot;</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>NAME [name]</dt>
+<dd>Der Name der vom IMAGETYPE Schlüsselwort benutzt wird um dieses
+Ausgabeformat auszuwählen. (optional)</dd>
+<dt>DRIVER [name]</dt>
+<dd>Name des Treibers der benutzt wird um dieses Ausgabeformat zu erzeugen.
+Einige Treiber geben die Formatdefinition im Namen mit an, falls mehrere
+Formatdefinitionen unterstützt werden. Für AGG sind die möglichen Namen
+&#8220;AG/PNG&#8221; und &#8220;AGG/JPEG&#8221;. Für GD &#8220;GD/Gif&#8221;, &#8220;GD/PNG&#8221;, &#8220;GD/WBMP&#8221; und &#8220;GD/JPEG&#8221;.
+Für Flash gibt es nur &#8220;SWF&#8221;. Für die Ausgabe durch GDAL wird der
+GDAL-Kurzname des Formats angehängt, z.B. &#8220;GDAL/GTiff&#8221;. PNG, JPEG und GIF
+können sowohl mit GDAL als auch GD erzeugt werden, wobei GD im allgemeinen
+effizienter ist. (Pflichtangabe)</dd>
+<dt>IMAGEMODE [PC256/RGB/RGBA/INT16/FLOAT32]</dt>
+<dd><p class="first">Bestimmt den Zeichenmodus in dem das Kartenbild erzeugt wird. Ist wichtig
+für Nicht-Rasterformate wie Flash. Nicht alle Formate unterstützen alle
+kombinationen. So unterstützt GD/GIF nur PC256. (optional)</p>
+<ul class="last simple">
+<li>PC256: Erzeugt eine Ausgabe mit Falschfarben mit bis zu 256 Farben in
+der Palette (traditioneller MapServer Modus).</li>
+<li>RGB: Ausgabe im 24bit Rot/Grün/Blau Modus. Unterstützt alle Farben aber
+keine Transparenz.</li>
+<li>RGBA: Ausgabe im 32bit Rot/Grün/Blau/Alpha Modus. Unterstützt alle Farben
+und Alpha-Transparenz. Alle Objekte werden mit einem transparentem
+Hintergrund gezeichnet.</li>
+<li>BYTE: Ausgabe von 8bit-Pixel-Werten (keine Darstellung). Derzeit nur für
+RASTER Layer (durch GDAL) und WMS Layer verfügbar.</li>
+<li>INT16: Ausgabe von vorzeichenbehafteten 16bit Werten (keine Darstellung).
+Derzeit nur für RASTER Layer (durch GDAL) und WMS Layer verfügbar.</li>
+<li>FLOAT32: Ausgabe von 32bit Gleitkomma Pixel Werten (keine Darstellung).
+Derzeit nur für RASTER Layer (durch GDAL) und WMS Layer verfügbar.</li>
+</ul>
+</dd>
+<dt>MIMETYPE [type]</dt>
+<dd>Legt den Mime-Typ fest, der für Web-Ausgaben benutzt wird.(optional)</dd>
+<dt>EXTENSION [type]</dt>
+<dd>Legt die Dateinamenerweiterung für erzeugte Dateien fest. (optional)</dd>
+<dt>TRANSPARENT [ON/OFF]</dt>
+<dd>Gibt an ob Transparenz für dieses Format aktiviert wird. Für IMAGEMODE RGB
+steht keine Transparenz zur Verfügung. Nicht alle Formate unterstützen
+Transparenz (optional).
+Wird z.B. für die 8bit Falschfarben-Ausgabe Transparenz aktiviert, wird die
+per IMAGECOLOR angegebene Farbe in der Ausgabepalette als trnasparent
+markiert. Alle anderen Kartenelemente mit der Farbe werden ebenfalls
+transparent. Für die Erstellung von Karten mit Transparenz sollte deshalb
+eine Farbe als Hintergrundfarbe benutzt werden, die in der Karte sonst
+nicht vorkommt.</dd>
+</dl>
+<dl class="docutils" id="formatoption">
+<dt>FORMATOPTION [option]</dt>
+<dd><p class="first">Stellt einen Treiber oder formatspezifische Optionen zur Verfügung. Es
+können 0 oder mehr FORMATOPTION Angaben in dem OUTPUTFORMAT Block
+angegeben werden. (optional)</p>
+<ul class="last">
+<li><p class="first">GD/JPEG: Mit der Angabe &#8220;QUALITY=n&#8221; kann die Qualität der Ausgabe
+beeinflußt werden (Werte von 0-100).</p>
+</li>
+<li><p class="first">GD/PNG: Die Angabe &#8220;INTERLACE=[ON/OFF]&#8221; schaltet Interlacing an oder aus.</p>
+</li>
+<li><p class="first">GD/GIF: Die Angabe &#8220;INTERLACE=[ON/OFF]&#8221; schaltet Interlacing an oder aus.</p>
+</li>
+<li><p class="first">GDAL/GTiff: unterstützt die Optionen TILED=YES, BLOCKXSIZE=n,
+BLOCKYSIZE=n, INTERLEAVE=[PIXEL/BAND] und
+COMPRESS=[NONE,PACKBITS,JPEG,LZW,DEFLATE]</p>
+</li>
+<li><p class="first">GDAL/*: Alle FORMATOPTIONen werden an die GDAL-Funktion create
+weitergereicht. Die verfügbaren Optionen sind detailiert in der GDAL
+Dokumentation aufgeführt.</p>
+</li>
+<li><p class="first">GD/PNG und AGG/PNG unterstützen beide Quantitisierung von 24/32 Bits zu
+8 Bits um die Ausgabegröße der erzeugten Bilddateien zu reduzieren (und
+damit auch Bandbreite). (Siehe auch
+<a class="reference external" href="http://trac.osgeo.org/mapserver/ticket/2436#comment:4">http://trac.osgeo.org/mapserver/ticket/2436#comment:4</a> für Regeln der
+Anwendungsreihenfolge):</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;QUANTIZE_FORCE=on&#8221; wird benutzt um ein RGB oder RGBA Bild in ein
+8 Bit (oder weniger) Bild mit Farbpalette umzuwandeln. Die Farben die
+für die Palette gewählt werden sind geeignet den wirklichen Farben in
+dem RGB Bild zu entsprechen. (RGBA Quantitisierung wurde in Version
+5.2 eingeführt und benötigt das Flag &#8211;enable-experimental-png bei
+der Konfiguration)</li>
+<li>&#8220;QUANTIZE_COLORS=256&#8221; wird benutzt um die Anzahl der Farben anzugeben
+wenn Quantitisierung angewandt wird. Der Maximalwert beträgt 256.
+Für Angaben zwischen 17 und 255 wird wahrscheinlich Qualität
+verschenkt, da jedes Pixel dennoch mit einem ganzen Byte kodiert
+wird. Angaben unter 16 erzeugen sehr kleine Bilddateien, jedoch mit
+extrem verminderter Qualität.</li>
+<li>&#8220;QUANTIZE_NEW=on&#8221; wird benutzt um einen anderen Algorithmus (bessere
+Qualität, aber langsamer) für die Quantitisierung zu benutzen. Bei
+Standardverhalten wird ein schneller aber sehr einfacher Algorithmus
+benutzt. Dadurch erhält man doppelte Einträge in der Palette und
+sichtbare Artifakte bei der Kachelung.</li>
+<li>&#8220;PALETTE_FORCE=on&#8221; wird benutzt um die Farbtiefe mit einer
+vordefinierten Palette zu reduzieren. Diese Option ist inkompatible
+mit den oben aufgeführten Quantitisierungsoptionen.</li>
+<li>&#8220;PALETTE=/path/to/palette.txt&#8221; wird benutzt um den Pfad zu den
+Palettenfarben anzugeben. Diese Datei sollte 256 Einträge der Form
+r,g,b für RGB Farbmodi oder r,g,b,a für RGBA Farbmodi enthalten.
+Jede Zeile enthält genau ein Dreierpaar (oder Viererpaar), die Werte
+sind durch Kommata getrennt. Enthält die Datei weniger als 256
+Einträge, werden die restlichen Farben per Quantitisierung bestimmt.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Navigation</h3>
+<p>
+<a href="../about.html" title="About">About</a><br>
+<a href="../products.html" title="Products">Products</a><br>
+<a href="../community/index.html" title="Community">Community</a><br>
+<a href="../development/index.html" title="Development">Development</a><br>
+<a href="../download.html" title="Downloads">Downloads</a><br>
+<a href="../documentation.html" title="Documentation">Documentation</a><br>
+<a href="../faq.html" title="FAQ">FAQ</a>
+</p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Los" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Open Source Geospatial Foundation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

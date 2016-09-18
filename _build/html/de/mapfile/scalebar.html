@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SCALE &#8212; MapServer 7.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/mapserver.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../about.html" />
+    <link rel="top" title="MapServer 7.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+<table width="100%" style="width: 100%; background-color: white;">
+  <tr>
+    <td rowspan="2" style="padding: 10px 0px 10px 10px;">
+      <a href="../index.html" title="Home"><img src="../_static/banner.png" alt="MapServer banner" border="0" /></a>
+    </td>
+    <td style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="../index.html" title="Home">Home</a> |
+      <a href="../products.html" title="Products (MapServer core, MapCache, TinyOWS">Products</a> |
+      <a href="https://github.com/mapserver/mapserver/issues/" title="Issue Tracker (MapServer core)">Issue Tracker</a> |
+      <a href="../faq.html" title="FAQ">FAQ</a> |
+      <a href="../download.html" title="Download">Download </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 10px 0px 0px; text-align: right; vertical-align: bottom;">
+        
+          
+            <a href="../../mapfile/scalebar.html"><img src="../_static/flagicons/en.png" alt="en" title="en" border="0" /></a>
+          
+        
+        <img src="../_static/flagicons/de.png" alt="de" title="de" border="0" width="18px" height="13px"/>
+        
+          
+            <a href="../../es/mapfile/scalebar.html"><img src="../_static/flagicons/es.png" alt="es" title="es" border="0" /></a>
+          
+        
+        
+          
+            <a href="../../zh_cn/mapfile/scalebar.html"><img src="../_static/flagicons/zh_cn.png" alt="zh_cn" title="zh_cn" border="0" /></a>
+          
+        
+
+    </td>
+  </tr>
+</table>
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="scale">
+<span id="scalebar"></span><h1>SCALE<a class="headerlink" href="#scale" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Maßstabsleisten verwenden derzeit keine TrueType-Schriften. Die Größe des
+Bildes der Maßstabsleiste kann erst zum Zeitpunkt des Zeichnen ermittelt
+werden. Deshalb sollten keine festen Breiten- und Höhenangaben zum &lt;IMG&gt;-Tag
+in der Templatedatei benutzt werden. Zukünftige Versionen werden die
+Größenangaben unterstützen.</p>
+<dl class="docutils">
+<dt>ALIGN [left|center|right]</dt>
+<dd><p class="first">Bestimmt wie die eigentliche Maßstabsleiste im zu erstellenden Bild
+ausgerichtet ist. Standard ist center. Ab Version 5.2 verfügbar.</p>
+<div class="last versionadded">
+<p><span class="versionmodified">Neu in Version 5.2.</span></p>
+</div>
+</dd>
+<dt>BACKGROUNDCOLOR [r] [g] [b]</dt>
+<dd>Farbe die für den Hintergrund der Maßstabsleiste benutzt wird, nicht
+der Bildhintergrund.</dd>
+<dt>COLOR [r] [g] [b]</dt>
+<dd>Farbe mit der alle Objekte gezeichnet werden, wenn keine Attributtabellen
+benutzt werden.</dd>
+<dt>IMAGECOLOR [r] [g] [b]</dt>
+<dd>Farbe mit der die Maßstabsleiste initialisiert wird (d.h. Hintergrund)</dd>
+<dt>INTERLACE [true|false]</dt>
+<dd><p class="first"><em>Veraltet</em> Um für Ausgabebilder interlace zu aktivieren muss im Abschnitt
+<a class="reference internal" href="outputformat.html#outputformat"><span class="std std-ref">OUTPUTFORMAT</span></a> FORMATOPTION &#8220;INTERLACE=ON&#8221; gesetzt sein.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 4.6.</span></p>
+</div>
+</dd>
+<dt>INTERVALS [integer]</dt>
+<dd>Anzahl der Intervalle der Maßstabsleiste. Standard ist 4.</dd>
+<dt>LABEL</dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a> Objektes.</dd>
+<dt>OUTLINECOLOR [r] [g] [b]</dt>
+<dd>Farbe mit der einzelne Intervalle umrandet werden. Standard ist -1, d.h.
+es wird keine Umrandung gezeichnet.</dd>
+<dt>POSITION [ul|uc|ur|ll|lc|lr]</dt>
+<dd>Gibt die Position der Maßstabsleiste innerhalb des Kartenbildes an.
+Standard ist lr.</dd>
+<dt>POSTLABELCACHE [true|false]</dt>
+<dd>Nur für eingebettete Maßstabsleisten verfügbar. Veranlaßt MapServer die
+Maßstabsleiste erst einzubetten, wenn alle Beschriftungen bereits
+gezeichnet wurden. Standard ist false.</dd>
+<dt>SIZE [x][y]</dt>
+<dd>Größe der Maßstabsleiste in Pixel. Die Beschriftung wird dabei nicht
+mitgerechnet.</dd>
+<dt>STATUS [on|off|embed]</dt>
+<dd>Gibt an ob die Maßstabsleiste erstellt wird und falls ja, ob sie in das
+Kartenbild eingebettet wird. (Hinweis: Für eingebettete Maßstabsleisten
+muss ein Markerset definiert werden. Letztendlich wird die Maßstabsleiste
+wie ein Marker behandelt, so wie jede andere Annotation.)</dd>
+<dt>STYLE [integer]</dt>
+<dd>Legt den Stil der Maßstabsleiste fest. Gültige Werte sind 0 und 1.</dd>
+<dt>TRANSPARENT [on|off]</dt>
+<dd><p class="first"><em>Veraltet</em> Für eine transparente Maßstabsleiste muss
+FORMATOPTION &#8220;TRANSPARENT=ON&#8221; im Abschnitt <a class="reference internal" href="outputformat.html#outputformat"><span class="std std-ref">OUTPUTFORMAT</span></a> gesetzt
+werden. Standard ist off.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 4.6.</span></p>
+</div>
+</dd>
+<dt>UNITS [feet|inches|kilometers|meters|miles]</dt>
+<dd>Einheit der Maßstabsleiste, Standard ist miles. Wird zusammen mit den
+Karteneinheiten benutzt um die eigentliche Grafik aufzubauen. Hinweis:
+Dezimalgrad keine gültige Einheit.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Navigation</h3>
+<p>
+<a href="../about.html" title="About">About</a><br>
+<a href="../products.html" title="Products">Products</a><br>
+<a href="../community/index.html" title="Community">Community</a><br>
+<a href="../development/index.html" title="Development">Development</a><br>
+<a href="../download.html" title="Downloads">Downloads</a><br>
+<a href="../documentation.html" title="Documentation">Documentation</a><br>
+<a href="../faq.html" title="FAQ">FAQ</a>
+</p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Los" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Open Source Geospatial Foundation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

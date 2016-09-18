@@ -1,0 +1,679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LAYER &#8212; MapServer 7.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/mapserver.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../about.html" />
+    <link rel="top" title="MapServer 7.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+<table width="100%" style="width: 100%; background-color: white;">
+  <tr>
+    <td rowspan="2" style="padding: 10px 0px 10px 10px;">
+      <a href="../index.html" title="Home"><img src="../_static/banner.png" alt="MapServer banner" border="0" /></a>
+    </td>
+    <td style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="../index.html" title="Home">Home</a> |
+      <a href="../products.html" title="Products (MapServer core, MapCache, TinyOWS">Products</a> |
+      <a href="https://github.com/mapserver/mapserver/issues/" title="Issue Tracker (MapServer core)">Issue Tracker</a> |
+      <a href="../faq.html" title="FAQ">FAQ</a> |
+      <a href="../download.html" title="Download">Download </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 10px 0px 0px; text-align: right; vertical-align: bottom;">
+        
+          
+            <a href="../../mapfile/layer.html"><img src="../_static/flagicons/en.png" alt="en" title="en" border="0" /></a>
+          
+        
+        <img src="../_static/flagicons/de.png" alt="de" title="de" border="0" width="18px" height="13px"/>
+        
+          
+            <a href="../../es/mapfile/layer.html"><img src="../_static/flagicons/es.png" alt="es" title="es" border="0" /></a>
+          
+        
+        
+          
+            <a href="../../zh_cn/mapfile/layer.html"><img src="../_static/flagicons/zh_cn.png" alt="zh_cn" title="zh_cn" border="0" /></a>
+          
+        
+
+    </td>
+  </tr>
+</table>
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="layer">
+<span id="id1"></span><h1>LAYER<a class="headerlink" href="#layer" title="Link zu dieser Überschrift">¶</a></h1>
+<dl class="docutils">
+<dt><a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a></dt>
+<dd><p class="first">Signalisiert den Anfang des <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a> Objektes.</p>
+<p class="last">Innerhalb eines Layers wird immer nur eine Klasse zum Rendering des
+Objektes benutzt. Jedes Objekt wird gegen jede Klasse getestet, unter
+Berücksichtigung der Definitionsreihenfolge im Mapfile. Die Klasse die
+zuerst die Bedingung für Min/Max-Maßstab und der
+<a class="reference internal" href="expressions.html#expressions"><span class="std std-ref">EXPRESSION</span></a> Auswertung erfüllt, wird gezeichnet.</p>
+</dd>
+</dl>
+<dl class="docutils" id="classitem">
+<span id="index-0"></span><dt>CLASSITEM [attribute]</dt>
+<dd>Name der Tabellenspalte der für Klassenabfragen benutzt wird.</dd>
+<dt>CLASSGROUP  [string]</dt>
+<dd>Definiert den Namen der Klassengruppe.
+Der <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a> Objekt GROUP Parameter muss zusammen mit
+CLASSGROUP benutzt werden..</dd>
+<dt>CONNECTION [string]</dt>
+<dd><p class="first">Festlegen der Verbindungsdaten für Datenbanken.</p>
+<p>Die Verbindungsdaten für eine SDE-Verbindung enthalten den Hostnamen,
+Instanznamen, Datenbanknamen, Benutzernamen und Passwort, jeweils durch
+Kommata getrennt.</p>
+<p>Für eine PostGIS-Verbindung können typische PostgreSQL-Verbindungsangaben
+benutzt werden. Beispiel:
+&#8220;user=nobody password=****** dbname=dbname host=localhost port=5432&#8221;</p>
+<p>Oracle Verbindungsangaben: user/pass[&#64;db]</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last">Siehe auch <span class="xref std std-ref">vector</span> für spezielle Verbindungsangaben
+unterschiedlicher Datenquellen.</p>
+</div>
+</dd>
+<dt>CONNECTIONTYPE [local|sde|ogr|postgis|oraclespatial|wms]</dt>
+<dd><p class="first">Art der Verbindung. Standard ist local.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last">Siehe auch <span class="xref std std-ref">vector</span> für spezielle Verbindungsangaben
+unterschiedlicher Datenquellen.</p>
+</div>
+</dd>
+<dt>DATA [filename]|[sde parameters][postgis table/column][oracle table/column]</dt>
+<dd><p class="first">Vollständiger Dateiname der zu verarbeitenden Daten. Für Shapedateien
+muss keine Dateinamenerweiterung (.shp) angegeben werden. Kann relativ
+zu im Map-Objekt definierten SHAPEPATH angegeben werden.</p>
+<p>Handelt es ich um einen SDE-Layer, so sollte neben dem Layernamen auch
+der Name der Geometriespalte angegeben werden
+(z.B. &#8220;mylayer,shape,myversion&#8221;).</p>
+<p>Handelt es sich um einen PostGIS-Layer, sollte die Angabe in der Form
+&#8220;&lt;columnname&gt; from &lt;tablename&gt;&#8221; erfolgen, wobei &#8220;columname&#8221; der Name
+der Geometriespalte ist und &#8220;tablename&#8221; der Tabellenname aus dem die
+Daten gelesen werden.</p>
+<p>Handelt es sich um einen Oracle-Layer, kann &#8220;shape FROM table&#8221; oder
+&#8220;shape FROM (SELECT statement)&#8221; oder auch komplexere Oracle-Statements
+benutzt werden. Werden räumliche Unterabfragen benutzt, treten erhebliche
+Performanzeinbußen auf. Wenn möglich sollten immer MapServer&#8217;s <a class="reference internal" href="#filter">FILTER</a>
+benutzt werden. Um das erzeugte SQL-Statement zu sehen, kann ein Fehler
+provoziert werden, in dem der offensichtlich fehlerhafte DATA Parameter
+mit einem ungültigen Spaltennamen benutzt wird.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last">Siehe auch <span class="xref std std-ref">vector</span> für spezielle Verbindungsangaben
+unterschiedlicher Datenquellen.</p>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="index-1">
+<dt>DEBUG [off|on|0|1|2|3|4|5]</dt>
+<dd><p class="first">Aktiviert Debugging des aktuellen Layers.</p>
+<p><em>Debugging mit MapServer Versionen &gt;= 5.0:</em></p>
+<p>Ausführliche Ausgaben werden in die Standardfehlerausgabe (STDERR) oder in
+die per Umgebungsvariable &#8220;MS_ERRORFILE&#8221; angegebene Datei geschrieben.
+Die Umgebungsvariable kann per CONFIG Parameter auf MAP Ebene wie folgt
+gesetzt werden:</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">CONFIG</span> <span class="s">&quot;MS_ERRORFILE&quot;</span> <span class="s">&quot;/ms4w/tmp/ms_error.txt&quot;</span>
+</pre></div>
+</div>
+<p>Die Umgebungsvariable kann bei Apache durch das hinzufügen folgender Zeile
+gesetzt werden:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SetEnv</span> <span class="n">MS_ERRORFILE</span> <span class="s2">&quot;/ms4w/tmp/ms_error.txt&quot;</span>
+</pre></div>
+</div>
+<p>Ist die Umgebungsvariable gesetzt, so können mittels DEBUG Parameter die
+Details der Ausgabe gesetzt werden. Folgende Liste beschreibt die möglichen
+DEBUG Werte:</p>
+<ul class="simple">
+<li><strong>DEBUG O or OFF</strong> - nur msSetError() Aufrufe werden nach MS_ERRORFILE
+protokolliert.
+Keine msDebug() Ausgaben. Dies ist das Standardverhalten und entspricht
+dem ursprünglichen Verhalten von MS_ERRORFILE in MapServer 4.x</li>
+<li><strong>DEBUG 1 or ON</strong> - enthält alle Ausgaben von DEBUG 0 plus msDebug()
+Warnungen über häufige Fehlerquellen, ungültige Anweisungen oder oder
+nicht-fatale Fehler (z.B. fehlende oder ungültige Parameterwerte,
+fehlende Dateien im Tileindex, Timeouts von WMS/WFS Servern, etc.)</li>
+<li><strong>DEBUG 2</strong> - enthält alle Ausgaben von DEBUG 1 plus Hinweise und Werte
+zur Zeitmessung, nützlich zum Tuning von Mapfiles und Anwendungen</li>
+<li><strong>DEBUG 3</strong> - enthält alle Ausgaben von DEBUG 2 plus zusätzliche
+Debugausgaben zur Fehleranalyse wie z.B. aufgerufene WMS-URLs, Angaben zu
+Datenbankverbindungen etc.
+Dies ist der empfohlene Debuglevel zur Fehleranalyse von Mapfiles.</li>
+<li><strong>DEBUG 4</strong> - DEBUG 3 plus noch mehr Details...</li>
+<li><strong>DEBUG 5</strong> - DEBUG 4 plus alle msDebug() Ausgaben die möglicherweise nur
+für Entwickler hilfreich sind.</li>
+</ul>
+<p>Das Debuglevel kann auch über die Umgebungsvariable &#8220;MS_DEBUGLEVEL&#8221; gesetzt
+werden.</p>
+<p>Die Debugangabe kann auch für Layer gesetzt werden indem der Parameter DEBUG
+im <a class="reference internal" href="map.html#map"><span class="std std-ref">MAP</span></a> Objekt gesetzt wird.</p>
+<p>Für weitere Details wird auf <span class="xref std std-ref">RFC28</span> verwiesen.</p>
+<p><em>Debugging mit MapServer Versionen &lt; 5:</em></p>
+<p class="last">Ausführliche Angaben werden erzeugt und an die Standardfehlerausgabe
+(STDERR) oder eine MapServer Logdatei geschrieben. Diese wird über den
+Parameter LOG im WEB Objekt gesetzt. Benutzer des Apache finden Zeitangaben
+zum Zeichnen in den Apache Logdateien. MapServer muss mit der Option
+DEBUG=MSDEBUG (&#8211;with-debug) übersetzt werden.</p>
+</dd>
+<dt>DUMP [true|false]</dt>
+<dd>Schalter um MapServer zu veranlassen Daten im GML-Format auszugeben.
+Nützlich bei Verwendung von WMS GetFeatureInfo Abfragen. Standard ist false.</dd>
+<dt>EXTENT [minx] [miny] [maxx] [maxy]</dt>
+<dd>Die räumliche Ausdehnung der zu erstellenden Karte. Dieser Parameter sollte
+angegeben werden. Fehlt dieser, so berechnet MapServer die Ausdehnung,
+wodurch es zu Geschwindigkeitseinbußen kommen kann.</dd>
+<dt><a class="reference internal" href="feature.html#feature"><span class="std std-ref">FEATURE</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="feature.html#feature"><span class="std std-ref">FEATURE</span></a> Objektes.</dd>
+</dl>
+<dl class="docutils" id="filter">
+<dt>FILTER [string]</dt>
+<dd><p class="first">Dieser Parameter erlaubt die Filterung an Hand von Attributen.
+Die Auswertung erfolgt zur gleichen Zeit wie die räumliche Filterung jedoch
+vor Auswertung der CLASS-Expressions. Im Fall von OGR und Shapefiles
+entspricht der Wert eines regulären Ausdrucks. Bei raumbezogenen Datenbanken
+entspricht der Wert der SQL WHERE Klausel in Bezug auf die benutzte
+Datenbank.</p>
+<p class="last">Beispiel: FILTER &#8220;type=&#8217;road&#8217; and size &lt;2&#8221;</p>
+</dd>
+<dt>FILTERITEM [attribute]</dt>
+<dd>Spalte die für einfache <a class="reference internal" href="#filter">FILTER</a> Ausdrücke benutzt wird. Nür für OGR und
+Shapefiles.</dd>
+<dt>FOOTER [filename]</dt>
+<dd>Template das <em>nach</em> den Apfrageergebnissen benutzt wird.
+Nur für mehrzeilie Ergebnisse.</dd>
+<dt><a class="reference internal" href="grid.html#grid"><span class="std std-ref">GRID</span></a></dt>
+<dd>Signals the start of a <a class="reference internal" href="grid.html#grid"><span class="std std-ref">GRID</span></a> object.</dd>
+<dt>GROUP [name]</dt>
+<dd>Name of a group that this layer belongs to. The group name can then be
+reference as a regular layer name in the template files, allowing to do
+things like turning on and off a group of layers at once.</dd>
+<dt>HEADER [filename]</dt>
+<dd>Template to use <em>before</em> a layer&#8217;s set of results have been sent.
+Multiresult query modes only.</dd>
+<dt><a class="reference internal" href="join.html#join"><span class="std std-ref">JOIN</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="join.html#join"><span class="std std-ref">JOIN</span></a> Objektes.</dd>
+<dt>LABELANGLEITEM [attribute]</dt>
+<dd><p class="first">(Ab MapServer Version 5.0 nicht mehr verfügbar. Bitte beim ANGLE Parameter
+vom <a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a> Objekt nachlesen).
+Für Versionen &lt; 5.0, Spaltenname der Attributtabelle für
+Beschriftungswinkel. Angaben in Grad.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+</dd>
+<dt>LABELCACHE [on|off]</dt>
+<dd>Gibt an ob Label zur gleichen Zeit wie der Layer gezeichnet werden oder
+zwischengespeichert und nach allen Layern gezeichnet werden. Standard ist
+on. Entfernen von überlappenden Labeln, automatische Platzierung etc. sind
+nur bei aktiviertem Labelcache verfügbar.</dd>
+<dt>LABELITEM [attribute]</dt>
+<dd>Name der Spalte der Attributtabelle in der Text zur Beschriftung
+gespeichert ist.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt>LABELMAXSCALEDENOM [double]</dt>
+<dd><p class="first">Größter Maßstab bis zu dem der Layer beschriftet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben. Implementiert in
+MapServer 5.0, ersetzt veralteten LABELMAXSCALE Parameter.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last"><span class="xref std std-term">Map Scale</span></p>
+</div>
+</dd>
+<dt>LABELMAXSCALE [double]</dt>
+<dd><p class="first">(<em>veraltet</em>) Ab MapServer Version 5.0 sollte LABELMAXSCALEDENOM benutzt
+werden.
+Größter Maßstab bis zu dem die Layerbeschriftung gezeichnet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt>LABELMINSCALEDENOM [double]</dt>
+<dd><p class="first">Kleinster Maßstab bis zu dem der Layer beschriftet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben. Implementiert in
+MapServer 5.0, ersetzt veralteten LABELMINSCALE Parameter.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last"><span class="xref std std-term">Map Scale</span></p>
+</div>
+</dd>
+<dt>LABELMINSCALE [double]</dt>
+<dd><p class="first">(<em>veraltet</em>) Ab MapServer Version 5.0 sollte LABELMINSCALEDENOM benutzt
+werden.
+Kleinster Maßstab bis zu dem die Layerbeschriftung gezeichnet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="labelrequires">
+<dt>LABELREQUIRES [expression]</dt>
+<dd><p class="first">Bedingung zum Beschriften, z.B.:</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">LABELREQUIRES</span> <span class="s">&quot;![orthoquads]&quot;</span>
+</pre></div>
+</div>
+<p class="last">bedeutet das dieser Layer nicht beschriftet wird wenn ein Layer mit dem
+Namen &#8220;orthoquads&#8221; aktiv ist. Der Wert besteht aus einem Booleschen Ausdruck
+und basiert auf den Stati anderer Layer. Jedes Auftreten von [layer name]
+wird durch 0 oder 1 ersetzt, je nachdem was der aktuelle <a class="reference internal" href="#status">STATUS</a> des Layers
+ist und anschließend außgewertet. Die logischen Operatoren AND und OR können
+benutzt werden.</p>
+</dd>
+<dt>LABELSIZEITEM [attribute]</dt>
+<dd><p class="first">(Ab MapServer Version 5.0 nicht mehr verfügbar. Bitte beim SIZE Parameter
+vom <a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a> Objekt nachlesen).
+Für Versionen &lt; 5.0, Spaltenname der Attributtabelle für Beschriftungsgröße.
+Angaben in Pixel.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+</dd>
+<dt>MAXFEATURES [integer]</dt>
+<dd><p class="first">Gibt die Anzahl der darzustellenden Objekte eines Layers im aktuellen
+Fenster an.
+Bietet interessante Möglichkeiten der Beschriftung von sortierten Werten
+(z.B. Seen eines Gebietes)</p>
+<p class="last">sorted data (i.e. lakes by area).</p>
+</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt>MAXSCALEDENOM [double]</dt>
+<dd><p class="first">Größter Maßstab bis zu dem der Layer gezeichnet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben. Implementiert in
+MapServer 5.0, ersetzt veralteten MAXSCALE Parameter.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last"><span class="xref std std-term">Map Scale</span></p>
+</div>
+</dd>
+<dt>MAXSCALE [double]</dt>
+<dd><p class="first">(<em>veraltet</em>) Ab MapServer Version 5.0 ist MAXSCALEDENOM zu benutzen.
+Größter Maßstab bis zu dem der Layer gezeichnet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+</dd>
+<dt>METADATA</dt>
+<dd><p class="first">Hiermit können beliebige Daten als Wertepaare gespeichert werden.
+Dies wird mit <span class="xref std std-ref">OGC WMS</span> benutzt um z.B. den Layertitel
+zu definieren. Es erlaubt auch mehr Flexibilität bei der Templateerstellung,
+da auf die hier definierten Werte über Template Tags zugegriffen werden kann.</p>
+<p>Example:</p>
+<div class="last highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">METADATA</span>
+    <span class="k">title</span> <span class="s">&quot;My layer title&quot;</span>
+    <span class="k">author</span> <span class="s">&quot;Me!&quot;</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt>MINSCALEDENOM [double]</dt>
+<dd><p class="first">Kleinster Maßstab bis zu dem der Layer gezeichnet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben. Implementiert in
+MapServer 5.0, ersetzt veralteten MINSCALE Parameter.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last"><span class="xref std std-term">Map Scale</span></p>
+</div>
+</dd>
+<dt>MINSCALE [double] - deprecated</dt>
+<dd><p class="first">(<em>veraltet</em>) Ab MapServer Version 5.0 ist MINSCALEDENOM zu benutzen.
+Kleinster Maßstab bis zu dem der Layer gezeichnet wird.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+</dd>
+<dt>NAME [string]</dt>
+<dd>Kurzer Name des Layers. Beschränkung liegt bei 20 Zeichen. Über diesen Namen
+wird die Verbindung zwischen Mapfile und Webinterface hergestellt. Der Name
+muß eindeutig sein, es sein denn ein Layer wird durch einen anderen bei
+unterschiedlichen Maßstäben ersetzt. Für Gruppierungen von Layern steht
+die GROUP Option zur Verfügung.</dd>
+<dt>OFFSITE [r] [g] [b]</dt>
+<dd>Definiert den Farbwert der bei Raster Layer transparent erscheinen soll.</dd>
+</dl>
+<dl class="docutils" id="opacity">
+<dt>OPACITY [integer|alpha]</dt>
+<dd><p class="first">Gibt die Deckkraft für einen Layer an. Als Wert wird entweder ein
+Integer-Wert im Intervall von (0-100) angegeben oder das Symbol &#8220;ALPHA&#8221;.
+Ein Wert von 100 ist undurchlässig und 0 entspricht voller Transparenz.
+Implementiert in MapServer 5.0 um den veralteten Parameter TRANSPARENCY
+zu ersetzen.</p>
+<p class="last">Durch das Symbol &#8220;ALPHA&#8221; wird der MapServer veranlasst indizierte- oder
+alpha-Transparenz von Pixmap-Symbolen zu benutzen. Dies ist nur notwendig
+wenn RGB Ausgabeformate benutzt werden. Da die Verarbeitung von
+transparenten Pixmap-Symbolen in einem RGB-Bild sehr rechenaufwendig ist,
+sollte Alpha-Transparenz nur benutzt werden wenn es wirklich notwendig ist.</p>
+</dd>
+<dt>POSTLABELCACHE [true|false]</dt>
+<dd>Veranlasst MapServer diesen Layer erst zu zeichnen wenn alle Labels im
+Cache gezeichnet wurden. Nützlich für Begrenzungslinien oder ähnliche
+Elemente. Standard ist false.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt>PROCESSING [string]</dt>
+<dd><p class="first">Gibt Direktiven an wie der Layer verarbeitet werden soll. Die unterstützen
+Direktiven sind abhängig vom Typ des Layers und dem benutzten Treiber.</p>
+<ul class="last">
+<li><p class="first"><strong>Attribut Direktive</strong> - Die ITEMS Option erlaubt die Angabe der
+Attributnamen für Inlinelayer oder die vom Layer benuzten Attribute, z.B.</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">PROCESSING</span> <span class="s">&quot;ITEMS=itemname1,itemname2,itemname3&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Verbindungspooling Direktive</strong> - Hiermit kann für bestimmte Layer
+das Verbindungspooling aktiviert werden. Verbindungspooling erlaubt
+MapServer das Handle der Datenbankverbindung für mehrere Layer
+wiederzuverwenden. Wird FastCGI benutzt, bleibt die Verbindung unbegrenzt
+lange offen bzw. maximal so lange wie die angegebenen Optionen in der
+<span class="xref std std-ref">FastCGI</span> Konfiguration es erlauben. <span class="xref std std-ref">oci</span>,
+<span class="xref std std-ref">arcsde</span>, <span class="xref std std-ref">ogr</span> und <span class="xref std std-ref">input_postgis</span> unterstützen diese
+Option.</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">PROCESSING</span> <span class="s">&quot;CLOSE_CONNECTION=DEFER&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>OGR Style Direktive</strong> - Diese Direktive wird benutzt um Labelstyles
+durch MapScript zu erhalten. Für weitere Informationen siehe
+<span class="xref std std-ref">MapServer&#8217;s OGR document</span>.</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">PROCESSING</span> <span class="s">&quot;GETSHAPE_STYLE_ITEMS=all&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><strong>Raster Direktive</strong> - Alle Verarbeitungsoptionen für Raster sind in
+<span class="xref std std-ref">raster</span> beschrieben. Im folgenden Beispiel wird die SCALE und
+BANDS Direktive benutzt um Rasterdaten automatisch zu skalieren und
+die Kanäle zu ändern.</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">PROCESSING</span> <span class="s">&quot;SCALE=AUTO&quot;</span>
+<span class="k">PROCESSING</span> <span class="s">&quot;BANDS=3,2,1&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+<dt><a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a> Objektes.</dd>
+<dt>REQUIRES [expression]</dt>
+<dd>Erlaubt die Angabe von Bedingungen zur Anzeige des Layers (siehe
+<a class="reference internal" href="#labelrequires">LABELREQUIRES</a>).</dd>
+<dt>SIZEUNITS [pixels|feet|inches|kilometers|meters|miles|</dt>
+<dd>Gibt die Einheit der SIZE Werte (Standard ist pixels) der <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a>
+Objekte an. Nützlich für die Simulation von Buffern.</dd>
+</dl>
+<dl class="docutils" id="status">
+<dt>STATUS [on|off|default]</dt>
+<dd><p class="first">Gibt den aktuellen Status des Layers an. Wir von MapServer oftmals selbst
+gesetzt. Für permanente Anzeige wird &#8220;default&#8221; benutzt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Im <span class="xref std std-ref">CGI</span> modus, Layer mit STATUS DEFAULT können nicht
+mit den üblichen Mchanismen deaktiviert werden. Für die Fehlersuche
+wird empfohlen STATUS DEFAULT zu setzen, für produktive Benutzung
+STATUS ON/OFF.</p>
+</div>
+<div class="last admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Für <span class="xref std std-ref">WMS</span> werden Layer mit STATUS DEFAULT immer
+ausgeliefert.</p>
+</div>
+</dd>
+<dt>STYLEITEM [attribute]</dt>
+<dd>Wird benutzt für featureabhängiges Styling. Dies ist im Moment <em>sehr</em>
+experimentell und steht nur für OGR zur Verfügung.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt>SYMBOLSCALEDENOM [double]</dt>
+<dd><p class="first">Der Maßstab bei dem die Symbole und/oder Text in Originalgröße erscheinen.
+Dies erlaubt dynamische Skalierung von Objekten in Abhängigkeit vom
+Kartenmaßstab. Wird dies nicht gesetzt, werden die Symbole über den
+gesamten Maßstabsbereich mit der gleichen Größe gezeichnet. Die Skalierung
+findet nur in den Grenzen von MINSIZE und MAXSIZE statt.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben. Implementiert in
+MapServer 5.0, ersetzt veralteten SYMBOLSCALE Parameter.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last"><span class="xref std std-term">Map Scale</span></p>
+</div>
+</dd>
+<dt>SYMBOLSCALE [double] - deprecated</dt>
+<dd><p class="first">Ab MapServer Version 5.0 wird dieser Parameter durch SYMBOLSCALEDENOM
+ersetzt.
+Der Maßstab bei dem die Symbole und/oder Text in Originalgröße erscheinen.
+Dies erlaubt dynamische Skalierung von Objekten in Abhängigkeit vom
+Kartenmaßstab. Wird dies nicht gesetzt, werden die Symbole über den
+gesamten Maßstabsbereich mit der gleichen Größe gezeichnet. Die Skalierung
+findet nur in den Grenzen von MINSIZE und MAXSIZE statt.
+Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
+eine Karte im Maßstab 1:24000 wird 24000 angegeben.</p>
+<div class="last deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+</dd>
+<dt><a class="reference internal" href="template.html#template"><span class="std std-ref">TEMPLATE</span></a> [file|url]</dt>
+<dd>Wird als globale Alternative zum CLASS TEMPLATE benutzt.</dd>
+<dt><span class="xref std std-ref">TILEINDEX</span> [filename|layername]</dt>
+<dd><p class="first">Name des Tileindex. Ein Teileindex ist ähnlich des ArcInfo
+Bibliotheks Index. Der Tileindex enthält Polygonfeatures für jede Kachel.
+Das Attributelement, das den Verweis auf die gekachelten Daten enthält,
+wird mitdem TILEITEM Parameter angegeben. Wird eine Datei als Tileindex
+für Shapefile- oder Raster-Layer benutzt, sollte der Tileindex ein
+Shapefile sein. Für Layer mit CONNECTIONTYPE OGR können alle von OGR
+unterstützten Datenquellen Tileindex sein. Als Verweis (zum Speicherort)
+wird die Angabe relativ zum Shapepath erwartet, nicht relativ zum
+Tileindex. Enthält der DATA Parameter einen Wert, wird die an das Ende
+des Verweises angehängt. Wird ein Layer mit Tileindex benutzt, verhält
+dieser sich als ob die Datei direkt angegeben wurde, aber alle
+unterstützten Quellen können benutzt werden (z.B. postgres, oracle).</p>
+<div class="last admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Alle Dateien im Tileindex sollten im selben Koordinatensystem
+vorliegen und Vektordateien sollten die selben Attribute in der
+selben Reihenfolge besitzen.</p>
+</div>
+</dd>
+<dt>TILEITEM [attribute]</dt>
+<dd>Attribut das den Verweis auf die zu benutzende Kachel enthält, Standardwert
+ist &#8220;location&#8221;.</dd>
+</dl>
+<dl class="docutils" id="tolerance">
+<dt>TOLERANCE [double]</dt>
+<dd>Empfindlichkeit für punktbasierte Abfragen (z.B. via Maus und/oder
+Kartenkoordinaten). Angabe in TOLERANCEUNITS. Handelt es sich um einen
+Punkt- (POINT) oder Linien-Layer (LINE), wird als Stadardwert 3 benutzt.
+Für alle anderen Layertypen wird 0 als Standardwert benutzt. Um
+flächenbasierte Suchen in der Art einzuschränken das der Punkt innerhalb
+des Polygons sein muss, muss der Toleranzwert auf 0 gesetzt werden. Diese
+Einstellung betrifft nicht WFS GetFeature Operaionen.</dd>
+<dt>TOLERANCEUNITS [pixels|feet|inches|kilometers|meters|miles|dd]</dt>
+<dd>Einheit der TOLERANCE Werte. Standard ist pixels.</dd>
+<dt>TRANSPARENCY [integer|alpha] - deprecated</dt>
+<dd><p class="first">Ab MapServer Version 5.0 wird der Parameter OPACITY benutzt.
+Gibt die Deckkraft für einen Layer an. Als Wert wird entweder ein
+Integer-Wert im Intervall von (0-100) angegeben oder das Symbol &#8220;ALPHA&#8221;.
+Ein Wert von 100 ist undurchlässig und 0 entspricht voller Transparenz.</p>
+<p>Durch das Symbol &#8220;ALPHA&#8221; wird der MapServer veranlasst indizierte- oder
+alpha-Transparenz von Pixmap-Symbolen zu benutzen. Dies ist nur notwendig
+wenn RGB Ausgabeformate benutzt werden. Da die Verarbeitung von
+transparenten Pixmap-Symbolen in einem RGB-Bild sehr rechenaufwendig ist,
+sollte Alpha-Transparenz nur benutzt werden wenn es wirklich notwendig ist.</p>
+<div class="deprecated">
+<p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
+</div>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last"><a class="reference internal" href="#opacity"><span class="std std-ref">OPACITY</span></a></p>
+</div>
+</dd>
+<dt>TRANSFORM [true|false ul|uc|ur|lc|cc|lr|ll|lc|lr]</dt>
+<dd><p class="first">Gibt an ob MapServer einen Layer von einem Koordinatensystem in
+Bildkoordinaten umwandeln soll. Standard ist true. Dies erlaubt die
+Verwendung von Shapefiles mit Bildkoordinaten, deren Objekte immer an
+der gleichen Stelle platziert werden. Wird für die Platzierung von Logos
+oder Text benutzt. Zu beachten ist, das bei dem Bildkoordinatensystem
+der Ursprung in der linken oberen Ecke liegt, im Gegensatz zu den
+meisten anderen Koordinatensystemen.</p>
+<p class="last">Ab Version 4.10 besteht die Möglichkeit Objekte mit Pixelkoordinaten
+(oder Prozentwerten, siehe UNITS) relativ zu einem beliebigen anderen Punkt
+außer UL zu definieren. Dies wird durch &#8220;TRANSFORM FALSE&#8221; erreicht. Bei
+Verwendung eines anderen Ursprungs kann z.B. ein Copyright-Symbol in einem
+Teilbereich des Bildes Angezeigt werden, der von der Bildgröße
+unabhängig ist.</p>
+</dd>
+<dt>TYPE [point|line|polygon|circle|annotation|raster|query|chart]</dt>
+<dd><p class="first">Gibt an wie die Daten gezeichnet werden sollen. Die Angabe muß nicht mit
+dem Shapefile-Typ übereinstimmen. Zum Beispiel kann ein Polygon-Shapefile
+als Punktlayer gezeichnet werden, aber nicht umgekehrt.
+Annotation bedeutet das ein Beschriftungspunkt berechnet wird, jedoch das
+eigentliche Objekt nicht gezeichnet wird. Es kann ein Marker definiert
+werden, der statt des Objektes gezeichnet wird. Damit sind komplexe
+Beschriftungen möglich wie z.B. nummerierte Autobahnschilder. Punkte werden
+an den Punktkoordinaten beschriftet. Polygone werden an ihrem Schwerpunkt
+beschriftet. Sollte dieser außerhalb des Polygons liegen, wird durch einen
+Scanline-Algorithmus eine Position innerhalb des Polygons bestimmt.
+Linien werden in der Mitte des längsten Bogen beschriftet, wobei nur
+der sichtbare Abschnitt der Linie berücksichtigt wird. Durch den Typ
+&#8220;query&#8221; steht der Layer nur für Abfragen zur Verfügung, er wird nicht
+gezeichnet.</p>
+<p>Um zwischen POLYGONen und POLYLINEen (die es als Typ nicht gibt)
+unterscheiden zu können, wird bei der Klassifizierung das Schlüsselwort
+COLOR benutzt bzw. weggelassen. Wird es benutzt, handelt es sich um ein
+Polygon mit einer Füllfarbe, andernfalls ist es ein Linienzug mit einer
+Randfarbe (OUTLINECOLOR).</p>
+<p>Ein Kreis wird durch die kleinste Hülle eines Rechtecks definiert. Zwei
+Punkte beschreiben das kleinste Quadrat, das den Kreis umgibt. Diese zwei
+Punkte sind die gegenüberliegenden Eckpunkte der Hülle.
+A circle must be defined by a a minimum bounding rectangle. That is, two
+points that define the smallest square that can contain it. These two points
+are the two opposite corners of said box.</p>
+<p>Hier wird ein Kreis mittels Inlinepunkten definiert</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">LAYER</span>
+  <span class="k">NAME</span> <span class="s">&#39;inline_circles&#39;</span>
+  <span class="k">TYPE</span> <span class="nb">CIRCLE</span>
+  <span class="k">STATUS</span> <span class="nb">ON</span>
+  <span class="k">FEATURE</span>
+    <span class="k">POINTS</span>
+      <span class="mf">74.01</span> <span class="p">-</span><span class="mf">53.8</span>
+      <span class="mf">110.7</span> <span class="p">-</span><span class="mf">22.16</span>
+    <span class="k">END</span>
+  <span class="k">END</span>
+  <span class="k">CLASS</span>
+    <span class="k">STYLE</span>
+      <span class="k">COLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">255</span>
+    <span class="k">END</span>
+  <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<div class="last admonition seealso">
+<p class="first admonition-title">Siehe auch</p>
+<p class="last">Für Diagrammlayer siehe <span class="xref std std-ref">Dynamic Charting</span> HowTo</p>
+</div>
+</dd>
+<dt>UNITS [feet|inches|kilometers|meters|miles|dd|pixels|percentages]</dt>
+<dd>Einheit des Layers. <cite>Percentages</cite> wurde in MapServer 4.10 hinzugefügt und
+wird oftmals für Inline-Layer benutzt.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Navigation</h3>
+<p>
+<a href="../about.html" title="About">About</a><br>
+<a href="../products.html" title="Products">Products</a><br>
+<a href="../community/index.html" title="Community">Community</a><br>
+<a href="../development/index.html" title="Development">Development</a><br>
+<a href="../download.html" title="Downloads">Downloads</a><br>
+<a href="../documentation.html" title="Documentation">Documentation</a><br>
+<a href="../faq.html" title="FAQ">FAQ</a>
+</p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Los" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Open Source Geospatial Foundation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

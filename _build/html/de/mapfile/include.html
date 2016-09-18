@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>INCLUDE &#8212; MapServer 7.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../_static/mapserver.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../about.html" />
+    <link rel="top" title="MapServer 7.0.0 documentation" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+<table width="100%" style="width: 100%; background-color: white;">
+  <tr>
+    <td rowspan="2" style="padding: 10px 0px 10px 10px;">
+      <a href="../index.html" title="Home"><img src="../_static/banner.png" alt="MapServer banner" border="0" /></a>
+    </td>
+    <td style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="../index.html" title="Home">Home</a> |
+      <a href="../products.html" title="Products (MapServer core, MapCache, TinyOWS">Products</a> |
+      <a href="https://github.com/mapserver/mapserver/issues/" title="Issue Tracker (MapServer core)">Issue Tracker</a> |
+      <a href="../faq.html" title="FAQ">FAQ</a> |
+      <a href="../download.html" title="Download">Download </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 10px 0px 0px; text-align: right; vertical-align: bottom;">
+        
+          
+            <a href="../../mapfile/include.html"><img src="../_static/flagicons/en.png" alt="en" title="en" border="0" /></a>
+          
+        
+        <img src="../_static/flagicons/de.png" alt="de" title="de" border="0" width="18px" height="13px"/>
+        
+          
+            <a href="../../es/mapfile/include.html"><img src="../_static/flagicons/es.png" alt="es" title="es" border="0" /></a>
+          
+        
+        
+          
+            <a href="../../zh_cn/mapfile/include.html"><img src="../_static/flagicons/zh_cn.png" alt="zh_cn" title="zh_cn" border="0" /></a>
+          
+        
+
+    </td>
+  </tr>
+</table>
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="include">
+<span id="id1"></span><h1>INCLUDE<a class="headerlink" href="#include" title="Link zu dieser Überschrift">¶</a></h1>
+<p id="index-0">Wird beim Parsen der Mapdatei die INCLUDE Anweisung gefunden, wird
+sofort die einzubindende Datei geparst. Die einzubindende Datei darf alle
+Anweisungen enthalten die der Mapdatei-Syntax entsprechen. Zum Beispiel:</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">INCLUDE</span> <span class="s">&#39;myLayer.map&#39;</span>
+</pre></div>
+</div>
+<p>Die Performanz wird bei mäßiger Benutzung nicht sonderlich beeinträchtigt. Für
+Hochperformante Anwendungen empfiehlt es sich die INCLUDEs in einer
+Vorverarbeitung durchzuführen um eine Mapdatei zu erstellen. Der C Pre-Prozessor
+kann ebenso benutzt werden. Er ist weitaus umfangreicher, erfordert aber eine
+andere Syntax.</p>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Unterstützt in Versionen 4.10 und höher.</p>
+</li>
+<li><p class="first">Der Name der einzubindenden Datei <strong>MUSS</strong> in Anführungszeichen geschrieben
+werden (einfache oder doppelte Anführungszeichen).</p>
+</li>
+<li><p class="first">Es kann bis zu 5 Ebenen verschachtelt werden.</p>
+</li>
+<li><p class="first">Die Dateiangabe kann alls absoluter Pfad oder (mit MapServer &gt;= 4.10.1) als
+Angabe relativ zur Mapdatei erfolgen.</p>
+</li>
+<li><p class="first">Die Fehlersuche wird erschwert, weil:</p>
+<ol class="arabic">
+<li><p class="first">der Dateiname der Datei, in der ein Fehler auftritt, wird nicht ausgegeben</p>
+</li>
+<li><p class="first">der Zeilenzähler nicht für jede Datei zurück gesetzt wird. Folgender
+Fehler tritt auf wenn die einzubindende Datei nicht gefunden wird:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">msyylex</span><span class="p">():</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">access</span> <span class="n">file</span><span class="o">.</span> <span class="n">Error</span> <span class="n">opening</span> <span class="n">included</span> <span class="n">file</span> <span class="s2">&quot;parks_include.map&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="beispiel">
+<h2>Beispiel<a class="headerlink" href="#beispiel" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MAP</span>
+ <span class="n">NAME</span> <span class="s2">&quot;include_mapfile&quot;</span>
+ <span class="n">EXTENT</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">500</span> <span class="mi">500</span>
+ <span class="n">SIZE</span> <span class="mi">250</span> <span class="mi">250</span>
+
+ <span class="n">INCLUDE</span> <span class="s2">&quot;test_include_symbols.map&quot;</span>
+ <span class="n">INCLUDE</span> <span class="s2">&quot;test_include_layer.map&quot;</span>
+<span class="n">END</span>
+</pre></div>
+</div>
+<p>wobei test_include_symbols.map enthält:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SYMBOL</span>
+   <span class="n">NAME</span> <span class="s1">&#39;square&#39;</span>
+   <span class="n">TYPE</span> <span class="n">VECTOR</span>
+   <span class="n">FILLED</span> <span class="n">TRUE</span>
+   <span class="n">POINTS</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="n">END</span>
+<span class="n">END</span>
+</pre></div>
+</div>
+<p>und test_include_layer.map enthält:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LAYER</span>
+  <span class="n">TYPE</span> <span class="n">POINT</span>
+  <span class="n">STATUS</span> <span class="n">DEFAULT</span>
+  <span class="n">FEATURE</span>
+    <span class="n">POINTS</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">40</span> <span class="mi">20</span> <span class="mi">300</span> <span class="mi">300</span> <span class="mi">400</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">400</span> <span class="n">END</span>
+  <span class="n">END</span>
+  <span class="n">CLASS</span>
+    <span class="n">NAME</span> <span class="s1">&#39;Church&#39;</span>
+    <span class="n">COLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+    <span class="n">SYMBOL</span> <span class="s1">&#39;square&#39;</span>
+    <span class="n">SIZE</span> <span class="mi">7</span>
+    <span class="n">STYLE</span>
+      <span class="n">SYMBOL</span> <span class="s2">&quot;square&quot;</span>
+      <span class="n">SIZE</span> <span class="mi">5</span>
+      <span class="n">COLOR</span> <span class="mi">255</span> <span class="mi">255</span> <span class="mi">255</span>
+    <span class="n">END</span>
+    <span class="n">STYLE</span>
+      <span class="n">SYMBOL</span> <span class="s2">&quot;square&quot;</span>
+      <span class="n">SIZE</span> <span class="mi">3</span>
+      <span class="n">COLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">255</span>
+    <span class="n">END</span>
+  <span class="n">END</span>
+<span class="n">END</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Navigation</h3>
+<p>
+<a href="../about.html" title="About">About</a><br>
+<a href="../products.html" title="Products">Products</a><br>
+<a href="../community/index.html" title="Community">Community</a><br>
+<a href="../development/index.html" title="Development">Development</a><br>
+<a href="../download.html" title="Downloads">Downloads</a><br>
+<a href="../documentation.html" title="Documentation">Documentation</a><br>
+<a href="../faq.html" title="FAQ">FAQ</a>
+</p>
+  <h3>Current Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">INCLUDE</a><ul>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#beispiel">Beispiel</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Los" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Open Source Geospatial Foundation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

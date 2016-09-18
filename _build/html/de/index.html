@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Willkommen zum MapServer &#8212; MapServer 7.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '7.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/mapserver.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="about.html" />
+    <link rel="top" title="MapServer 7.0.0 documentation" href="#" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+<table width="100%" style="width: 100%; background-color: white;">
+  <tr>
+    <td rowspan="2" style="padding: 10px 0px 10px 10px;">
+      <a href="#" title="Home"><img src="_static/banner.png" alt="MapServer banner" border="0" /></a>
+    </td>
+    <td style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="#" title="Home">Home</a> |
+      <a href="products.html" title="Products (MapServer core, MapCache, TinyOWS">Products</a> |
+      <a href="https://github.com/mapserver/mapserver/issues/" title="Issue Tracker (MapServer core)">Issue Tracker</a> |
+      <a href="faq.html" title="FAQ">FAQ</a> |
+      <a href="download.html" title="Download">Download </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 10px 0px 0px; text-align: right; vertical-align: bottom;">
+        
+          
+            <a href="../index.html"><img src="_static/flagicons/en.png" alt="en" title="en" border="0" /></a>
+          
+        
+        <img src="_static/flagicons/de.png" alt="de" title="de" border="0" width="18px" height="13px"/>
+        
+          
+            <a href="../es/index.html"><img src="_static/flagicons/es.png" alt="es" title="es" border="0" /></a>
+          
+        
+        
+          
+            <a href="../zh_cn/index.html"><img src="_static/flagicons/zh_cn.png" alt="zh_cn" title="zh_cn" border="0" /></a>
+          
+        
+
+    </td>
+  </tr>
+</table>
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="willkommen-zum-mapserver">
+<span id="home"></span><h1>Willkommen zum MapServer<a class="headerlink" href="#willkommen-zum-mapserver" title="Link zu dieser Überschrift">¶</a></h1>
+<p>MapServer ist eine <a class="reference external" href="http://www.opensource.org">Open Source</a>-Software um raumbezogene Daten und
+interaktive Kartenanwendungen im Web zu präsentieren. Entwickelt wurde
+MapServer ursprünglich Mitte der 1990er Jahre an der Universität von Minnesota
+und wird unter einer <span class="xref std std-ref">MIT-style Lizenz</span> veröffentlicht. Es werden
+alle bedeutenden Plattformen unterstützt
+(<span class="xref std std-ref">windows</span>, <span class="xref std std-ref">linux</span>, <span class="xref std std-ref">osx</span>).</p>
+<p>Das MapServer <span class="xref std std-ref">Project Steering Committee (PSC)</span>, von der <a class="reference external" href="http://www.osgeo.org">OSGeo</a>
+anerkannt, verwaltet und betreut das Projekt, das von Entwicklern aus der
+ganzen Welt gewartet, verbessert und unterstützt wird. MapServer ist kein
+komplettes <a class="reference external" href="http://en.wikipedia.org/wiki/Geographic_information_system">GIS</a> system und wird es auch nicht werden.</p>
+<p><a class="reference internal" href="about.html#about"><span class="std std-ref">More about MapServer</span></a></p>
+<!--
+<table style="height:450px;width:100%"><tr>
+<td id="olmaptd" width="100%" style="width:100%;height:100%;padding-top:25px;text-align:right;">
+<div id="olmap" style="width:100%;height:100%;margin:0px;"></div>
+<span style="width:100%;text-align:right;font-size:x-small;">
+Barcelona, SP.  Home of <a href="http://2010.foss4g.org/">FOSS4G 2010</a>. Map data by <a href="http://openstreetmap.org">openstreetmap</a> (<a href="https://github.com/mapserver/mapserver/wiki/RenderingOsmData">more&hellip;</a>)
+</span>
+</td>
+</tr></table>
+<script src="_static/openlayers/OpenLayers.js"></script>
+<script src="_static/ol.js"></script>
+--><div class="section" id="announcements">
+<h2>Announcements<a class="headerlink" href="#announcements" title="Link zu dieser Überschrift">¶</a></h2>
+<p><strong>2015-07-24 - MapServer 7.0.0 and MapCache 1.4 are released</strong></p>
+<p>The major version MapServer 7.0 has been released. The list of significant
+changes for this release can be found in the <span class="xref std std-ref">7.0 announcement</span>.
+See the <span class="xref std std-ref">changelog</span> for the full list
+of changes since beta2.</p>
+<p>MapCache version 1.4 has been released. The list of significant changes can be
+found in the <span class="xref std std-ref">1.4 announcement</span>.</p>
+<p>Head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2015-06-26 - MapServer 7.0.0-beta2, MapServer 6.4.2 and TinyOWS 1.1.1 are released</strong></p>
+<p>This is a security release to mitigate the effects of an issue in older versions of libxml2 (&lt;2.9).
+You are strongly recommended to update your systems if using an unpatched version of libxml2 &lt; 2.9 as
+it may lead to the information disclosure of any file readable by the user running the mapserver
+services.</p>
+<p>MapServer 7.0 beta2 is being simultaneously released and contains a number of fixes to issues that
+were discovered during the beta1 test phase. Please help us pushing out a final 7.0 by testing this
+beta and reporting any issues you may have.</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="xref std std-ref">7.0-beta2 changelog</span></li>
+<li><span class="xref std std-ref">6.4.2 changelog</span></li>
+</ul>
+</div></blockquote>
+<p>Head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2015-02-12 - MapServer 7.0.0-beta1 is released</strong></p>
+<p>The first beta for MapServer 7.0 has been released. The list of
+major changes for this release can be found in the <span class="xref std std-ref">7.0 announcement</span>.
+See the <span class="xref std std-ref">changelog</span>
+for the full list of changes and head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2014-01-02 - MapServer 6.4.1, 6.2.2, 6.0.4 and 5.6.9 are released</strong></p>
+<p>Releases for the stable branches of MapServer have been released in order
+to fix a potential leakage of information through an SQL injection when
+using TIME filtering in conjunction with postgis backends. More information
+can be found in the dedicated issue: <a class="reference external" href="https://github.com/mapserver/mapserver/issues/4834">#4834</a>.</p>
+<p>Changelogs for each specific version can be found here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="xref std std-ref">6.4.0 to 6.4.1 changes</span></li>
+<li><span class="xref std std-ref">6.2.1 to 6.2.2 changes</span></li>
+<li><span class="xref std std-ref">6.0.3 to 6.0.4 changes</span></li>
+<li>5.6.9 contains only the fix for #4834</li>
+</ul>
+</div></blockquote>
+<p>Head to <span class="xref std std-ref">download</span> to obtain copies.</p>
+<p><strong>2014-01-03 - MapCache 1.2.1 is released</strong></p>
+<p>MapCache 1.2.1 has been released. Head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2013-09-17 - MapServer 6.4.0 is released</strong></p>
+<p>MapServer 6.4.0 has been released. Major changes since 6.2 can be found in the
+in <span class="xref std std-ref">the 6.4 announcement</span>. For
+the small list of changes since RC1, see <span class="xref std std-ref">the final changelog</span>,
+then head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2013-04-19 - MapServer 6.2.1 is released</strong></p>
+<p>MapServer 6.2.1 has been released.  See <span class="xref std std-ref">the changelog</span>
+for more details and head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2012-11-14 - MapServer Suite 12.11 is released</strong></p>
+<p>The first MapServer Suite, numbered 12.11, and containing MapServer 6.2.0, MapCache
+1.0.0 and TinyOWS 1.1.0 has been released. See <span class="xref std std-ref">the release announcement</span>
+for more details and head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2012-11-14 - MapServer 6.2.0 is released</strong></p>
+<p>MapServer 6.2.0 has been released. See <span class="xref std std-ref">the release announcement</span>
+for more details, <span class="xref std std-ref">the changelog since RC1</span> and head
+to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2012-10-10 - MapServer 6.2.0 RC1 is released</strong></p>
+<p>MapServer 6.2.0-RC1 has been released.  See <span class="xref std std-ref">the changelog</span>
+for more details and head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2012-05-18 - MapServer 6.0.3 is released</strong></p>
+<p>MapServer 6.0.3 has been released.  See <a class="reference external" href="http://lists.osgeo.org/pipermail/mapserver-users/2012-May/072329.html">the release announcement</a>
+for more details and head to <span class="xref std std-ref">download</span> to obtain a copy.</p>
+<p><strong>2012-02-08 - TinyOWS 1.0.0 is released</strong></p>
+<p>TinyOWS 1.0.0 has been released.  See <a class="reference external" href="http://lists.osgeo.org/pipermail/mapserver-users/2012-February/071478.html">the release announcement</a>
+for more details. (Note that TinyOWS will be part of the MapServer project starting with version 6.2)</p>
+</div>
+<div class="section" id="documentation">
+<h2><a class="reference internal" href="documentation.html#documentation"><span class="std std-ref">MapServer 7.0.0 Dokumentation</span></a><a class="headerlink" href="#documentation" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+<div class="section" id="download">
+<h2><span class="xref std std-ref">Download</span><a class="headerlink" href="#download" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Navigation</h3>
+<p>
+<a href="about.html" title="About">About</a><br>
+<a href="products.html" title="Products">Products</a><br>
+<a href="community/index.html" title="Community">Community</a><br>
+<a href="development/index.html" title="Development">Development</a><br>
+<a href="download.html" title="Downloads">Downloads</a><br>
+<a href="documentation.html" title="Documentation">Documentation</a><br>
+<a href="faq.html" title="FAQ">FAQ</a>
+</p>
+<a href="http://www.osgeo.org/">
+    <img src="_static/OSGeo_project.png" border="0px; text-decoration:none" />
+</a>
+<p>MapServer is a project of the <a href="http://www.osgeo.org/">
+Open Source Geospatial Foundation</a>.</p>
+<p>
+<a href="http://2016.foss4g.org/">
+    <img src="_static/foss4g2016.png" border="0px; text-decoration:none" />
+</a>
+</p>
+<p>
+    <script type="text/javascript" src="http://www.ohloh.net/p/3692/widgets/project_thin_badge.js"></script>
+</p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Los" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Open Source Geospatial Foundation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Signaturbeispiele &#8212; MapServer 7.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/mapserver.ico"/>
+    <link rel="author" title="Über dieses Dokument" href="../../about.html" />
+    <link rel="top" title="MapServer 7.0.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+
+<table width="100%" style="width: 100%; background-color: white;">
+  <tr>
+    <td rowspan="2" style="padding: 10px 0px 10px 10px;">
+      <a href="../../index.html" title="Home"><img src="../../_static/banner.png" alt="MapServer banner" border="0" /></a>
+    </td>
+    <td style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="../../index.html" title="Home">Home</a> |
+      <a href="../../products.html" title="Products (MapServer core, MapCache, TinyOWS">Products</a> |
+      <a href="https://github.com/mapserver/mapserver/issues/" title="Issue Tracker (MapServer core)">Issue Tracker</a> |
+      <a href="../../faq.html" title="FAQ">FAQ</a> |
+      <a href="../../download.html" title="Download">Download </a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 10px 0px 0px; text-align: right; vertical-align: bottom;">
+        
+          
+            <a href="../../../mapfile/symbology/examples.html"><img src="../../_static/flagicons/en.png" alt="en" title="en" border="0" /></a>
+          
+        
+        <img src="../../_static/flagicons/de.png" alt="de" title="de" border="0" width="18px" height="13px"/>
+        
+          
+            <a href="../../../es/mapfile/symbology/examples.html"><img src="../../_static/flagicons/es.png" alt="es" title="es" border="0" /></a>
+          
+        
+        
+          
+            <a href="../../../zh_cn/mapfile/symbology/examples.html"><img src="../../_static/flagicons/zh_cn.png" alt="zh_cn" title="zh_cn" border="0" /></a>
+          
+        
+
+    </td>
+  </tr>
+</table>
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="signaturbeispiele">
+<span id="sym-examples"></span><h1><a class="toc-backref" href="#inhaltsverzeichnis">Signaturbeispiele</a><a class="headerlink" href="#signaturbeispiele" title="Link zu dieser Überschrift">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Jeff McKenna</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Contact:</th><td class="field-body">jmckenna at gatewaygeomatics.com</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Revision:</th><td class="field-body">$Revision: 8295 $</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Date:</th><td class="field-body">$Date: 2008-12-27 06:08:04 +0100 (Sa, 27. Dez 2008) $</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Last Updated:</th><td class="field-body">2008/07/16</td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic" id="inhaltsverzeichnis">
+<p class="topic-title first">Inhaltsverzeichnis</p>
+<ul class="simple">
+<li><a class="reference internal" href="#signaturbeispiele" id="id1">Signaturbeispiele</a><ul>
+<li><a class="reference internal" href="#beispiel-1-gestrichelte-linie" id="id2">Beispiel 1. Gestrichelte Linie</a></li>
+<li><a class="reference internal" href="#beispiel-2-truetype-schrift-markersymbol" id="id3">Beispiel 2. TrueType-Schrift Markersymbol</a></li>
+<li><a class="reference internal" href="#beispiel-3-markersymbol-vektor-dreieck" id="id4">Beispiel 3. Markersymbol Vektor-Dreieck</a></li>
+<li><a class="reference internal" href="#beispiel-4-markersymbol-kreuz" id="id5">Beispiel 4. Markersymbol Kreuz</a></li>
+<li><a class="reference internal" href="#beispiel-5-kreissymbol" id="id6">Beispiel 5. Kreissymbol</a></li>
+<li><a class="reference internal" href="#beispiel-6-diagonale-fullung" id="id7">Beispiel 6. Diagonale Füllung</a></li>
+<li><a class="reference internal" href="#beispiel-7-gestrichelte-cartoline-signatur" id="id8">Beispiel 7. Gestrichelte Cartoline Signatur</a></li>
+<li><a class="reference internal" href="#beispiel-8-erzeugung-von-schraffuren-neu-in-4-6" id="id9">Beispiel 8. Erzeugung von Schraffuren (neu in 4.6)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Folgendes Beispiel erzeugt eine gestrichelte Linie mit dem Muster 10 Pixel an,
+5 Pixel aus, 5 Pixel an, 10 Pixel aus...</p>
+<div class="section" id="beispiel-1-gestrichelte-linie">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 1. Gestrichelte Linie</a><a class="headerlink" href="#beispiel-1-gestrichelte-linie" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&#39;dashed1&#39;</span>
+  <span class="k">TYPE</span> <span class="nb">ELLIPSE</span>
+  <span class="k">POINTS</span> <span class="mi">1</span> <span class="mi">1</span> <span class="k">END</span>
+  <span class="k">FILLED</span> <span class="nb">true</span>
+  <span class="k">PATTERN</span> <span class="mi">10</span> <span class="mi">5</span> <span class="mi">5</span> <span class="mi">10</span> <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<p>Das nächste Beispiel zeigt einen Stern, um z.B. die Hauptstadt zu
+symbolisieren. Der Schriftartenname wird in der Datei <a class="reference internal" href="../fontset.html#fontset"><span class="std std-ref">FONTSET</span></a> definiert.
+Die Kennziffer &#8220;114&#8221; variiert je nach Schriftart. Unter Windows kann die
+Zeichentabelle benutzt werden, um die genaue Kennziffer zu bestimmen.</p>
+</div>
+<div class="section" id="beispiel-2-truetype-schrift-markersymbol">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 2. TrueType-Schrift Markersymbol</a><a class="headerlink" href="#beispiel-2-truetype-schrift-markersymbol" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&quot;natcap&quot;</span>
+  <span class="k">TYPE</span> <span class="nb">TRUETYPE</span>
+  <span class="k">FONT</span> <span class="err">geo</span>
+  <span class="k">FILLED</span> <span class="nb">true</span>
+  <span class="k">ANTIALIAS</span> <span class="nb">true</span>
+  <span class="k">CHARACTER</span> <span class="s">&quot;&amp;#114;&quot;</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<p>Dieses Beispiel ist relativ einfach. Um ein Dreieck zu zeichnen, werden 4
+Punkte benötigt, wobei der erste und letzte identisch sind.</p>
+</div>
+<div class="section" id="beispiel-3-markersymbol-vektor-dreieck">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 3. Markersymbol Vektor-Dreieck</a><a class="headerlink" href="#beispiel-3-markersymbol-vektor-dreieck" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&quot;triangle&quot;</span>
+  <span class="k">TYPE</span> <span class="nb">vector</span>
+  <span class="k">POINTS</span>
+    <span class="mi">0</span> <span class="mi">4</span>
+    <span class="mi">2</span> <span class="mi">0</span>
+    <span class="mi">4</span> <span class="mi">4</span>
+    <span class="mi">0</span> <span class="mi">4</span>
+  <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<p>Hier wird ein Kreuz gezeichnet, also 2 Linien (Vektoren) die nicht miteinander
+verbunden sind (im Unterschied zum vorherigen Beispiel). Die negativen Werte
+sind für die Trennung verantwortlich.</p>
+</div>
+<div class="section" id="beispiel-4-markersymbol-kreuz">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 4. Markersymbol Kreuz</a><a class="headerlink" href="#beispiel-4-markersymbol-kreuz" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&quot;cross&quot;</span>
+  <span class="k">TYPE</span> <span class="nb">vector</span>
+  <span class="k">POINTS</span>
+    <span class="mi">2</span> <span class="mi">0</span>
+    <span class="mi">2</span> <span class="mi">4</span>
+    <span class="p">-</span><span class="mi">99</span> <span class="p">-</span><span class="mi">99</span>
+    <span class="mi">0</span> <span class="mi">2</span>
+    <span class="mi">4</span> <span class="mi">2</span>
+  <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<p>Im nächsten Beispiel wird ein gefüllter Kreis gezeichnet. Um eine Ellipse zu
+erhalten, müssen unterschiedliche Werte benutzt werden.</p>
+</div>
+<div class="section" id="beispiel-5-kreissymbol">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 5. Kreissymbol</a><a class="headerlink" href="#beispiel-5-kreissymbol" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&quot;circle&quot;</span>
+  <span class="k">TYPE</span> <span class="nb">ellipse</span>
+  <span class="k">FILLED</span> <span class="nb">true</span>
+  <span class="k">POINTS</span>
+    <span class="mi">1</span> <span class="mi">1</span>
+  <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="beispiel-6-diagonale-fullung">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 6. Diagonale Füllung</a><a class="headerlink" href="#beispiel-6-diagonale-fullung" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&quot;downwarddiagonalfill&quot;</span>
+  <span class="k">TYPE</span> <span class="nb">vector</span>
+  <span class="k">TRANSPARENT</span> <span class="mi">0</span>
+  <span class="k">POINTS</span>
+    <span class="mi">0</span> <span class="mi">1</span>
+    <span class="mi">1</span> <span class="mi">0</span>
+  <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<p>Dieses Beispiel erzeugt eine gestrichelte Linie mit 10 Pixel an, 5 Pixel aus...
+Die Linie hat ein geraden Abschluß und eine kurze Gehrungsgrenze. Für Layer
+mit skalierten Symbolen (SYMBOLSCALE, MINSIZE, MAXSIZE) wird PATTERN der
+Größe angepasst um das Verhältnis beizubehalten.</p>
+</div>
+<div class="section" id="beispiel-7-gestrichelte-cartoline-signatur">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 7. Gestrichelte Cartoline Signatur</a><a class="headerlink" href="#beispiel-7-gestrichelte-cartoline-signatur" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&quot;cartoline&quot;</span>
+  <span class="k">TYPE</span> <span class="nb">cartoline</span>
+  <span class="k">LINECAP</span> <span class="nb">butt</span>
+  <span class="k">LINEJOIN</span> <span class="nb">miter</span>
+  <span class="k">LINEJOINMAXSIZE</span> <span class="mi">1</span>
+  <span class="k">PATTERN</span> <span class="mi">10</span> <span class="mi">5</span> <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="beispiel-8-erzeugung-von-schraffuren-neu-in-4-6">
+<h2><a class="toc-backref" href="#inhaltsverzeichnis">Beispiel 8. Erzeugung von Schraffuren (neu in 4.6)</a><a class="headerlink" href="#beispiel-8-erzeugung-von-schraffuren-neu-in-4-6" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit MapServer 4.6 und höher ist es möglich, mit dem Symboltyp HATCH Schraffuren
+zu erzeugen. Das folgende Beispiel erzeugt eine Schraffur mit einem Winkel von
+45 Grad, 10 Pixel Abstand und 3 Pixel stark.</p>
+<p>Symbol definition:</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">SYMBOL</span>
+  <span class="k">NAME</span> <span class="s">&#39;hatch-test&#39;</span>
+  <span class="k">TYPE</span> <span class="nb">HATCH</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<p>Layer definition:</p>
+<div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">LAYER</span>
+  <span class="p">...</span>
+  <span class="k">CLASS</span>
+    <span class="p">...</span>
+    <span class="k">STYLE</span>
+      <span class="k">SYMBOL</span> <span class="s">&#39;hatch-test&#39;</span>
+      <span class="k">COLOR</span> <span class="mi">255</span> <span class="mi">0</span> <span class="mi">0</span>
+      <span class="k">ANGLE</span> <span class="mi">45</span>
+      <span class="k">SIZE</span> <span class="mi">10</span>
+      <span class="k">WIDTH</span> <span class="mi">3</span>
+    <span class="k">END</span>
+  <span class="k">END</span>
+<span class="k">END</span>
+</pre></div>
+</div>
+<p>Für den Typ HATCH sind weitere Parameter verfügbar:ANGLEITEM, SIZEITEM,
+MINWIDTH, and MAXWIDTH.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Navigation</h3>
+<p>
+<a href="../../about.html" title="About">About</a><br>
+<a href="../../products.html" title="Products">Products</a><br>
+<a href="../../community/index.html" title="Community">Community</a><br>
+<a href="../../development/index.html" title="Development">Development</a><br>
+<a href="../../download.html" title="Downloads">Downloads</a><br>
+<a href="../../documentation.html" title="Documentation">Documentation</a><br>
+<a href="../../faq.html" title="FAQ">FAQ</a>
+</p>
+  <h3>Current Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Signaturbeispiele</a><ul>
+<li><a class="reference internal" href="#beispiel-1-gestrichelte-linie">Beispiel 1. Gestrichelte Linie</a></li>
+<li><a class="reference internal" href="#beispiel-2-truetype-schrift-markersymbol">Beispiel 2. TrueType-Schrift Markersymbol</a></li>
+<li><a class="reference internal" href="#beispiel-3-markersymbol-vektor-dreieck">Beispiel 3. Markersymbol Vektor-Dreieck</a></li>
+<li><a class="reference internal" href="#beispiel-4-markersymbol-kreuz">Beispiel 4. Markersymbol Kreuz</a></li>
+<li><a class="reference internal" href="#beispiel-5-kreissymbol">Beispiel 5. Kreissymbol</a></li>
+<li><a class="reference internal" href="#beispiel-6-diagonale-fullung">Beispiel 6. Diagonale Füllung</a></li>
+<li><a class="reference internal" href="#beispiel-7-gestrichelte-cartoline-signatur">Beispiel 7. Gestrichelte Cartoline Signatur</a></li>
+<li><a class="reference internal" href="#beispiel-8-erzeugung-von-schraffuren-neu-in-4-6">Beispiel 8. Erzeugung von Schraffuren (neu in 4.6)</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Schnellsuche</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Los" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Open Source Geospatial Foundation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
