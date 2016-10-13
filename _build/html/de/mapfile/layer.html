@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LAYER &#8212; MapServer 7.0.0 documentation</title>
+    <title>LAYER &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -84,13 +84,13 @@
   <div class="section" id="layer">
 <span id="id1"></span><h1>LAYER<a class="headerlink" href="#layer" title="Link zu dieser Überschrift">¶</a></h1>
 <dl class="docutils">
-<dt><a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a></dt>
-<dd><p class="first">Signalisiert den Anfang des <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a> Objektes.</p>
+<dt><a class="reference internal" href="class.html#class"><span>CLASS</span></a></dt>
+<dd><p class="first">Signalisiert den Anfang des <a class="reference internal" href="class.html#class"><span>CLASS</span></a> Objektes.</p>
 <p class="last">Innerhalb eines Layers wird immer nur eine Klasse zum Rendering des
 Objektes benutzt. Jedes Objekt wird gegen jede Klasse getestet, unter
 Berücksichtigung der Definitionsreihenfolge im Mapfile. Die Klasse die
 zuerst die Bedingung für Min/Max-Maßstab und der
-<a class="reference internal" href="expressions.html#expressions"><span class="std std-ref">EXPRESSION</span></a> Auswertung erfüllt, wird gezeichnet.</p>
+<a class="reference internal" href="expressions.html#expressions"><span>EXPRESSION</span></a> Auswertung erfüllt, wird gezeichnet.</p>
 </dd>
 </dl>
 <dl class="docutils" id="classitem">
@@ -98,7 +98,7 @@ zuerst die Bedingung für Min/Max-Maßstab und der
 <dd>Name der Tabellenspalte der für Klassenabfragen benutzt wird.</dd>
 <dt>CLASSGROUP  [string]</dt>
 <dd>Definiert den Namen der Klassengruppe.
-Der <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a> Objekt GROUP Parameter muss zusammen mit
+Der <a class="reference internal" href="class.html#class"><span>CLASS</span></a> Objekt GROUP Parameter muss zusammen mit
 CLASSGROUP benutzt werden..</dd>
 <dt>CONNECTION [string]</dt>
 <dd><p class="first">Festlegen der Verbindungsdaten für Datenbanken.</p>
@@ -161,7 +161,7 @@ gesetzt werden:</p>
 </div>
 <p>Die Umgebungsvariable kann bei Apache durch das hinzufügen folgender Zeile
 gesetzt werden:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SetEnv</span> <span class="n">MS_ERRORFILE</span> <span class="s2">&quot;/ms4w/tmp/ms_error.txt&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>SetEnv MS_ERRORFILE &quot;/ms4w/tmp/ms_error.txt&quot;
 </pre></div>
 </div>
 <p>Ist die Umgebungsvariable gesetzt, so können mittels DEBUG Parameter die
@@ -189,7 +189,7 @@ für Entwickler hilfreich sind.</li>
 <p>Das Debuglevel kann auch über die Umgebungsvariable &#8220;MS_DEBUGLEVEL&#8221; gesetzt
 werden.</p>
 <p>Die Debugangabe kann auch für Layer gesetzt werden indem der Parameter DEBUG
-im <a class="reference internal" href="map.html#map"><span class="std std-ref">MAP</span></a> Objekt gesetzt wird.</p>
+im <a class="reference internal" href="map.html#map"><span>MAP</span></a> Objekt gesetzt wird.</p>
 <p>Für weitere Details wird auf <span class="xref std std-ref">RFC28</span> verwiesen.</p>
 <p><em>Debugging mit MapServer Versionen &lt; 5:</em></p>
 <p class="last">Ausführliche Angaben werden erzeugt und an die Standardfehlerausgabe
@@ -205,8 +205,8 @@ Nützlich bei Verwendung von WMS GetFeatureInfo Abfragen. Standard ist false.</d
 <dd>Die räumliche Ausdehnung der zu erstellenden Karte. Dieser Parameter sollte
 angegeben werden. Fehlt dieser, so berechnet MapServer die Ausdehnung,
 wodurch es zu Geschwindigkeitseinbußen kommen kann.</dd>
-<dt><a class="reference internal" href="feature.html#feature"><span class="std std-ref">FEATURE</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="feature.html#feature"><span class="std std-ref">FEATURE</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="feature.html#feature"><span>FEATURE</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="feature.html#feature"><span>FEATURE</span></a> Objektes.</dd>
 </dl>
 <dl class="docutils" id="filter">
 <dt>FILTER [string]</dt>
@@ -224,8 +224,8 @@ Shapefiles.</dd>
 <dt>FOOTER [filename]</dt>
 <dd>Template das <em>nach</em> den Apfrageergebnissen benutzt wird.
 Nur für mehrzeilie Ergebnisse.</dd>
-<dt><a class="reference internal" href="grid.html#grid"><span class="std std-ref">GRID</span></a></dt>
-<dd>Signals the start of a <a class="reference internal" href="grid.html#grid"><span class="std std-ref">GRID</span></a> object.</dd>
+<dt><a class="reference internal" href="grid.html#grid"><span>GRID</span></a></dt>
+<dd>Signals the start of a <a class="reference internal" href="grid.html#grid"><span>GRID</span></a> object.</dd>
 <dt>GROUP [name]</dt>
 <dd>Name of a group that this layer belongs to. The group name can then be
 reference as a regular layer name in the template files, allowing to do
@@ -233,11 +233,11 @@ things like turning on and off a group of layers at once.</dd>
 <dt>HEADER [filename]</dt>
 <dd>Template to use <em>before</em> a layer&#8217;s set of results have been sent.
 Multiresult query modes only.</dd>
-<dt><a class="reference internal" href="join.html#join"><span class="std std-ref">JOIN</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="join.html#join"><span class="std std-ref">JOIN</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="join.html#join"><span>JOIN</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="join.html#join"><span>JOIN</span></a> Objektes.</dd>
 <dt>LABELANGLEITEM [attribute]</dt>
 <dd><p class="first">(Ab MapServer Version 5.0 nicht mehr verfügbar. Bitte beim ANGLE Parameter
-vom <a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a> Objekt nachlesen).
+vom <a class="reference internal" href="label.html#label"><span>LABEL</span></a> Objekt nachlesen).
 Für Versionen &lt; 5.0, Spaltenname der Attributtabelle für
 Beschriftungswinkel. Angaben in Grad.</p>
 <div class="last deprecated">
@@ -312,7 +312,7 @@ benutzt werden.</p>
 </dd>
 <dt>LABELSIZEITEM [attribute]</dt>
 <dd><p class="first">(Ab MapServer Version 5.0 nicht mehr verfügbar. Bitte beim SIZE Parameter
-vom <a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a> Objekt nachlesen).
+vom <a class="reference internal" href="label.html#label"><span>LABEL</span></a> Objekt nachlesen).
 Für Versionen &lt; 5.0, Spaltenname der Attributtabelle für Beschriftungsgröße.
 Angaben in Pixel.</p>
 <div class="last deprecated">
@@ -449,13 +449,13 @@ die Kanäle zu ändern.</p>
 </li>
 </ul>
 </dd>
-<dt><a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="projection.html#projection"><span>PROJECTION</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="projection.html#projection"><span>PROJECTION</span></a> Objektes.</dd>
 <dt>REQUIRES [expression]</dt>
 <dd>Erlaubt die Angabe von Bedingungen zur Anzeige des Layers (siehe
 <a class="reference internal" href="#labelrequires">LABELREQUIRES</a>).</dd>
 <dt>SIZEUNITS [pixels|feet|inches|kilometers|meters|miles|</dt>
-<dd>Gibt die Einheit der SIZE Werte (Standard ist pixels) der <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a>
+<dd>Gibt die Einheit der SIZE Werte (Standard ist pixels) der <a class="reference internal" href="class.html#class"><span>CLASS</span></a>
 Objekte an. Nützlich für die Simulation von Buffern.</dd>
 </dl>
 <dl class="docutils" id="status">
@@ -508,7 +508,7 @@ eine Karte im Maßstab 1:24000 wird 24000 angegeben.</p>
 <p><span class="versionmodified">Veraltet ab Version 5.0.</span></p>
 </div>
 </dd>
-<dt><a class="reference internal" href="template.html#template"><span class="std std-ref">TEMPLATE</span></a> [file|url]</dt>
+<dt><a class="reference internal" href="template.html#template"><span>TEMPLATE</span></a> [file|url]</dt>
 <dd>Wird als globale Alternative zum CLASS TEMPLATE benutzt.</dd>
 <dt><span class="xref std std-ref">TILEINDEX</span> [filename|layername]</dt>
 <dd><p class="first">Name des Tileindex. Ein Teileindex ist ähnlich des ArcInfo
@@ -560,7 +560,7 @@ sollte Alpha-Transparenz nur benutzt werden wenn es wirklich notwendig ist.</p>
 </div>
 <div class="last admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
-<p class="last"><a class="reference internal" href="#opacity"><span class="std std-ref">OPACITY</span></a></p>
+<p class="last"><a class="reference internal" href="#opacity"><span>OPACITY</span></a></p>
 </div>
 </dd>
 <dt>TRANSFORM [true|false ul|uc|ur|lc|cc|lr|ll|lc|lr]</dt>
@@ -652,11 +652,14 @@ wird oftmals für Inline-Layer benutzt.</dd>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -667,7 +670,7 @@ wird oftmals für Inline-Layer benutzt.</dd>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

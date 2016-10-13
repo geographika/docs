@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Templating &#8212; MapServer 7.0.0 documentation</title>
+    <title>Templating &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -215,14 +215,14 @@ Semikolon getrennt.</p>
 Bildnamen wenn IMAGE_URL in der Mapdatei nicht gesetzt wurde.</p>
 <p class="last">In einem Interface-Template wird [img] durch den Pfad zum Kartenbild
 ersetzt. Bei einem Abfragetemplate hingegen wird [img] durch den Pfad
-zum Bild des Abfrageergebnisses ersetzt. (falls ein <a class="reference internal" href="querymap.html#querymap"><span class="std std-ref">QUERYMAP</span></a>
-Objekt im <a class="reference internal" href="index.html#mapfile"><span class="std std-ref">Mapfile</span></a> definiert ist).</p>
+zum Bild des Abfrageergebnisses ersetzt. (falls ein <a class="reference internal" href="querymap.html#querymap"><span>QUERYMAP</span></a>
+Objekt im <a class="reference internal" href="index.html#mapfile"><span>Mapfile</span></a> definiert ist).</p>
 </dd>
 <dt>[ref]</dt>
 <dd>Pfad (relativ zum Document-Root) des erzeugten Übersichtsbildes.</dd>
 <dt>[legend]</dt>
 <dd><p class="first">Pfad (relativ zum Document-Root) des erzeugten Legendenbildes.</p>
-<p class="last">Wird im <a class="reference internal" href="index.html#mapfile"><span class="std std-ref">Mapfile</span></a> ein HTML Legenden-Template definiert, so wird
+<p class="last">Wird im <a class="reference internal" href="index.html#mapfile"><span>Mapfile</span></a> ein HTML Legenden-Template definiert, so wird
 die dadurch erzeugte Ausgabe für [legend] eingesetzt. Siehe auch <span class="xref std std-ref">html_legend</span>.</p>
 </dd>
 <dt>[scalebar]</dt>
@@ -304,11 +304,11 @@ are:</p>
 <dd><p class="first">Expand the bounds of the extents by a specific value.  Specified in
 map coordinates.
 For example, [mapext] might return:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">123456</span> <span class="mi">123456</span> <span class="mi">567890</span> <span class="mi">567890</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>123456 123456 567890 567890
 </pre></div>
 </div>
 <p>and [mapext expand=1000] would therefore return:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="mi">122456</span> <span class="mi">122456</span> <span class="mi">568890</span> <span class="mi">568890</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>122456 122456 568890 568890
 </pre></div>
 </div>
 </dd>
@@ -318,7 +318,7 @@ For example, [mapext] might return:</p>
 <dt>format=</dt>
 <dd><p class="first">Format of the coordinates.  Default is &#8220;$minx $miny $maxx $maxy&#8221;.
 For example, to add commas to the coordinates you would use:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mapext</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$minx,$miny,$maxx,$maxy&quot;</span><span class="p">]</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>[mapext format=&quot;$minx,$miny,$maxx,$maxy&quot;]
 </pre></div>
 </div>
 </dd>
@@ -376,11 +376,11 @@ are:</p>
 <dd><p class="first">Expand the bounds of the extents by a specific value.  Specified in
 map coordinates.
 For example, [rawext] might return:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">123456</span> <span class="mi">123456</span> <span class="mi">567890</span> <span class="mi">567890</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>123456 123456 567890 567890
 </pre></div>
 </div>
 <p>and [rawext expand=1000] would therefore return:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="mi">122456</span> <span class="mi">122456</span> <span class="mi">568890</span> <span class="mi">568890</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>122456 122456 568890 568890
 </pre></div>
 </div>
 </dd>
@@ -390,7 +390,7 @@ For example, [rawext] might return:</p>
 <dt>format=</dt>
 <dd><p class="first">Format of the coordinates.  Default is &#8220;$minx $miny $maxx $maxy&#8221;.
 For example, to add commas to the coordinates you would use:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">rawext</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$minx,$miny,$maxx,$maxy&quot;</span><span class="p">]</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>[rawext format=&quot;$minx,$miny,$maxx,$maxy&quot;]
 </pre></div>
 </div>
 </dd>
@@ -409,7 +409,7 @@ For example, to add commas to the coordinates you would use:</p>
 <dd>Minimum / maximum X or Y coordinate of a raw map/search extent.</dd>
 </dl>
 <p>The following substitutions are only available if the MapServer was compiled with
-PROJ support and a <a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a> is defined in the <a class="reference internal" href="index.html#mapfile"><span class="std std-ref">Mapfile</span></a>.</p>
+PROJ support and a <a class="reference internal" href="projection.html#projection"><span>PROJECTION</span></a> is defined in the <a class="reference internal" href="index.html#mapfile"><span>Mapfile</span></a>.</p>
 <dl class="docutils">
 <dt>[maplon], [maplat]</dt>
 <dd>Longitude / latitude value of mouse click. Available only when projection enabled.</dd>
@@ -448,11 +448,11 @@ are:</p>
 <dd><p class="first">Expand the bounds of the extents by a specific value.  Specified in
 map coordinates.
 For example, [mapext_latlon] might return:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">123456</span> <span class="mi">123456</span> <span class="mi">567890</span> <span class="mi">567890</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>123456 123456 567890 567890
 </pre></div>
 </div>
 <p>and [mapext_latlon expand=1000] would therefore return:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="mi">122456</span> <span class="mi">122456</span> <span class="mi">568890</span> <span class="mi">568890</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>122456 122456 568890 568890
 </pre></div>
 </div>
 </dd>
@@ -462,7 +462,7 @@ For example, [mapext_latlon] might return:</p>
 <dt>format=</dt>
 <dd><p class="first">Format of the coordinates.  Default is &#8220;$minx $miny $maxx $maxy&#8221;.
 For example, to add commas to the coordinates you would use:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mapext_latlon</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$minx,$miny,$maxx,$maxy&quot;</span><span class="p">]</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>[mapext_latlon format=&quot;$minx,$miny,$maxx,$maxy&quot;]
 </pre></div>
 </div>
 </dd>
@@ -517,11 +517,11 @@ are:</p>
 <div><p>Expand the bounds of the extents by a specific value.  Specified in
 map coordinates.
 For example, [refext] might return:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">123456</span> <span class="mi">123456</span> <span class="mi">567890</span> <span class="mi">567890</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>123456 123456 567890 567890
 </pre></div>
 </div>
 <p>and [refext expand=1000] would therefore return:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">122456</span> <span class="mi">122456</span> <span class="mi">568890</span> <span class="mi">568890</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>122456 122456 568890 568890
 </pre></div>
 </div>
 </div></blockquote>
@@ -530,7 +530,7 @@ For example, [refext] might return:</p>
 <dt>format=</dt>
 <dd><p class="first">Format of the coordinates.  Default is &#8220;$minx $miny $maxx $maxy&#8221;.
 For example, to add commas to the coordinates you would use:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">refwext</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$minx,$miny,$maxx,$maxy&quot;</span><span class="p">]</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>[refwext format=&quot;$minx,$miny,$maxx,$maxy&quot;]
 </pre></div>
 </div>
 </dd>
@@ -555,14 +555,14 @@ For example, to add commas to the coordinates you would use:</p>
 <p class="last">Also available as escaped version.</p>
 </dd>
 <dt>[toggle_layers] | [toggle_layers_esc]</dt>
-<dd><p class="first">List of all layers that can be toggled, i.e. all layers defined in the <a class="reference internal" href="index.html#mapfile"><span class="std std-ref">Mapfile</span></a>
+<dd><p class="first">List of all layers that can be toggled, i.e. all layers defined in the <a class="reference internal" href="index.html#mapfile"><span>Mapfile</span></a>
 which status is currently not default.</p>
 <p class="last">Also available as escaped version.</p>
 </dd>
 <dt>[layername_check | select]</dt>
 <dd>Used for making layers persistent across a map creation session. String is
 replaced with the keyword &#8220;checked&#8221;, &#8220;selected&#8221; or &#8220;&#8221; if layername is on.
-Layername is the name of a layer as it appears in the <a class="reference internal" href="index.html#mapfile"><span class="std std-ref">Mapfile</span></a>. Does not work
+Layername is the name of a layer as it appears in the <a class="reference internal" href="index.html#mapfile"><span>Mapfile</span></a>. Does not work
 for default layers.</dd>
 <dt>[layername_meta data key]</dt>
 <dd>Layer meta data access (e.g. [streets_build] the underscore is essential).</dd>
@@ -623,11 +623,11 @@ are:</p>
 <dd><p class="first">Expand the bounds of the extents by a specific value.  Specified in
 map coordinates.
 For example, [shpext] might return:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">123456</span> <span class="mi">123456</span> <span class="mi">567890</span> <span class="mi">567890</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>123456 123456 567890 567890
 </pre></div>
 </div>
 <p>and [shpext expand=1000] would therefore return:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="mi">122456</span> <span class="mi">122456</span> <span class="mi">568890</span> <span class="mi">568890</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>122456 122456 568890 568890
 </pre></div>
 </div>
 </dd>
@@ -637,7 +637,7 @@ For example, [shpext] might return:</p>
 <dt>format=</dt>
 <dd><p class="first">Format of the coordinates.  Default is &#8220;$minx $miny $maxx $maxy&#8221;.
 For example, to add commas to the coordinates you would use:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">shpext</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;$minx,$miny,$maxx,$maxy&quot;</span><span class="p">]</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>[shpext format=&quot;$minx,$miny,$maxx,$maxy&quot;]
 </pre></div>
 </div>
 </dd>
@@ -723,7 +723,7 @@ coordinates.</p>
 </li>
 </ul>
 <p>As a simple example:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">shpxy</span> <span class="n">xh</span><span class="o">=</span><span class="s2">&quot;(&quot;</span> <span class="n">yf</span><span class="o">=</span><span class="s2">&quot;)&quot;</span><span class="p">]</span> <span class="n">will</span> <span class="n">result</span> <span class="ow">in</span><span class="p">:</span> <span class="p">(</span><span class="n">x1</span> <span class="n">y1</span><span class="p">),(</span><span class="n">x2</span> <span class="n">y2</span><span class="p">),(</span><span class="n">x3</span> <span class="n">y3</span><span class="p">)</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>[shpxy xh=&quot;(&quot; yf=&quot;)&quot;] will result in: (x1 y1),(x2 y2),(x3 y3)
 </pre></div>
 </div>
 </dd>
@@ -740,7 +740,7 @@ In addition the escaped version (for use in URLs) as well as the raw data is
 available.</p>
 </dd>
 <dt>[Join name_DBASE item name],[Join name_DBASE item name_esc], [Join name_DBASE item name_raw]</dt>
-<dd><p class="first">One-to-one joins: First the join name (as specified in the <a class="reference internal" href="index.html#mapfile"><span class="std std-ref">Mapfile</span></a> has to
+<dd><p class="first">One-to-one joins: First the join name (as specified in the <a class="reference internal" href="index.html#mapfile"><span>Mapfile</span></a> has to
 be given, second the tables fields can be accessed similar to the layers
 attribute data. Available only when processing query results.</p>
 <p class="last">By default the attributes are encoded especially for HTML representation. In
@@ -749,7 +749,7 @@ addition the escaped version (for use in URLs) as well as the raw data is availa
 <dt>[join_Join name]</dt>
 <dd>One-to-many joins: The more complex variant. If the join type is multiple
 (one-to-many) the template is replaced by the set of header, template file
-and footer specified in the <a class="reference internal" href="index.html#mapfile"><span class="std std-ref">Mapfile</span></a>.</dd>
+and footer specified in the <a class="reference internal" href="index.html#mapfile"><span>Mapfile</span></a>.</dd>
 <dt>[metadata_meta data key], [metadata_meta data key_esc]</dt>
 <dd><p class="first">Queried layer meta data access (e.g [metadata_projection]</p>
 <p class="last">Also available as escaped version.</p>
@@ -960,11 +960,14 @@ MapServer specific templates (e.g. the [map], [mapext]) and user defined templat
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -975,7 +978,7 @@ MapServer specific templates (e.g. the [map], [mapext]) and user defined templat
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

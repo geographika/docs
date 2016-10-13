@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SYMBOL &#8212; MapServer 7.0.0 documentation</title>
+    <title>SYMBOL &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -86,7 +86,7 @@
 <ul class="simple">
 <li>Symboldefinitionen können direkt im Mapfile oder einer separaten Datei
 erstellt werden. Die separate Datei wird mit SYMBOLSET im
-<a class="reference internal" href="map.html#map"><span class="std std-ref">MAP Object</span></a> referenziert. Dadurch können die Symboldefinitionen
+<a class="reference internal" href="map.html#map"><span>MAP Object</span></a> referenziert. Dadurch können die Symboldefinitionen
 in verschiedenen MapServer-Anwendungen benutzt werden.</li>
 <li>Es gibt 3 Haupttypen von Symbolen im MapServer: Marker, Shadesets und Linien.</li>
 <li>Bei Symbol 0 handelt es sich immer um einen vereinfachten Fall einer
@@ -94,12 +94,12 @@ bestimmten Symbolklasse. Für Punkte ist symbol 0 ein einzelnes Pixel, bei
 Schraffuren (z.B. bei Polygonen) ist Symbol 0 eine Füllung und für Linien
 ist Symbol 0 eine Linie mit einer Breite von 1 Pixel.</li>
 <li>Symboldefinitionen enthalten keine Farbangaben, Farben werden im Objekt
-<a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a> definiert.</li>
+<a class="reference internal" href="class.html#class"><span>CLASS</span></a> definiert.</li>
 <li>Für MapServer Versionen &lt; 5 ist die Anzahl der Symbole auf 64 pro Datei
 beschränkt. Dies kann durch Anpassung von MS_MAXSYMBOLS in mapsymbol.h
 geändert werden. Ab MapServer 5.0 gibt es diese Begrenzung nicht mehr.</li>
 <li>Weitere Informationen können unter
-<a class="reference internal" href="symbology/construction.html#sym-construction"><span class="std std-ref">Konstruktion von kartographischen Signaturen</span></a>
+<a class="reference internal" href="symbology/construction.html#sym-construction"><span>Konstruktion von kartographischen Signaturen</span></a>
 gefunden werden.</li>
 </ul>
 <dl class="docutils" id="index-0">
@@ -110,11 +110,11 @@ gefunden werden.</li>
 Dabei muß die Zuordnung des Zeichens auf der Tastatur zum Schriftzeichen
 beachtet werden.</dd>
 <dt>FILLED [true|false]</dt>
-<dd>Gibt an ob das Symbol mit einer Farbe (siehe <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a> Objekt) gefüllt
+<dd>Gibt an ob das Symbol mit einer Farbe (siehe <a class="reference internal" href="class.html#class"><span>CLASS</span></a> Objekt) gefüllt
 werden soll. Wird für Markersymbole OUTLINECOLOR definiert, wird das Symbol
 damit umrissen.</dd>
 <dt>FONT [string]</dt>
-<dd>Name der TrueType-Schrift wie in <a class="reference internal" href="fontset.html#fontset"><span class="std std-ref">FONTSET</span></a> definiert.</dd>
+<dd>Name der TrueType-Schrift wie in <a class="reference internal" href="fontset.html#fontset"><span>FONTSET</span></a> definiert.</dd>
 <dt>GAP [int]</dt>
 <dd><p class="first">Angabe in Pixel. Hiermit wird der Symbolabstand für TrueType-Linien
 definiert. Ab MapServer 5.0 gilt dies auch für PixMap-Symbole.</p>
@@ -127,7 +127,7 @@ das Symbol als Pinsel genutzt um die Linie zu zeichnen.</p>
 <dd>Bild (GIF oder PNG) das als Marker oder Pinsel für PIXMAP-Symbole benutzt
 wird.</dd>
 <dt>NAME [string]</dt>
-<dd>Alias für die Schrift um im <a class="reference internal" href="class.html#class"><span class="std std-ref">CLASS</span></a>-Objekt benutzt werden zu können.</dd>
+<dd>Alias für die Schrift um im <a class="reference internal" href="class.html#class"><span>CLASS</span></a>-Objekt benutzt werden zu können.</dd>
 <dt>LINECAP [butt|round|square|triangle]</dt>
 <dd>Definiert den Typ von Linienabschluß für das Cartoline-Symbol. Standardwert
 ist &#8220;butt&#8221;. Funktioniert ausschließlich mit CARTOLINE-Symbolen!</dd>
@@ -185,7 +185,7 @@ Symbols zu definieren</li>
 <li><cite>truetype</cite>: zu benutzende TrueType-Schrift wie in FONTSET angegeben.</li>
 <li><cite>cartoline</cite>: erlaubt unterschiedliche Linienenden (spitzwinklig/mitered,
 abgerundet/rounded, schräg/beveled). Weitere Informationen sind im
-<a class="reference internal" href="symbology/construction.html#sym-construction"><span class="std std-ref">Konstruktion von kartographischen Signaturen</span></a>
+<a class="reference internal" href="symbology/construction.html#sym-construction"><span>Konstruktion von kartographischen Signaturen</span></a>
 zu finden.</li>
 <li><cite>hatch</cite>: erzeugt schraffierte Linien</li>
 </ul>
@@ -211,11 +211,14 @@ zu finden.</li>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -226,7 +229,7 @@ zu finden.</li>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

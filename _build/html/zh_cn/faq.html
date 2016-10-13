@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>常见问题 &#8212; MapServer 7.0.0 documentation</title>
+    <title>常见问题 &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -97,7 +97,7 @@ Mitchell著，O&#8217;Reilly出版。本书介绍了MapServer及其他许多相�
 </div>
 <div class="section" id="windoesmapserver">
 <h2>如何在Windoes上编译编译MapServer？<a class="headerlink" href="#windoesmapserver" title="永久链接至标题">¶</a></h2>
-<p>参见 <span class="xref std std-ref">win32</span> 同时，您也可以 <a class="reference internal" href="download.html#windows"><span class="std std-ref">OSGeo4W</span></a> 的库作为入门使用，这样就不用自行编译所有的库</p>
+<p>参见 <span class="xref std std-ref">win32</span> 同时，您也可以 <a class="reference internal" href="download.html#windows"><span>OSGeo4W</span></a> 的库作为入门使用，这样就不用自行编译所有的库</p>
 </div>
 <div class="section" id="id2">
 <h2>MapServer的版本号有什么特别的意思？<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -588,7 +588,7 @@ request (even though most OGC WMS clients would issue them anyway to be
 consistent with the WMS spec).</p>
 </div>
 <p>The request below now constitutes a valid GetMap request:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>http://wms.example.com/wms?service=WMS&amp;version=1.1.1&amp;request=GetMap&amp;layers=foo&amp;srs=EPSG:4326&amp;bbox=-180,-90,180,90&amp;format=image/png&amp;width=400&amp;height=300&amp;styles=default
+<div class="highlight-python"><div class="highlight"><pre><span></span>http://wms.example.com/wms?service=WMS&amp;version=1.1.1&amp;request=GetMap&amp;layers=foo&amp;srs=EPSG:4326&amp;bbox=-180,-90,180,90&amp;format=image/png&amp;width=400&amp;height=300&amp;styles=default
 </pre></div>
 </div>
 <p>Which is consistent with the WMS specification.</p>
@@ -609,7 +609,7 @@ data.  It was decided to disable layer level request access as a default.  See
 <span class="xref std std-ref">rfc67</span> provides a full explanation of the changes and implications.</p>
 <p>To enable pre-6.0 behaviour, you can add the following to the <span class="xref std std-ref">WEB</span> object&#8217;s METADATA section in your
 mapfile:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;ows_enable_request&quot;</span> <span class="s2">&quot;*&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="s2">&quot;ows_enable_request&quot;</span> <span class="s2">&quot;*&quot;</span>
 </pre></div>
 </div>
 <p>This will enable access of all layers to all OGC Web Service requests.</p>
@@ -635,14 +635,14 @@ projections of your shapefiles when passed the appropriate parameters. In my
 case, I was using MapServer to serve data in RI State Plane Feet. In order to
 do so, the data had to first be converted to meters. Here is the command I
 used:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ogr2ogr</span> <span class="o">-</span><span class="n">t_srs</span> <span class="n">EPSG</span><span class="p">:</span><span class="mi">32130</span> <span class="n">output</span><span class="o">.</span><span class="n">shp</span> <span class="nb">input</span><span class="o">.</span><span class="n">shp</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ogr2ogr -t_srs EPSG:32130 output.shp input.shp
 </pre></div>
 </div>
 <p>Since my data already had a projection defined, I did not need to explicitly
 state a source projection. This command uses the EPSG definition for NAD83
 Rhode Island (32130) and performs the feet to meters conversion.</p>
 <p>Now say my data wasn&#8217;t already projected? Here&#8217;s how we deal with that:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ogr2ogr</span> <span class="o">-</span><span class="n">s_srs</span> <span class="s2">&quot;+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3408 +no_defs&quot;</span> <span class="o">-</span><span class="n">t_srs</span> <span class="n">EPSG</span><span class="p">:</span><span class="mi">32130</span> <span class="n">output</span><span class="o">.</span><span class="n">shp</span> <span class="nb">input</span><span class="o">.</span><span class="n">shp</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>ogr2ogr -s_srs &quot;+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3408 +no_defs&quot; -t_srs EPSG:32130 output.shp input.shp
 </pre></div>
 </div>
 <p>Let&#8217;s examine what is going on here:</p>
@@ -651,8 +651,8 @@ parameters used here were taken out of the EPSG definition (in this case,
 32130) in the epsg file(see the <a class="reference external" href="epsg_codes">projection FAQ</a> for more
 details on locating EPSG definitions). The entry for RI in the epsg file is as
 follows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># NAD83 / Rhode Island</span>
-<span class="o">&lt;</span><span class="mi">32130</span><span class="o">&gt;</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">tmerc</span> <span class="o">+</span><span class="n">lat_0</span><span class="o">=</span><span class="mf">41.08333333333334</span> <span class="o">+</span><span class="n">lon_0</span><span class="o">=-</span><span class="mf">71.5</span> <span class="o">+</span><span class="n">k</span><span class="o">=</span><span class="mf">0.999994</span> <span class="o">+</span><span class="n">x_0</span><span class="o">=</span><span class="mi">100000</span> <span class="o">+</span><span class="n">y_0</span><span class="o">=</span><span class="mi">0</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">GRS80</span> <span class="o">+</span><span class="n">datum</span><span class="o">=</span><span class="n">NAD83</span> <span class="o">+</span><span class="n">units</span><span class="o">=</span><span class="n">m</span> <span class="o">+</span><span class="n">no_defs</span>  <span class="n">no_defs</span> <span class="o">&lt;&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span># NAD83 / Rhode Island
+&lt;32130&gt; +proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.999994 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs  no_defs &lt;&gt;
 </pre></div>
 </div>
 <p>You can see how the definition in the initial command is formulated. Notice
@@ -746,11 +746,14 @@ was the <a class="reference external" href="http://lists.osgeo.org/pipermail/map
 <div id="searchbox" style="display: none" role="search">
   <h3>快速搜索</h3>
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="转向" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="转向" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    输入相关的术语，模块，类或者函数名称进行搜索
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -761,7 +764,7 @@ was the <a class="reference external" href="http://lists.osgeo.org/pipermail/map
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

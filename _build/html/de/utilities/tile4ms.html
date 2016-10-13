@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>tile4ms &#8212; MapServer 7.0.0 documentation</title>
+    <title>tile4ms &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -101,30 +101,30 @@ verarbeiten.</p>
 </div>
 <div class="section" id="syntax">
 <h2>Syntax<a class="headerlink" href="#syntax" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tile4ms</span> <span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">tile</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">-</span><span class="n">tile</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">only</span><span class="p">]</span>
-<span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>     <span class="n">INPUT</span>  <span class="n">file</span> <span class="n">containing</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">shapefile</span> <span class="n">names</span>
-                <span class="p">(</span><span class="n">complete</span> <span class="n">paths</span> <span class="mi">255</span> <span class="n">chars</span> <span class="nb">max</span><span class="p">,</span> <span class="n">no</span> <span class="n">extension</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="n">tile</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span>     <span class="n">OUTPUT</span> <span class="n">shape</span> <span class="n">file</span> <span class="n">of</span> <span class="n">extent</span> <span class="n">rectangles</span> <span class="ow">and</span> <span class="n">names</span>
-                <span class="n">of</span> <span class="n">tiles</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">tile</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;.</span><span class="n">dbf</span>
-<span class="o">-</span><span class="n">tile</span><span class="o">-</span><span class="n">path</span><span class="o">-</span><span class="n">only</span> <span class="n">Optional</span> <span class="n">flag</span><span class="o">.</span>  <span class="n">If</span> <span class="n">specified</span> <span class="n">then</span> <span class="n">only</span> <span class="n">the</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span>
-                <span class="n">shape</span> <span class="n">files</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stored</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">LOCATION</span> <span class="n">field</span>
-                <span class="n">instead</span> <span class="n">of</span> <span class="n">storing</span> <span class="n">the</span> <span class="n">full</span> <span class="n">filename</span><span class="o">.</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>tile4ms &lt;meta-file&gt; &lt;tile-file&gt; [-tile-path-only]
+&lt;meta-file&gt;     INPUT  file containing list of shapefile names
+                (complete paths 255 chars max, no extension)
+&lt;tile-file&gt;     OUTPUT shape file of extent rectangles and names
+                of tiles in &lt;tile-file&gt;.dbf
+-tile-path-only Optional flag.  If specified then only the path to the
+                shape files will be stored in the LOCATION field
+                instead of storing the full filename.
 </pre></div>
 </div>
 </div>
 <div class="section" id="kurzes-beispiel">
 <h2>Kurzes Beispiel<a class="headerlink" href="#kurzes-beispiel" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Erzeuge tileindex.shp für alle Kacheln unterhalb von /path/to/data:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>   <span class="o">&lt;</span><span class="n">on</span> <span class="n">Unix</span><span class="o">&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>   &lt;on Unix&gt;
 
-<span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">data</span>
-<span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">name</span> <span class="s2">&quot;/*.shp&quot;</span> <span class="o">-</span><span class="nb">print</span> <span class="o">&gt;</span> <span class="n">metafile</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">tile4ms</span> <span class="n">metafile</span><span class="o">.</span><span class="n">txt</span> <span class="n">tileindex</span>
+cd /path/to/data
+find . -name &quot;/*.shp&quot; -print &gt; metafile.txt
+tile4ms metafile.txt tileindex
 
-   <span class="o">&lt;</span><span class="n">on</span> <span class="n">Windows</span><span class="o">&gt;</span>
+   &lt;on Windows&gt;
 
-<span class="nb">dir</span> <span class="o">/</span><span class="n">b</span> <span class="o">/</span><span class="n">s</span> <span class="o">*.</span><span class="n">shp</span> <span class="o">&gt;</span> <span class="n">metafile</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">tile4ms</span> <span class="n">metafile</span><span class="o">.</span><span class="n">txt</span> <span class="n">tileindex</span>
+dir /b /s *.shp &gt; metafile.txt
+tile4ms metafile.txt tileindex
 </pre></div>
 </div>
 </div>
@@ -143,28 +143,28 @@ Pfadangaben zu allen &#8216;wp.shp&#8217;-Dateien für Minnesota. Zur Erstellung
 folgende Kommandos benutzt werden:</li>
 </ol>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DOS</span><span class="p">:</span> <span class="nb">dir</span> <span class="n">wp</span><span class="o">.</span><span class="n">shp</span> <span class="o">/</span><span class="n">b</span> <span class="o">/</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">wp_list</span><span class="o">.</span><span class="n">txt</span>
-<span class="p">(</span><span class="n">Die</span> <span class="n">Pfadangabe</span> <span class="n">sollte</span> <span class="n">angepasst</span> <span class="n">werden</span><span class="p">,</span> <span class="n">so</span> <span class="n">dass</span> <span class="n">nur</span> <span class="n">der</span> <span class="n">relative</span>
-<span class="n">Pfad</span> <span class="n">vorhanden</span> <span class="n">bleibt</span><span class="p">)</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span>DOS: dir wp.shp /b /s &gt; wp_list.txt
+(Die Pfadangabe sollte angepasst werden, so dass nur der relative
+Pfad vorhanden bleibt)
 
-<span class="n">UNIX</span><span class="p">:</span> <span class="n">find</span> <span class="o">-</span><span class="n">name</span> <span class="o">*</span><span class="n">wp</span><span class="o">.</span><span class="n">shp</span> <span class="o">-</span><span class="nb">print</span> <span class="o">&gt;</span> <span class="n">wp_list</span><span class="o">.</span><span class="n">txt</span>
+UNIX: find -name *wp.shp -print &gt; wp_list.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>Die erzeugte Datei könnte wie folgt aussehen (nach Entfernung des absoluten
 Pfades):</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">001</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">003</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">005</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">007</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">009</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">011</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">013</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">015</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">017</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="mi">019</span>\<span class="n">wp</span><span class="o">.</span><span class="n">shp</span>
-<span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span>001\wp.shp
+003\wp.shp
+005\wp.shp
+007\wp.shp
+009\wp.shp
+011\wp.shp
+013\wp.shp
+015\wp.shp
+017\wp.shp
+019\wp.shp
+. . .
 </pre></div>
 </div>
 </div></blockquote>
@@ -173,8 +173,8 @@ Pfades):</p>
 die Indexdatei zu erzeugen:</li>
 </ol>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tile4ms</span> <span class="n">wp_list</span><span class="o">.</span><span class="n">txt</span> <span class="n">index</span>
-  <span class="n">Processed</span> <span class="mi">87</span> <span class="n">of</span> <span class="mi">87</span> <span class="n">files</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span>tile4ms wp_list.txt index
+  Processed 87 of 87 files
 </pre></div>
 </div>
 </div></blockquote>
@@ -206,19 +206,19 @@ Pfade enthält (Standard ist &#8216;location&#8217;)</li>
 <blockquote>
 <div><p>For example:</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LAYER</span>
-  <span class="n">NAME</span> <span class="s1">&#39;mn-lakes&#39;</span>
-  <span class="n">STATUS</span> <span class="n">ON</span>
-  <span class="n">TILEINDEX</span> <span class="s2">&quot;index&quot;</span>
-  <span class="n">TILEITEM</span> <span class="s2">&quot;location&quot;</span>
-  <span class="n">TYPE</span> <span class="n">POLYGON</span>
-  <span class="n">CLASS</span>
-    <span class="n">NAME</span> <span class="s2">&quot;mn-lakes&quot;</span>
-    <span class="n">STYLE</span>
-      <span class="n">COLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">255</span>
-    <span class="n">END</span>
-  <span class="n">END</span>
-<span class="n">END</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span>LAYER
+  NAME &#39;mn-lakes&#39;
+  STATUS ON
+  TILEINDEX &quot;index&quot;
+  TILEITEM &quot;location&quot;
+  TYPE POLYGON
+  CLASS
+    NAME &quot;mn-lakes&quot;
+    STYLE
+      COLOR 0 0 255
+    END
+  END
+END
 </pre></div>
 </div>
 </div></blockquote>
@@ -259,11 +259,14 @@ beschleunigt die Anwandung.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -274,7 +277,7 @@ beschleunigt die Anwandung.</p>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

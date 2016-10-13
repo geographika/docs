@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Einführung zum MapServer &#8212; MapServer 7.0.0 documentation</title>
+    <title>Einführung zum MapServer &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -112,7 +112,7 @@
 <li><a class="reference internal" href="#mapserver-uberblick" id="id8">MapServer Überblick</a></li>
 <li><a class="reference internal" href="#anatomie-einer-mapserver-anwendung" id="id9">Anatomie einer MapServer Anwendung</a></li>
 <li><a class="reference internal" href="#systemanforderungen-und-installationshinweise" id="id10">Systemanforderungen und Installationshinweise</a></li>
-<li><a class="reference internal" href="#einfuhrung-zum-mapfile" id="id11">Einführung zum <a class="reference internal" href="mapfile/index.html#mapfile"><span class="std std-ref">Mapfile</span></a></a></li>
+<li><a class="reference internal" href="#einfuhrung-zum-mapfile" id="id11">Einführung zum <a class="reference internal" href="mapfile/index.html#mapfile"><span>Mapfile</span></a></a></li>
 <li><a class="reference internal" href="#eine-eigene-mapserver-anwendung" id="id12">Eine eigene MapServer-Anwendung</a></li>
 <li><a class="reference internal" href="#die-eigene-anwendung-erweitern" id="id13">Die eigene Anwendung erweitern</a></li>
 <li><a class="reference internal" href="#wie-bekomme-ich-hilfe" id="id14">Wie bekomme ich Hilfe?</a></li>
@@ -138,14 +138,14 @@ Datenbankformaten</li>
 </ul>
 <p>Grundlegend betrachtet ist MapServer ein <span class="xref std std-term">CGI</span> programm, das inaktiv
 in einem Webserver eingebunden ist. Wird eine Anfrage an MapServer geschickt,
-werden Parameter der Anfrage-URL und Einstellungen des <a class="reference internal" href="mapfile/index.html#mapfile"><span class="std std-ref">Mapfile</span></a>
+werden Parameter der Anfrage-URL und Einstellungen des <a class="reference internal" href="mapfile/index.html#mapfile"><span>Mapfile</span></a>
 benutzt um ein Bild zu erstellen. Es können auch Bilder für Legenden,
 Maßstabsleisten, Übersichtskarten und Werte aus CGI Variablen abgefragt werden.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
 <p class="last">Das <span class="xref std std-ref">gloss</span> enthält viele der in diesem Dokument benutzten Fachausdrücke.</p>
 </div>
-<p>MapServer kann durch <span class="xref std std-ref">MapScript</span> oder <a class="reference internal" href="mapfile/template.html#template"><span class="std std-ref">templating</span></a>
+<p>MapServer kann durch <span class="xref std std-ref">MapScript</span> oder <a class="reference internal" href="mapfile/template.html#template"><span>templating</span></a>
 erweitert und angepasst werden. Er kann mit unterstützung für viele verschiedene
 <span class="xref std std-ref">vector</span> und <span class="xref std std-ref">raster</span> Formate übersetzt werden.
 Außerdem wird eine Vielzahl von <span class="xref std std-ref">output</span> Formaten unterstützt.
@@ -183,7 +183,7 @@ Projektion und Ausprägung. Die Dateiendung muss .map sein, sonst erkennt
 MapServer die Datei nicht.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
-<p class="last"><a class="reference internal" href="mapfile/index.html#mapfile"><span class="std std-ref">MapServer Mapfile Reference</span></a></p>
+<p class="last"><a class="reference internal" href="mapfile/index.html#mapfile"><span>MapServer Mapfile Reference</span></a></p>
 </div>
 </li>
 <li><p class="first"><strong>Geodaten</strong> - MapServer kann auf verschiedene Quellen von Geodaten zugreifen.
@@ -220,7 +220,7 @@ Kartenausdehnung. Durch das Template wird auch festgelegt, wie mit der
 MapServer-Anwendung interagiert werden kann.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
-<p class="last"><a class="reference internal" href="mapfile/template.html#template"><span class="std std-ref">Templating</span></a></p>
+<p class="last"><a class="reference internal" href="mapfile/template.html#template"><span>Templating</span></a></p>
 </div>
 </li>
 </ul>
@@ -288,7 +288,7 @@ werden.</p>
 </div>
 </li>
 <li><p class="first">Starten des Apache von der OSGeo4W-Shell und Aufruf von <a class="reference external" href="http://127.0.0.1">http://127.0.0.1</a></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apache</span><span class="o">-</span><span class="n">restart</span><span class="o">.</span><span class="n">bat</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">apache</span><span class="o">-</span><span class="n">restart</span><span class="o">.</span><span class="n">bat</span>
 </pre></div>
 </div>
 <img alt="_images/osgeo4w-install-complete.png" src="_images/osgeo4w-install-complete.png" />
@@ -325,7 +325,7 @@ OSGeo4W-Windows-Binaries aus. Für <span class="xref std std-ref">Linux</span> o
 sollte dies analog funktionieren. Unter <span class="xref std std-ref">download</span> gibt es
 Installationsanleitungen für vorkompilierte Pakete für Mac OS X und Linux.</p>
 <p>Benötigt wird außerdem ein Webbrowser und ein Texteditor (vi, emacs, notepad,
-homesite) zum Bearbeiten des HTML-Codes und des <a class="reference internal" href="mapfile/index.html#mapfile"><span class="std std-ref">Mapfile</span></a>.</p>
+homesite) zum Bearbeiten des HTML-Codes und des <a class="reference internal" href="mapfile/index.html#mapfile"><span>Mapfile</span></a>.</p>
 </div>
 <div class="section" id="kenntnisse">
 <h3>Kenntnisse<a class="headerlink" href="#kenntnisse" title="Link zu dieser Überschrift">¶</a></h3>
@@ -341,11 +341,11 @@ Ausdrücke, Kompilierung und Skriptsprachen sehr nützlich.</p>
 </div>
 </div>
 <div class="section" id="einfuhrung-zum-mapfile">
-<h2><a class="toc-backref" href="#contents">Einführung zum <a class="reference internal" href="mapfile/index.html#mapfile"><span class="std std-ref">Mapfile</span></a></a><a class="headerlink" href="#einfuhrung-zum-mapfile" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><a class="toc-backref" href="#contents">Einführung zum <a class="reference internal" href="mapfile/index.html#mapfile"><span>Mapfile</span></a></a><a class="headerlink" href="#einfuhrung-zum-mapfile" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Durch das Mapfile werden die Datenquellen und das Styling für den MapServer
 konfiguriert. Die Datei ist eine ASCII-Textdatei und kann verschiedene Objekte
 enthalten. Jedes Objekt hat eine Vielzahl von Parametern. Alle .map-Datei
-(bzw. Mapfile) -Parameter sind in der <a class="reference internal" href="mapfile/index.html#mapfile"><span class="std std-ref">Mapfile Referenz</span></a>
+(bzw. Mapfile) -Parameter sind in der <a class="reference internal" href="mapfile/index.html#mapfile"><span>Mapfile Referenz</span></a>
 dokumentiert. Ein einfaches Beispiel eines Mapfile zur Darstellung eines
 Layers und das dazugehörige Kartenbild wird im Folgenden gezeigt:</p>
 <div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">NAME</span> <span class="s">&quot;sample&quot;</span>
@@ -394,7 +394,7 @@ werden akzeptiert)</li>
 </ul>
 </div>
 <div class="section" id="map-object">
-<h3><a class="reference internal" href="mapfile/map.html#map"><span class="std std-ref">MAP</span></a> Object<a class="headerlink" href="#map-object" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><a class="reference internal" href="mapfile/map.html#map"><span>MAP</span></a> Object<a class="headerlink" href="#map-object" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">MAP</span>
     <span class="k">NAME</span>                 <span class="s">&quot;sample&quot;</span>
     <span class="k">EXTENT</span>        <span class="p">-</span><span class="mi">180</span> <span class="p">-</span><span class="mi">90</span> <span class="mi">180</span> <span class="mi">90</span> <span class="c"># Geographic</span>
@@ -410,11 +410,11 @@ werden akzeptiert)</li>
 </ul>
 </div>
 <div class="section" id="layer-objekt">
-<h3><a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> Objekt<a class="headerlink" href="#layer-objekt" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> Objekt<a class="headerlink" href="#layer-objekt" title="Link zu dieser Überschrift">¶</a></h3>
 <ul class="simple">
 <li>ab MapServer 5.0 gibt es keine Beschränkungen mehr für die Anzahl der Layer
 in einem Mapfile</li>
-<li>DATA-Parameter ist relativ zum SHAPEPATH-Parameter im <a class="reference internal" href="mapfile/map.html#map"><span class="std std-ref">MAP</span></a>-Objekt</li>
+<li>DATA-Parameter ist relativ zum SHAPEPATH-Parameter im <a class="reference internal" href="mapfile/map.html#map"><span>MAP</span></a>-Objekt</li>
 <li>Wird keine Dateinamenserweiterung angegeben, wird vom MapServer ein
 ESRI Shapefile (.shp) angenommen.</li>
 </ul>
@@ -463,10 +463,10 @@ Polygon-Layer dargestellt werden, in dem der Parameter OUTLINECOLOR benutzt wird
 </div>
 </div>
 <div class="section" id="class-und-style-objekte">
-<h3><a class="reference internal" href="mapfile/class.html#class"><span class="std std-ref">CLASS</span></a> und <a class="reference internal" href="mapfile/style.html#style"><span class="std std-ref">STYLE</span></a> Objekte<a class="headerlink" href="#class-und-style-objekte" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><a class="reference internal" href="mapfile/class.html#class"><span>CLASS</span></a> und <a class="reference internal" href="mapfile/style.html#style"><span>STYLE</span></a> Objekte<a class="headerlink" href="#class-und-style-objekte" title="Link zu dieser Überschrift">¶</a></h3>
 <ul class="simple">
-<li>Zur Ausprägung bzw. Styling werden <a class="reference internal" href="mapfile/class.html#class"><span class="std std-ref">CLASS</span></a> und <a class="reference internal" href="mapfile/style.html#style"><span class="std std-ref">STYLE</span></a> -Objekte
-innerhalb eines <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> definiert</li>
+<li>Zur Ausprägung bzw. Styling werden <a class="reference internal" href="mapfile/class.html#class"><span>CLASS</span></a> und <a class="reference internal" href="mapfile/style.html#style"><span>STYLE</span></a> -Objekte
+innerhalb eines <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> definiert</li>
 <li>Ab MapServer 5.0 gibt es keine Beschränkung in der Anzahl der Klassen oder
 Styles eines Mapfiles.</li>
 <li>Das folgende Beispiel zeigt die Ausprägung einer Straße mit zwei Farben,
@@ -493,7 +493,7 @@ in dem STYLE-Objekte überlagert werden:</li>
 </div>
 </div>
 <div class="section" id="symbole">
-<h3><a class="reference internal" href="mapfile/symbol.html#symbol"><span class="std std-ref">SYMBOLe</span></a><a class="headerlink" href="#symbole" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><a class="reference internal" href="mapfile/symbol.html#symbol"><span>SYMBOLe</span></a><a class="headerlink" href="#symbole" title="Link zu dieser Überschrift">¶</a></h3>
 <ul class="simple">
 <li>können im Mapfile oder in einer externen Datei definiert werden</li>
 <li>Für die externe Datei muss der Parameter SYMBOLSET im MAP-Objekt definiert
@@ -534,19 +534,19 @@ werden</li>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
-<p class="last"><a class="reference internal" href="mapfile/symbology/construction.html#sym-construction"><span class="std std-ref">Konstruktion von kartographischen Signaturen</span></a>, <a class="reference internal" href="mapfile/symbology/examples.html#sym-examples"><span class="std std-ref">Signaturbeispiele</span></a> und <a class="reference internal" href="mapfile/symbol.html#symbol"><span class="std std-ref">SYMBOL</span></a></p>
+<p class="last"><a class="reference internal" href="mapfile/symbology/construction.html#sym-construction"><span>Konstruktion von kartographischen Signaturen</span></a>, <a class="reference internal" href="mapfile/symbology/examples.html#sym-examples"><span>Signaturbeispiele</span></a> und <a class="reference internal" href="mapfile/symbol.html#symbol"><span>SYMBOL</span></a></p>
 </div>
 </div>
 <div class="section" id="label">
-<h3><a class="reference internal" href="mapfile/label.html#label"><span class="std std-ref">LABEL</span></a><a class="headerlink" href="#label" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><a class="reference internal" href="mapfile/label.html#label"><span>LABEL</span></a><a class="headerlink" href="#label" title="Link zu dieser Überschrift">¶</a></h3>
 <ul class="simple">
-<li>wird innerhalb eines <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> Objektes definiert</li>
-<li>Der Parameter LABELITEM im <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> Objekt kann zum Beschriften eine
+<li>wird innerhalb eines <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> Objektes definiert</li>
+<li>Der Parameter LABELITEM im <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> Objekt kann zum Beschriften eine
 bestimmte Attributspalte referenzieren.</li>
-<li>Schriften können in einer Datei, die im MAP-Objekt per <a class="reference internal" href="mapfile/fontset.html#fontset"><span class="std std-ref">FONTSET</span></a>
+<li>Schriften können in einer Datei, die im MAP-Objekt per <a class="reference internal" href="mapfile/fontset.html#fontset"><span>FONTSET</span></a>
 definiert wird, definiert werden</li>
 </ul>
-<p>Ein Beispiel für <a class="reference internal" href="mapfile/label.html#label"><span class="std std-ref">LABEL</span></a>-Objekt das eine Schrift referenziert:</p>
+<p>Ein Beispiel für <a class="reference internal" href="mapfile/label.html#label"><span>LABEL</span></a>-Objekt das eine Schrift referenziert:</p>
 <div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">LABEL</span>
     <span class="k">FONT</span> <span class="s">&quot;sans-bold&quot;</span>
     <span class="k">TYPE</span> <span class="nb">truetype</span>
@@ -564,31 +564,31 @@ definiert wird, definiert werden</li>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
-<p class="last"><a class="reference internal" href="mapfile/label.html#label"><span class="std std-ref">LABEL</span></a>, <a class="reference internal" href="mapfile/fontset.html#fontset"><span class="std std-ref">FONTSET</span></a></p>
+<p class="last"><a class="reference internal" href="mapfile/label.html#label"><span>LABEL</span></a>, <a class="reference internal" href="mapfile/fontset.html#fontset"><span>FONTSET</span></a></p>
 </div>
 </div>
 <div class="section" id="class-expressions">
-<h3><a class="reference internal" href="mapfile/class.html#class"><span class="std std-ref">CLASS</span></a> <a class="reference internal" href="mapfile/expressions.html#expressions"><span class="std std-ref">Expressions</span></a><a class="headerlink" href="#class-expressions" title="Link zu dieser Überschrift">¶</a></h3>
-<p>MapServer unterstützt drei Arten von <a class="reference internal" href="mapfile/class.html#class"><span class="std std-ref">CLASS</span></a>-Expressions in einem
-<a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a>:</p>
+<h3><a class="reference internal" href="mapfile/class.html#class"><span>CLASS</span></a> <a class="reference internal" href="mapfile/expressions.html#expressions"><span>Expressions</span></a><a class="headerlink" href="#class-expressions" title="Link zu dieser Überschrift">¶</a></h3>
+<p>MapServer unterstützt drei Arten von <a class="reference internal" href="mapfile/class.html#class"><span>CLASS</span></a>-Expressions in einem
+<a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a>:</p>
 <ol class="arabic">
 <li><p class="first">Zeichenkettenvergleiche</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">EXPRESSION</span> <span class="s2">&quot;africa&quot;</span><span class="p">)</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span>(EXPRESSION &quot;africa&quot;)
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Reguläre Ausdrücke</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">EXPRESSION</span> <span class="o">/^</span><span class="mi">9</span><span class="o">|^</span><span class="mi">10</span><span class="o">/</span><span class="p">)</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span>(EXPRESSION /^9|^10/)
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">Logische Ausdrücke</p>
 <blockquote>
-<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">([</span><span class="n">POPULATION</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50000</span> <span class="n">AND</span> <span class="s1">&#39;[LANGUAGE]&#39;</span> <span class="n">eq</span> <span class="s1">&#39;FRENCH&#39;</span><span class="p">)</span>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span>([POPULATION] &gt; 50000 AND &#39;[LANGUAGE]&#39; eq &#39;FRENCH&#39;)
 </pre></div>
 </div>
 </div></blockquote>
@@ -601,22 +601,22 @@ die Geschwindigkeit beim Erstellen des Kartenbildes.</p>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
-<p class="last"><a class="reference internal" href="mapfile/expressions.html#expressions"><span class="std std-ref">Expressions</span></a></p>
+<p class="last"><a class="reference internal" href="mapfile/expressions.html#expressions"><span>Expressions</span></a></p>
 </div>
 </div>
 <div class="section" id="include">
-<h3><a class="reference internal" href="mapfile/include.html#include"><span class="std std-ref">INCLUDE</span></a><a class="headerlink" href="#include" title="Link zu dieser Überschrift">¶</a></h3>
+<h3><a class="reference internal" href="mapfile/include.html#include"><span>INCLUDE</span></a><a class="headerlink" href="#include" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Ab MapServer 4.10 kann jeder Teil eines Mapfile in eine externe Datei
-ausgelagert werden und per <a class="reference internal" href="mapfile/include.html#include"><span class="std std-ref">INCLUDE</span></a>-Parameter wieder inkludiert werden.
+ausgelagert werden und per <a class="reference internal" href="mapfile/include.html#include"><span>INCLUDE</span></a>-Parameter wieder inkludiert werden.
 Die einzubindende Datei kann eine beliebige Dateiendung haben und die Angabe
 erfolgt immer relativ zum Mapfile. Einige mögliche Anwendungen:</p>
 <ul class="simple">
-<li><a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> können in Dateien ausgelagert werden und von mehreren Anwendungen
+<li><a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> können in Dateien ausgelagert werden und von mehreren Anwendungen
 eingebunden werden</li>
-<li><a class="reference internal" href="mapfile/style.html#style"><span class="std std-ref">STYLE</span></a> können ebenfalls ausgelagert und von mehreren Anwendungen
+<li><a class="reference internal" href="mapfile/style.html#style"><span>STYLE</span></a> können ebenfalls ausgelagert und von mehreren Anwendungen
 eingebunden werden</li>
 </ul>
-<p>Das folgende Beispiel demonstriert die Verwendung von <a class="reference internal" href="mapfile/include.html#include"><span class="std std-ref">includes</span></a> um eine Layerdefinition aus einer externen Datei einzubinden:</p>
+<p>Das folgende Beispiel demonstriert die Verwendung von <a class="reference internal" href="mapfile/include.html#include"><span>includes</span></a> um eine Layerdefinition aus einer externen Datei einzubinden:</p>
 <p>&#8216;shadedrelief.lay&#8217; enthält:</p>
 <div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">LAYER</span>
     <span class="k">NAME</span>         <span class="s">&#39;shadedrelief&#39;</span>
@@ -634,9 +634,9 @@ eingebunden werden</li>
 <span class="k">END</span>
 </pre></div>
 </div>
-<p>Das folgende ist ein Beispiel bei dem alle <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> in externen Dateien
-(Endung .lay) und alle anderen Objekte (<a class="reference internal" href="mapfile/web.html#web"><span class="std std-ref">WEB</span></a>, <a class="reference internal" href="mapfile/reference.html#reference"><span class="std std-ref">REFERENCE</span></a>,
-<a class="reference internal" href="mapfile/scalebar.html#scalebar"><span class="std std-ref">SCALE</span></a>, etc.) in einer &#8221;.ref&#8221;-Datei gespeichert sind:</p>
+<p>Das folgende ist ein Beispiel bei dem alle <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> in externen Dateien
+(Endung .lay) und alle anderen Objekte (<a class="reference internal" href="mapfile/web.html#web"><span>WEB</span></a>, <a class="reference internal" href="mapfile/reference.html#reference"><span>REFERENCE</span></a>,
+<a class="reference internal" href="mapfile/scalebar.html#scalebar"><span>SCALE</span></a>, etc.) in einer &#8221;.ref&#8221;-Datei gespeichert sind:</p>
 <div class="highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">NAME</span> <span class="s">&quot;base&quot;</span>
 <span class="c">#</span>
 <span class="c"># include reference objects</span>
@@ -655,20 +655,20 @@ eingebunden werden</li>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warnung</p>
-<p class="last"><a class="reference internal" href="mapfile/index.html#mapfile"><span class="std std-ref">Mapfiles</span></a> müssen die Endung <code class="docutils literal"><span class="pre">.map</span></code> besitzen um vom
+<p class="last"><a class="reference internal" href="mapfile/index.html#mapfile"><span>Mapfiles</span></a> müssen die Endung <code class="docutils literal"><span class="pre">.map</span></code> besitzen um vom
 MapServer erkannt zu werden. Include-Dateien können hingegen eine beliebige
 Endung besitzen.</p>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
-<p class="last"><a class="reference internal" href="mapfile/include.html#include"><span class="std std-ref">INCLUDE</span></a></p>
+<p class="last"><a class="reference internal" href="mapfile/include.html#include"><span>INCLUDE</span></a></p>
 </div>
 </div>
 <div class="section" id="mapserver-installation-testen">
 <h3>MapServer-Installation testen<a class="headerlink" href="#mapserver-installation-testen" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MapServer</span> <span class="n">version</span> <span class="mf">5.2</span> <span class="n">OUTPUT</span><span class="o">=</span><span class="n">GIF</span> <span class="n">OUTPUT</span><span class="o">=</span><span class="n">PNG</span>
-<span class="n">OUTPUT</span><span class="o">=</span><span class="n">JPEG</span> <span class="n">OUTPUT</span><span class="o">=</span><span class="n">WBMP</span> <span class="n">SUPPORTS</span><span class="o">=</span><span class="n">PROJ</span> <span class="n">SUPPORTS</span><span class="o">=</span><span class="n">FREETYPE</span>
-<span class="n">SUPPORTS</span><span class="o">=</span><span class="n">WMS_SERVER</span> <span class="n">INPUT</span><span class="o">=</span><span class="n">SHAPEFILE</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>MapServer version 5.2 OUTPUT=GIF OUTPUT=PNG
+OUTPUT=JPEG OUTPUT=WBMP SUPPORTS=PROJ SUPPORTS=FREETYPE
+SUPPORTS=WMS_SERVER INPUT=SHAPEFILE
 </pre></div>
 </div>
 <p>Zum Testen kann ein HTTP-Request zum MapServer CGI-Programm gesendet werden,
@@ -694,12 +694,12 @@ Daten angezeigt werden. Neue LAYER können dem Mapfile hinzugefügt werden, die
 auf eigene Geodaten aufbauen. (Die vorhandenen Layer sollten gelöscht oder
 deaktiviert werden z.B. durch Setzen des Status auf &#8220;off&#8221;.)</p>
 <p>Wenn die eigenen Daten eine andere geografische Ausdehnung als die Demodaten
-haben, muss <a class="reference internal" href="mapfile/map.html#map"><span class="std std-ref">MAP</span></a> EXTENT angepasst werden. Um die Ausdehnung zu bestimmen
+haben, muss <a class="reference internal" href="mapfile/map.html#map"><span>MAP</span></a> EXTENT angepasst werden. Um die Ausdehnung zu bestimmen
 kann <a class="reference external" href="http://www.gdal.org/ogrinfo.html">ogrinfo</a> benutzt werden. Es kann auch
-ein GIS benutzt werden um die Ausdehung zu bestimmen. Der <a class="reference internal" href="mapfile/map.html#map"><span class="std std-ref">MAP</span></a> EXTENT muss
+ein GIS benutzt werden um die Ausdehung zu bestimmen. Der <a class="reference internal" href="mapfile/map.html#map"><span>MAP</span></a> EXTENT muss
 in den Einheiten der Ausgabeprojektion angegeben werden.</p>
 <p>Werden Geodaten mit unterschiedlichen Projektionen hinzugefügt, muss eine
-<a class="reference internal" href="mapfile/projection.html#projection"><span class="std std-ref">PROJECTION</span></a> Definition für <a class="reference internal" href="mapfile/map.html#map"><span class="std std-ref">MAP</span></a> (Ausgabeprojektion) und <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a>
+<a class="reference internal" href="mapfile/projection.html#projection"><span>PROJECTION</span></a> Definition für <a class="reference internal" href="mapfile/map.html#map"><span>MAP</span></a> (Ausgabeprojektion) und <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a>
 (vorhandene Layerprojektion) hinzugefügt werden.
 Adding Data to Your Site
 ...............................................................................</p>
@@ -753,8 +753,8 @@ Windows können im <a class="reference external" href="https://github.com/mapser
 <h3>Abfragemöglichkeit hinzufügen<a class="headerlink" href="#abfragemoglichkeit-hinzufugen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Es gibt zwei Wege raumbasierte Daten abzufragen. Beide Methoden liefern Daten,
 in dem entweder Template- oder CGI-Variablen ersetzt werden. Eine
-<a class="reference internal" href="mapfile/querymap.html#querymap"><span class="std std-ref">QUERYMAP</span></a> kann die Ergebnisse der Abfrage visualisieren.</p>
-<p>Um Abfragen zu ermöglichen, muss jeder <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> ein <a class="reference internal" href="mapfile/template.html#template"><span class="std std-ref">TEMPLATE</span></a> definieren. Alternativ kann auch in einer <a class="reference internal" href="mapfile/class.html#class"><span class="std std-ref">CLASS</span></a> ein Template
+<a class="reference internal" href="mapfile/querymap.html#querymap"><span>QUERYMAP</span></a> kann die Ergebnisse der Abfrage visualisieren.</p>
+<p>Um Abfragen zu ermöglichen, muss jeder <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> ein <a class="reference internal" href="mapfile/template.html#template"><span>TEMPLATE</span></a> definieren. Alternativ kann auch in einer <a class="reference internal" href="mapfile/class.html#class"><span>CLASS</span></a> ein Template
 definiert werden. Weitere Informationen, welche CGI-Variablen zum Erstellen von
 Abfragen benutzt werden können, sind in der <span class="xref std std-ref">MapServer CGI Referenz</span>
 zu finden.</p>
@@ -794,7 +794,7 @@ die Abarbeitung eines Requests notwendig ist, kann die Gesamtperformance
 deutlich erhöhen. Hier sind einige Anregungen:</p>
 <ul class="simple">
 <li><strong>Indizierung von Daten</strong> - in dem räumliche Indizes durch Verwendung von
-<a class="reference internal" href="utilities/shptree.html#shptree"><span class="std std-ref">shptree</span></a> erstellt werden. Räumliche Indizes sollten auch für
+<a class="reference internal" href="utilities/shptree.html#shptree"><span>shptree</span></a> erstellt werden. Räumliche Indizes sollten auch für
 Geodatenbanken wie PostGIS und Oracle Spatial benutzt werden.</li>
 <li><strong>Kacheln von Daten</strong> - idealerweise werden die Daten in Kacheln aufgeteilt,
 die die Größe der gewünschten Darstellung aufweist. Es entsteht ein unnötiger
@@ -803,10 +803,10 @@ nur sehr kleiner Ausschnitt benötigt wird. Werden die Daten gekachelt und mit
 einem Tileindex (Kachelindex) versehen, kann MapServer direkt auf den
 (Teil-)Bereich der Daten zugreifen, der abgefragt wurde. Shapefiles können
 in kleinere Kacheln aufgeteilt werden und ein Tileindex Shapefile kann mit
-<a class="reference internal" href="utilities/tile4ms.html#tile4ms"><span class="std std-ref">tile4ms</span></a> erstellt werden. Ein <span class="xref std std-ref">tileindex</span>
+<a class="reference internal" href="utilities/tile4ms.html#tile4ms"><span>tile4ms</span></a> erstellt werden. Ein <span class="xref std std-ref">tileindex</span>
 kann auch für Rasterdaten erstellt werden.</li>
 <li><strong>Vorklassifizierung von Daten</strong> - MapServer gestattet sehr komplexe
-<a class="reference internal" href="mapfile/expressions.html#expressions"><span class="std std-ref">EXPRESSIONs</span></a> um Daten zu klassifizieren. Logische und
+<a class="reference internal" href="mapfile/expressions.html#expressions"><span>EXPRESSIONs</span></a> um Daten zu klassifizieren. Logische und
 Reguläre Ausdrücke sind aufwändiger abzuarbeiten als Zeichenkettenvergleiche.
 Um die Effizienz zu erhöhen können die Daten in verschiedene Klassen
 aufgeteilt werden. Dazu wird ein Feld erstellt, das für CLASSITEM benutzt
@@ -819,7 +819,7 @@ im Vorfeld gemacht werden. Weitere Informationen sind in der
 <span class="xref std std-ref">Rasterdatenreferenz</span> zu finden.</li>
 <li><strong>Generalisierung von Overviews</strong> - Für kleine Maßstäbe können generalisierte
 (d.h. vereinfachte) Daten berechnet werden. Diese können maßstabsabhängig
-mittels <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> MINSCALE und <a class="reference internal" href="mapfile/layer.html#layer"><span class="std std-ref">LAYER</span></a> MAXSCALE angezeigt werden.
+mittels <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> MINSCALE und <a class="reference internal" href="mapfile/layer.html#layer"><span>LAYER</span></a> MAXSCALE angezeigt werden.
 Beim Heranzoomen werden so die detaillierten Daten sichtbar.
 Auch für Bilder kann eine Generalisierung Vorteile bringen.</li>
 </ul>
@@ -834,7 +834,7 @@ Auch für Bilder kann eine Generalisierung Vorteile bringen.</li>
 <div class="section" id="dokumentation">
 <h3>Dokumentation<a class="headerlink" href="#dokumentation" title="Link zu dieser Überschrift">¶</a></h3>
 <ul class="simple">
-<li>Offizielle MapServer-Dokumentation ist auf dieser <a class="reference internal" href="documentation.html#documentation"><span class="std std-ref">Seite</span></a>
+<li>Offizielle MapServer-Dokumentation ist auf dieser <a class="reference internal" href="documentation.html#documentation"><span>Seite</span></a>
 zu finden.</li>
 <li>Von Anwendern erstellte Dokumentation findet sich im  <a class="reference external" href="https://github.com/mapserver/mapserver/wiki">Wiki</a>.</li>
 </ul>
@@ -969,11 +969,14 @@ topics, MapScript, and the creation of an actual application.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -984,7 +987,7 @@ topics, MapScript, and the creation of an actual application.</p>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

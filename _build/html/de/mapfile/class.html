@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CLASS &#8212; MapServer 7.0.0 documentation</title>
+    <title>CLASS &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -95,7 +95,7 @@
 <dt>DEBUG [on|off]</dt>
 <dd><p class="first">Aktiviert Debugausgaben für das Class-Objekt. Die Ausgaben werden an die
 Standardfehlerausgabe (STDERR) oder in die MapServer- Logdatei geschrieben,
-falls der LOG Parameter im <a class="reference internal" href="web.html#web"><span class="std std-ref">WEB</span></a> Objekt entsprechend gesetzt wurde.</p>
+falls der LOG Parameter im <a class="reference internal" href="web.html#web"><span>WEB</span></a> Objekt entsprechend gesetzt wurde.</p>
 <div class="last admonition seealso">
 <p class="first admonition-title">Siehe auch</p>
 <p class="last"><span class="xref std std-ref">rfc28</span></p>
@@ -103,7 +103,7 @@ falls der LOG Parameter im <a class="reference internal" href="web.html#web"><sp
 </dd>
 </dl>
 <dl class="docutils" id="index-1">
-<dt><a class="reference internal" href="expressions.html#expressions"><span class="std std-ref">EXPRESSION</span></a> [string]</dt>
+<dt><a class="reference internal" href="expressions.html#expressions"><span>EXPRESSION</span></a> [string]</dt>
 <dd><p class="first">Es gibt vier Arten von Ausdrücken (Expression) mit denen eine
 Klassenzugehörigkeit definiert wird. Zeichenkettenvergleich,
 reguläre Ausdrücke, logische Ausdrücke und Zeichenkettenfunktionen. Wird
@@ -132,7 +132,7 @@ mehr Zeitaufwand.</p>
 </li>
 <li><p class="first">Es existiert eine Zeichenkettenfunktion: length(). Diese berechnet die
 Länge einer Zeichenkette, wie das folgende Beispiel veranschaulicht:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">EXPRESSION</span> <span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="s1">&#39;[NAME_E]&#39;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">EXPRESSION</span> <span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="s1">&#39;[NAME_E]&#39;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Zeichenkettenvergleiche und reguläre Ausdrücke benutzten die Angabe von
@@ -145,7 +145,7 @@ können verschiedene Ausdruckstypen benutzt werden.</p>
 <dl class="docutils" id="index-2">
 <dt>GROUP [string]</dt>
 <dd><p class="first">Ermöglicht die Gruppierung von Klassen. Dies wird nur benutzt wenn auf
-<a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a> Ebene CLASSGROUP definiert wurde. Ist CLASSGROUP gesetzt,
+<a class="reference internal" href="layer.html#layer"><span>LAYER</span></a> Ebene CLASSGROUP definiert wurde. Ist CLASSGROUP gesetzt,
 werden nur Klassen mit dem gleichen Gruppennamen beim Zeichnen
 berücksichtigt. Ein Beispiel mit mehreren Gruppen von Klassen:</p>
 <div class="last highlight-mapfile"><div class="highlight"><pre><span></span><span class="k">LAYER</span>
@@ -175,15 +175,15 @@ berücksichtigt. Ein Beispiel mit mehreren Gruppen von Klassen:</p>
 </dl>
 <dl class="docutils" id="keyimage">
 <span id="index-3"></span><dt>KEYIMAGE [filename]</dt>
-<dd>Vollständiger Dateiname des Legendenbildes für <a class="reference internal" href="#class"><span class="std std-ref">CLASS</span></a>. Dieses Bild
+<dd>Vollständiger Dateiname des Legendenbildes für <a class="reference internal" href="#class"><span>CLASS</span></a>. Dieses Bild
 wird bei der Legendenerstellung benutzt (oder bei der Abfrage des
 Legendensymbols via MapScript oder <span class="xref std std-ref">CGI application</span>).</dd>
-<dt><a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="label.html#label"><span>LABEL</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="label.html#label"><span>LABEL</span></a> Objektes.</dd>
 </dl>
 <dl class="docutils" id="index-4">
 <dt>MAXSCALEDENOM [double]</dt>
-<dd><p class="first">Größter Maßstab bis zu dem <a class="reference internal" href="#class"><span class="std std-ref">CLASS</span></a> gezeichnet wird.
+<dd><p class="first">Größter Maßstab bis zu dem <a class="reference internal" href="#class"><span>CLASS</span></a> gezeichnet wird.
 Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
 eine Karte im Maßstab 1:24000 wird 24000 angegeben. Implementiert in
 MapServer 5.0, ersetzt veralteten MAXSCALE Parameter.</p>
@@ -202,7 +202,7 @@ eine Karte im Maßstab 1:24000 wird 24000 angegeben.</dd>
 </dl>
 <dl class="docutils" id="index-5">
 <dt>MINSCALEDENOM [double]</dt>
-<dd><p class="first">Kleinster Maßstab bis zu dem <a class="reference internal" href="#class"><span class="std std-ref">CLASS</span></a> gezeichnet wird.
+<dd><p class="first">Kleinster Maßstab bis zu dem <a class="reference internal" href="#class"><span>CLASS</span></a> gezeichnet wird.
 Es wird nur der Nenner des eigentlichen Maßstabwertes angegeben. Z.B. für
 eine Karte im Maßstab 1:24000 wird 24000 angegeben. Implementiert in
 MapServer 5.0, ersetzt veralteten MINSCALE Parameter.</p>
@@ -232,10 +232,10 @@ benutzt wurde. Für Pixmap-Symbole entspricht die vertikale Größe dem
 Standardwert . Für TTF Symbole ist der Standardwert 1.</dd>
 <dt>STATUS [on|off]</dt>
 <dd>Definiert den Anzeigestatus der Klasse. Standardwert ist on.</dd>
-<dt><a class="reference internal" href="style.html#style"><span class="std std-ref">STYLE</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="style.html#style"><span class="std std-ref">STYLE</span></a> Objektes. Eine Klasse kann
+<dt><a class="reference internal" href="style.html#style"><span>STYLE</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="style.html#style"><span>STYLE</span></a> Objektes. Eine Klasse kann
 mehrere Styles beinhalten.</dd>
-<dt><a class="reference internal" href="symbol.html#symbol"><span class="std std-ref">SYMBOL</span></a> [integer|string|filename]</dt>
+<dt><a class="reference internal" href="symbol.html#symbol"><span>SYMBOL</span></a> [integer|string|filename]</dt>
 <dd><p class="first">Der zu benutzende Symbolname oder Symbolnummer für alle Objekte falls keine
 Attributtablle benutzt wird. Die Nummer entspricht dem Index in der
 Symboldatei, beginnend bei 1. Das fünfte Symbol hat demnach die Nummer 5.
@@ -246,9 +246,9 @@ breiten Linie oder einem flächig gefüllten Polygon.</p>
 <p class="last">Es kann auch eine gif- oder png-Datei angegeben werden. Der Pfad ist
 relativ zum Mapfile anzugeben.</p>
 </dd>
-<dt><a class="reference internal" href="template.html#template"><span class="std std-ref">TEMPLATE</span></a> [filename]</dt>
+<dt><a class="reference internal" href="template.html#template"><span>TEMPLATE</span></a> [filename]</dt>
 <dd>Template-Datei oder URL das zur Darstellung der Abfrageergebnisse benutzt
-werden soll. Siehe auch <a class="reference internal" href="template.html#template"><span class="std std-ref">Templating</span></a>.</dd>
+werden soll. Siehe auch <a class="reference internal" href="template.html#template"><span>Templating</span></a>.</dd>
 <dt>TEXT [string]</dt>
 <dd>Statischer Text der zur Beschriftung der Klassenelemente benutzt wird. Dies
 überschreibt die Werte die durch LABELITEM definiert wurden. Der Ausdruck
@@ -258,7 +258,7 @@ Beispiel: ([FIRSTNAME],[LASTNAME]).</dd>
 </dl>
 <p>Es können auch 2 Symbole &#8220;gestapelt&#8221; werden. Das zweite Symbol wird genauso wie
 das erste definiert, nur das es auf dem ersten Symbol gerendert wird.
-Siehe auch <a class="reference internal" href="symbology/construction.html#sym-construction"><span class="std std-ref">Konstruktion von kartographischen Signaturen</span></a> für weitere Informationen.</p>
+Siehe auch <a class="reference internal" href="symbology/construction.html#sym-construction"><span>Konstruktion von kartographischen Signaturen</span></a> für weitere Informationen.</p>
 <p>Die folgenden Parameter stehen zur Verfügung und verhalten sich äquivalent
 zu den &#8220;nicht-Overlay-Parametern&#8221;.</p>
 <ul class="simple">
@@ -290,11 +290,14 @@ zu den &#8220;nicht-Overlay-Parametern&#8221;.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -305,7 +308,7 @@ zu den &#8220;nicht-Overlay-Parametern&#8221;.</p>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

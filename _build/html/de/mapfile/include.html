@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>INCLUDE &#8212; MapServer 7.0.0 documentation</title>
+    <title>INCLUDE &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -113,7 +113,7 @@ Angabe relativ zur Mapdatei erfolgen.</p>
 </li>
 <li><p class="first">der Zeilenzähler nicht für jede Datei zurück gesetzt wird. Folgender
 Fehler tritt auf wenn die einzubindende Datei nicht gefunden wird:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">msyylex</span><span class="p">():</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">access</span> <span class="n">file</span><span class="o">.</span> <span class="n">Error</span> <span class="n">opening</span> <span class="n">included</span> <span class="n">file</span> <span class="s2">&quot;parks_include.map&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>msyylex(): Unable to access file. Error opening included file &quot;parks_include.map&quot;
 </pre></div>
 </div>
 </li>
@@ -123,49 +123,49 @@ Fehler tritt auf wenn die einzubindende Datei nicht gefunden wird:</p>
 </div>
 <div class="section" id="beispiel">
 <h2>Beispiel<a class="headerlink" href="#beispiel" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MAP</span>
- <span class="n">NAME</span> <span class="s2">&quot;include_mapfile&quot;</span>
- <span class="n">EXTENT</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">500</span> <span class="mi">500</span>
- <span class="n">SIZE</span> <span class="mi">250</span> <span class="mi">250</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>MAP
+ NAME &quot;include_mapfile&quot;
+ EXTENT 0 0 500 500
+ SIZE 250 250
 
- <span class="n">INCLUDE</span> <span class="s2">&quot;test_include_symbols.map&quot;</span>
- <span class="n">INCLUDE</span> <span class="s2">&quot;test_include_layer.map&quot;</span>
-<span class="n">END</span>
+ INCLUDE &quot;test_include_symbols.map&quot;
+ INCLUDE &quot;test_include_layer.map&quot;
+END
 </pre></div>
 </div>
 <p>wobei test_include_symbols.map enthält:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SYMBOL</span>
-   <span class="n">NAME</span> <span class="s1">&#39;square&#39;</span>
-   <span class="n">TYPE</span> <span class="n">VECTOR</span>
-   <span class="n">FILLED</span> <span class="n">TRUE</span>
-   <span class="n">POINTS</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="n">END</span>
-<span class="n">END</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>SYMBOL
+   NAME &#39;square&#39;
+   TYPE VECTOR
+   FILLED TRUE
+   POINTS 0 0 0 1 1 1 1 0 0 0 END
+END
 </pre></div>
 </div>
 <p>und test_include_layer.map enthält:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LAYER</span>
-  <span class="n">TYPE</span> <span class="n">POINT</span>
-  <span class="n">STATUS</span> <span class="n">DEFAULT</span>
-  <span class="n">FEATURE</span>
-    <span class="n">POINTS</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">40</span> <span class="mi">20</span> <span class="mi">300</span> <span class="mi">300</span> <span class="mi">400</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">400</span> <span class="n">END</span>
-  <span class="n">END</span>
-  <span class="n">CLASS</span>
-    <span class="n">NAME</span> <span class="s1">&#39;Church&#39;</span>
-    <span class="n">COLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
-    <span class="n">SYMBOL</span> <span class="s1">&#39;square&#39;</span>
-    <span class="n">SIZE</span> <span class="mi">7</span>
-    <span class="n">STYLE</span>
-      <span class="n">SYMBOL</span> <span class="s2">&quot;square&quot;</span>
-      <span class="n">SIZE</span> <span class="mi">5</span>
-      <span class="n">COLOR</span> <span class="mi">255</span> <span class="mi">255</span> <span class="mi">255</span>
-    <span class="n">END</span>
-    <span class="n">STYLE</span>
-      <span class="n">SYMBOL</span> <span class="s2">&quot;square&quot;</span>
-      <span class="n">SIZE</span> <span class="mi">3</span>
-      <span class="n">COLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">255</span>
-    <span class="n">END</span>
-  <span class="n">END</span>
-<span class="n">END</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>LAYER
+  TYPE POINT
+  STATUS DEFAULT
+  FEATURE
+    POINTS 10 10 40 20 300 300 400 10 10 400 END
+  END
+  CLASS
+    NAME &#39;Church&#39;
+    COLOR 0 0 0
+    SYMBOL &#39;square&#39;
+    SIZE 7
+    STYLE
+      SYMBOL &quot;square&quot;
+      SIZE 5
+      COLOR 255 255 255
+    END
+    STYLE
+      SYMBOL &quot;square&quot;
+      SIZE 3
+      COLOR 0 0 255
+    END
+  END
+END
 </pre></div>
 </div>
 </div>
@@ -198,11 +198,14 @@ Fehler tritt auf wenn die einzubindende Datei nicht gefunden wird:</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -213,7 +216,7 @@ Fehler tritt auf wenn die einzubindende Datei nicht gefunden wird:</p>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

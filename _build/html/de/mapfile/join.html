@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>JOIN &#8212; MapServer 7.0.0 documentation</title>
+    <title>JOIN &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -85,7 +85,7 @@
 <span id="id1"></span><h1>JOIN<a class="headerlink" href="#join" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="beschreibung">
 <span id="index-0"></span><h2>Beschreibung<a class="headerlink" href="#beschreibung" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Joins werden innerhalb des <a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a> Objektes definiert. Es ist wichtig zu
+<p>Joins werden innerhalb des <a class="reference internal" href="layer.html#layer"><span>LAYER</span></a> Objektes definiert. Es ist wichtig zu
 verstehen, dass JOINS <em>NUR</em> verfügbar sind, wenn eine Abfrage verarbeitet wurde.
 Auf das Aussehen der Karte haben JOINs keinen Einfluss. Der Hauptanwendungszweck
 liegt bei der Verwendung von Lookup-Tabellen für kodierte Daten
@@ -174,7 +174,7 @@ Groß-/Kleinschreibung.</dd>
 </div>
 <div class="section" id="ogrinfo">
 <h3>Ogrinfo<a class="headerlink" href="#ogrinfo" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&gt;ogrinfo lookup.dbf lookup -summary
+<div class="highlight-python"><div class="highlight"><pre><span></span>&gt;ogrinfo lookup.dbf lookup -summary
 INFO: Open of `lookup.dbf&#39;
 using driver `ESRI Shapefile&#39; successful.
 
@@ -187,7 +187,7 @@ IDENT: Integer (2.0)
 VAL: Integer (2.0)
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&gt;ogrinfo prov.shp prov -summary
+<div class="highlight-python"><div class="highlight"><pre><span></span>&gt;ogrinfo prov.shp prov -summary
 INFO: Open of `prov.shp&#39;
 using driver `ESRI Shapefile&#39; successful.
 
@@ -204,7 +204,7 @@ ID: Integer (2.0)
 </div>
 <div class="section" id="template">
 <h3>Template<a class="headerlink" href="#template" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">tr</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s2">&quot;#EFEFEF&quot;</span><span class="o">&gt;&lt;</span><span class="n">td</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="o">&gt;</span><span class="p">[</span><span class="n">NAME</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">td</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="o">&gt;</span><span class="p">[</span><span class="n">test_VAL</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;tr bgcolor=&quot;#EFEFEF&quot;&gt;&lt;td align=&quot;left&quot;&gt;[NAME]&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;[test_VAL]&lt;/td&gt;&lt;/tr&gt;
 </pre></div>
 </div>
 </div>
@@ -244,7 +244,7 @@ ID: Integer (2.0)
 </div>
 <div class="section" id="id3">
 <h3>Ogrinfo<a class="headerlink" href="#id3" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&gt;ogrinfo -ro PG:&quot;host=127.0.0.1 port=5432 user=postgres password=postgre dbname=join&quot; lookup -summary
+<div class="highlight-python"><div class="highlight"><pre><span></span>&gt;ogrinfo -ro PG:&quot;host=127.0.0.1 port=5432 user=postgres password=postgre dbname=join&quot; lookup -summary
 INFO: Open of `PG:host=127.0.0.1 port=5432 user=postgres password=postgres dbname=join&#39;
 using driver `PostgreSQL&#39; successful.
 
@@ -260,7 +260,7 @@ val: Integer (0.0)
 </div>
 <div class="section" id="id4">
 <h3>Template<a class="headerlink" href="#id4" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">tr</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s2">&quot;#EFEFEF&quot;</span><span class="o">&gt;&lt;</span><span class="n">td</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="o">&gt;</span><span class="p">[</span><span class="n">NAME</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">td</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="o">&gt;</span><span class="p">[</span><span class="n">test_val</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;tr bgcolor=&quot;#EFEFEF&quot;&gt;&lt;td align=&quot;left&quot;&gt;[NAME]&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;[test_val]&lt;/td&gt;&lt;/tr&gt;
 </pre></div>
 </div>
 <div class="admonition note">
@@ -303,7 +303,7 @@ Bei Versionen &gt; 4.10.0 konnten keine Abstürtze beobachtet werden.</p>
 </div>
 <div class="section" id="csv-file-structure">
 <h3>CSV File Structure<a class="headerlink" href="#csv-file-structure" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;IDENT&quot;</span><span class="p">,</span><span class="s2">&quot;VAL&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="s2">&quot;IDENT&quot;</span><span class="p">,</span><span class="s2">&quot;VAL&quot;</span>
 <span class="mi">1</span><span class="p">,</span><span class="mi">12</span>
 <span class="mi">2</span><span class="p">,</span><span class="mi">11</span>
 <span class="mi">3</span><span class="p">,</span><span class="mi">10</span>
@@ -321,7 +321,7 @@ Bei Versionen &gt; 4.10.0 konnten keine Abstürtze beobachtet werden.</p>
 </div>
 <div class="section" id="id6">
 <h3>Ogrinfo<a class="headerlink" href="#id6" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span>&gt;ogrinfo lookup.csv lookup -summary
+<div class="highlight-python"><div class="highlight"><pre><span></span>&gt;ogrinfo lookup.csv lookup -summary
 INFO: Open of `lookup.csv&#39;
 using driver `CSV&#39; successful.
 
@@ -337,7 +337,7 @@ VAL: String (0.0)
 </div>
 <div class="section" id="id7">
 <h3>Template<a class="headerlink" href="#id7" title="Link zu dieser Überschrift">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">tr</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s2">&quot;#EFEFEF&quot;</span><span class="o">&gt;&lt;</span><span class="n">td</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="o">&gt;</span><span class="p">[</span><span class="n">NAME</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">td</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="o">&gt;</span><span class="p">[</span><span class="n">test_VAL</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>&lt;tr bgcolor=&quot;#EFEFEF&quot;&gt;&lt;td align=&quot;left&quot;&gt;[NAME]&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;[test_VAL]&lt;/td&gt;&lt;/tr&gt;
 </pre></div>
 </div>
 </div>
@@ -391,11 +391,14 @@ VAL: String (0.0)
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -406,7 +409,7 @@ VAL: String (0.0)
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

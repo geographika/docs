@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>FEATURE &#8212; MapServer 7.0.0 documentation</title>
+    <title>FEATURE &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -86,7 +86,7 @@
 <dl class="docutils">
 <dt>POINTS</dt>
 <dd><p class="first">Eine Reihe von x-y-Paaren die mit END abgeschlossen wird, z.B.:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">POINTS</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">50</span> <span class="mi">50</span> <span class="mi">1</span> <span class="mi">50</span> <span class="mi">1</span> <span class="mi">1</span> <span class="n">END</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>POINTS 1 1 50 50 1 50 1 1 END
 </pre></div>
 </div>
 </dd>
@@ -99,7 +99,7 @@ besitzen (geschlossenes Objekt).</p>
 <dl class="docutils">
 <dt>ITEMS</dt>
 <dd><p class="first">Komma separierte Liste von Objektattributen:</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">ITEMS</span> <span class="s2">&quot;value1;value2;value3&quot;</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>ITEMS &quot;value1;value2;value3&quot;
 </pre></div>
 </div>
 </dd>
@@ -116,8 +116,8 @@ angegeben werden.</p>
 <dt>WKT [string]</dt>
 <dd><p class="first">Eine Geometrie im Format Well Known Text. Dies wird nur unterstützt wenn
 der MapServer mit OGR und GEOS Unterstützung übersetzt wurde.</p>
-<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">WKT</span> <span class="s2">&quot;POLYGON((500 500, 3500 500, 3500 2500, 500 2500, 500 500))&quot;</span>
-<span class="n">WKT</span> <span class="s2">&quot;POINT(2000 2500)&quot;</span>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>WKT &quot;POLYGON((500 500, 3500 500, 3500 2500, 500 2500, 500 500))&quot;
+WKT &quot;POINT(2000 2500)&quot;
 </pre></div>
 </div>
 </dd>
@@ -148,11 +148,14 @@ zeichnen und alle andere CONNECTIONTYPE ignorieren.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -163,7 +166,7 @@ zeichnen und alle andere CONNECTIONTYPE ignorieren.</p>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

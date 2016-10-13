@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>MAP &#8212; MapServer 7.0.0 documentation</title>
+    <title>MAP &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -88,12 +88,12 @@
 <dd><p class="first">Winkel, in Grad, um den die Karte rotiert wird. Standard ist 0. Die gerenderte
 Karte wird im Uhrzeigersinn rotiert. Folgende Bedingungen müssen beachtet werden:</p>
 <ul class="last simple">
-<li>Erfordert die Angabe eines <a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a> Objektes auf MAP-Ebende und für
-jedes <a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a> Objekt (auch wenn alle Ebenen die selbe Projektion benutzen).</li>
+<li>Erfordert die Angabe eines <a class="reference internal" href="projection.html#projection"><span>PROJECTION</span></a> Objektes auf MAP-Ebende und für
+jedes <a class="reference internal" href="layer.html#layer"><span>LAYER</span></a> Objekt (auch wenn alle Ebenen die selbe Projektion benutzen).</li>
 <li>Erfordert <span class="xref std std-ref">MapScript</span> (<span class="xref std std-ref">SWIG</span>, <span class="xref std std-ref">PHP
 MapScript</span>). Funktioniert nicht im <span class="xref std std-ref">CGI</span> Modus.</li>
-<li>Werden die Parameter ANGLE des <a class="reference internal" href="label.html#label"><span class="std std-ref">LABEL</span></a> Objektes oder LABELANGLEITEM des
-<a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a> Objektes benutzt, sind diese Parameter relativ zu der
+<li>Werden die Parameter ANGLE des <a class="reference internal" href="label.html#label"><span>LABEL</span></a> Objektes oder LABELANGLEITEM des
+<a class="reference internal" href="layer.html#layer"><span>LAYER</span></a> Objektes benutzt, sind diese Parameter relativ zu der
 Kartenrotation (d.h. sie werden nach dem Winkel des MAP Objektes berechnet).
 Wird beispielsweise ANGLE mit 45 für das MAP Objekt angegeben, und bei einem
 Layer LABELANGLEITEM mit 45, so wird das Label nicht rotiert dargestellt. Die
@@ -116,7 +116,7 @@ Für MapServer sind folgende Optionen verfügbar:</p>
 URL zu aktivieren. Siehe auch <span class="xref std std-ref">Map Context HowTo</span>.</dd>
 <dt>MS_ENCRYPTION_KEY [filename]</dt>
 <dd>Dieser CONFIG Parameter wird benutzt um einen encryption key anzugeben.
-Siehe auch <a class="reference internal" href="../utilities/msencrypt.html#msencrypt"><span class="std std-ref">msencypt utility</span></a>.</dd>
+Siehe auch <a class="reference internal" href="../utilities/msencrypt.html#msencrypt"><span>msencypt utility</span></a>.</dd>
 <dt>MS_ERRORFILE [filename]</dt>
 <dd>Dieser CONFIG Parameter wird benutzt um Fehlermeldungen von MapServer in eine
 Datei zu schreiben (ab MapServer 5.0). Es muss ein absoluter Pfad
@@ -208,7 +208,7 @@ gesetzt werden:</p>
 </div>
 <p>Die Umgebungsvariable kann bei Apache durch das hinzufügen folgender Zeile
 gesetzt werden:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SetEnv</span> <span class="n">MS_ERRORFILE</span> <span class="s2">&quot;/ms4w/tmp/ms_error.txt&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>SetEnv MS_ERRORFILE &quot;/ms4w/tmp/ms_error.txt&quot;
 </pre></div>
 </div>
 <p>Ist die Umgebungsvariable gesetzt, so können mittels DEBUG Parameter die
@@ -233,7 +233,7 @@ Entwickler hilfreich sind.</li>
 </ul>
 <p>Das Debuglevel kann auch über die Umgebungsvariable &#8220;MS_DEBUGLEVEL&#8221; gesetzt werden.</p>
 <p>Die Debugangabe kann auch für Layer gesetzt werden indem der Parameter DEBUG im
-<a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a> Objekt gesetzt wird.</p>
+<a class="reference internal" href="layer.html#layer"><span>LAYER</span></a> Objekt gesetzt wird.</p>
 <p>Für weitere Details wird auf <span class="xref std std-ref">RFC28</span> verwiesen.</p>
 <p><em>Debugging mit MapServer Versionen &lt; 5:</em></p>
 <p class="last">Ausführliche Angaben werden erzeugt und an die Standardfehlerausgabe (STDERR)
@@ -246,7 +246,7 @@ Apache Logdateien. MapServer muss mit der Option DEBUG=MSDEBUG (&#8211;with-debu
 <dd>Die räumliche Ausdehnung der zu erstellenden Karte. Dieser Parameter sollte
 angegeben werden. Fehlt dieser, so berechnet MapServer die Ausdehnung, wodurch
 es zu Geschwindigkeitseinbußen kommen kann.</dd>
-<dt><a class="reference internal" href="fontset.html#fontset"><span class="std std-ref">FONTSET</span></a> [filename]</dt>
+<dt><a class="reference internal" href="fontset.html#fontset"><span>FONTSET</span></a> [filename]</dt>
 <dd>Dateiname des zu benutzenden Schriftenkatalogs. Angabe kann relativ zum Mapfile
 oder als absolute Angabe erfolgen.</dd>
 <dt>IMAGECOLOR [r] [g] [b]</dt>
@@ -262,7 +262,7 @@ Hintergrundfarbe zu definieren.</p>
 </dd>
 <dt>IMAGEQUALITY [int]</dt>
 <dd><p class="first"><em>Veraltet</em> Zur Angabe der Qualität der JPEG Ausgabe wird FORMATOPTION &#8220;QUALITY=n&#8221;
-in der <a class="reference internal" href="outputformat.html#outputformat"><span class="std std-ref">OUTPUTFORMAT</span></a> Deklaration benutzt.</p>
+in der <a class="reference internal" href="outputformat.html#outputformat"><span>OUTPUTFORMAT</span></a> Deklaration benutzt.</p>
 <div class="last deprecated">
 <p><span class="versionmodified">Veraltet ab Version 4.6.</span></p>
 </div>
@@ -270,20 +270,20 @@ in der <a class="reference internal" href="outputformat.html#outputformat"><span
 </dl>
 <dl class="docutils" id="imagetype">
 <dt>IMAGETYPE [gif|png|jpeg|wbmp|gtiff|swf|userdefined]</dt>
-<dd>Zu erstellendes Ausgabeformat. Siehe auch unter <a class="reference internal" href="outputformat.html#outputformat"><span class="std std-ref">OUTPUTFORMAT</span></a> im Abschnitt
+<dd>Zu erstellendes Ausgabeformat. Siehe auch unter <a class="reference internal" href="outputformat.html#outputformat"><span>OUTPUTFORMAT</span></a> im Abschnitt
 für verfügbare Formate. Der hier angegebene Name muss mit einem benutzerdefinierten
-oder internen definierten  Namen des <a class="reference internal" href="outputformat.html#outputformat"><span class="std std-ref">OUTPUTFORMAT</span></a> Abschnittes entsprechen.</dd>
+oder internen definierten  Namen des <a class="reference internal" href="outputformat.html#outputformat"><span>OUTPUTFORMAT</span></a> Abschnittes entsprechen.</dd>
 <dt>INTERLACE [on|off]</dt>
 <dd><p class="first"><em>Veraltet</em> Um für Ausgabebilder interlace zu aktivieren muss im Abschnitt
-<a class="reference internal" href="outputformat.html#outputformat"><span class="std std-ref">OUTPUTFORMAT</span></a> FORMATOPTION &#8220;INTERLACE=ON&#8221; gesetzt sein.</p>
+<a class="reference internal" href="outputformat.html#outputformat"><span>OUTPUTFORMAT</span></a> FORMATOPTION &#8220;INTERLACE=ON&#8221; gesetzt sein.</p>
 <div class="last deprecated">
 <p><span class="versionmodified">Veraltet ab Version 4.6.</span></p>
 </div>
 </dd>
-<dt><a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="layer.html#layer"><span class="std std-ref">LAYER</span></a> Objektes.</dd>
-<dt><a class="reference internal" href="legend.html#legend"><span class="std std-ref">LEGEND</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="legend.html#legend"><span class="std std-ref">LEGEND</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="layer.html#layer"><span>LAYER</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="layer.html#layer"><span>LAYER</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="legend.html#legend"><span>LEGEND</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="legend.html#legend"><span>LEGEND</span></a> Objektes.</dd>
 <dt>MAXSIZE [integer]</dt>
 <dd>Definiert die maximale Größe des Kartenbildes. Diese Angabe überschreibt
 den Standardwert. Z.B. wird als Wert 2048 angegeben, so kann das Bild
@@ -291,12 +291,12 @@ den Standardwert. Z.B. wird als Wert 2048 angegeben, so kann das Bild
 <dt>NAME [name]</dt>
 <dd>Präfix der GIF Dateinamen für map, scalebar und legend -Grafiken die durch
 die Anwendung dieses Mapfiles erzeugt werden. Es sollte ein kurzer Name benutzt werden.</dd>
-<dt><a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="projection.html#projection"><span class="std std-ref">PROJECTION</span></a> Objektes.</dd>
-<dt><a class="reference internal" href="querymap.html#querymap"><span class="std std-ref">QUERYMAP</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="querymap.html#querymap"><span class="std std-ref">QUERYMAP</span></a> Objektes.</dd>
-<dt><a class="reference internal" href="reference.html#reference"><span class="std std-ref">REFERENCE</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="reference.html#reference"><span class="std std-ref">REFERENCE</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="projection.html#projection"><span>PROJECTION</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="projection.html#projection"><span>PROJECTION</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="querymap.html#querymap"><span>QUERYMAP</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="querymap.html#querymap"><span>QUERYMAP</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="reference.html#reference"><span>REFERENCE</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="reference.html#reference"><span>REFERENCE</span></a> Objektes.</dd>
 <dt>RESOLUTION [int]</dt>
 <dd>Definiert die Anzahl Pixel pro Zoll, betrifft nur Maßstabsberechnungen
 und sonst nichts. Standardwert ist 72.</dd>
@@ -322,7 +322,7 @@ eine Karte im Maßstab 1:24000 wird 24000 angegeben.</p>
 </div>
 </dd>
 <dt>SCALEBAR</dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="scalebar.html#scalebar"><span class="std std-ref">SCALE</span></a> Objektes.</dd>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="scalebar.html#scalebar"><span>SCALE</span></a> Objektes.</dd>
 <dt>SHAPEPATH [filename]</dt>
 <dd>Pfad zum Verzeichnis der Shapefiles oder Tiles. Es können sich auch
 Unterverzeichnisse unterhalb von SHAPEPATH befinden.</dd>
@@ -334,8 +334,8 @@ werden, kann die Karte hiermit abgeschaltet werden.</dd>
 <dt>SYMBOLSET [filename]</dt>
 <dd>Dateiname des zu benutzenden Symbolsets. Angabe erfolgt relativ zum Mapfile,
 oder als absolute Pfadangabe.</dd>
-<dt><a class="reference internal" href="symbol.html#symbol"><span class="std std-ref">SYMBOL</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="symbol.html#symbol"><span class="std std-ref">SYMBOL</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="symbol.html#symbol"><span>SYMBOL</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="symbol.html#symbol"><span>SYMBOL</span></a> Objektes.</dd>
 </dl>
 <dl class="docutils" id="templatepattern">
 <dt>TEMPLATEPATTERN [regular expression]</dt>
@@ -348,15 +348,15 @@ werden, aufbauend auf einer sehr konservativen Konfiguration. Siehe auch
 DATAPATTERN.</dd>
 <dt>TRANSPARENT [on|off]</dt>
 <dd><p class="first"><em>Veraltet</em> Für ein transparentes Ausgabebild muss FORMATOPTION &#8220;TRANSPARENT=ON&#8221;
-im Abschnitt <a class="reference internal" href="outputformat.html#outputformat"><span class="std std-ref">OUTPUTFORMAT</span></a> gesetzt werden.</p>
+im Abschnitt <a class="reference internal" href="outputformat.html#outputformat"><span>OUTPUTFORMAT</span></a> gesetzt werden.</p>
 <div class="last deprecated">
 <p><span class="versionmodified">Veraltet ab Version 4.6.</span></p>
 </div>
 </dd>
 <dt>UNITS [feet|inches|kilometers|meters|miles|dd]</dt>
 <dd>Einheiten der Kartenkoordinaten. Wird für Maßstableiste und Maßstabberechnungen benutzt.</dd>
-<dt><a class="reference internal" href="web.html#web"><span class="std std-ref">WEB</span></a></dt>
-<dd>Signalisiert den Anfang des <a class="reference internal" href="web.html#web"><span class="std std-ref">WEB</span></a> Objektes.</dd>
+<dt><a class="reference internal" href="web.html#web"><span>WEB</span></a></dt>
+<dd>Signalisiert den Anfang des <a class="reference internal" href="web.html#web"><span>WEB</span></a> Objektes.</dd>
 </dl>
 </div>
 
@@ -378,11 +378,14 @@ im Abschnitt <a class="reference internal" href="outputformat.html#outputformat"
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -393,7 +396,7 @@ im Abschnitt <a class="reference internal" href="outputformat.html#outputformat"
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>

@@ -2,11 +2,11 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Konstruktion von kartographischen Signaturen &#8212; MapServer 7.0.0 documentation</title>
+    <title>Konstruktion von kartographischen Signaturen &mdash; MapServer 7.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -608,7 +608,7 @@ Zeichen reichen, welches in der Bildmitte liegt und gleiche Abstände in
 x- und y-Richtung zum Bildrand hat. Eine regelmäßige Schraffur mit breiteren
 Linien kann mit dem Rasterbild in Abb. 2 erstellt werden. Für eine
 45 Grad-Schraffur gilt dabei:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">H</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">H</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
 </pre></div>
 </div>
 <p>Zur Erstellung der Legende muss beachtet werden, dass das Rasterbild nur
@@ -792,9 +792,9 @@ LINECAP &#8216;butt&#8217; gezeichnet.</dd>
 <p>Definiert die maximale Länge für m (nur für LINEJOIN miter von Bedeutung).
 Der Wert dient dabei als Multiplikationsfaktor (default ist 3). Die
 tatsächliche max. Länge berechnet sich wie folgt:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">-</span> <span class="n">current</span> <span class="n">join</span> <span class="n">size</span>
-<span class="n">d</span> <span class="o">-</span> <span class="n">symbol</span> <span class="n">size</span>
-<span class="n">m_max</span> <span class="o">=</span> <span class="n">d</span> <span class="o">*</span> <span class="n">LINEJOINMAXSIZE</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>m - current join size
+d - symbol size
+m_max = d * LINEJOINMAXSIZE
 </pre></div>
 </div>
 <p>Wenn current m &gt; m_max dann wird die Verbindungslänge auf m_max gesetzt.</p>
@@ -1082,11 +1082,14 @@ kartographische Zwecke enthalten.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Schnellsuche</h3>
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Los" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Los" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Geben Sie Suchbegriffe oder einen Modul-, Klassen- oder Funktionsnamen ein.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1097,7 +1100,7 @@ kartographische Zwecke enthalten.</p>
       &copy;2016, Open Source Geospatial Foundation.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
       
     </div>
