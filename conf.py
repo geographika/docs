@@ -167,6 +167,7 @@ htmlhelp_basename = 'MapServerdoc'
 # Hide source from sidebar (see http://sphinx.pocoo.org/config.html#confval-html_show_sourcelink)
 html_show_sourcelink = False
 
+html_theme_options = {'sidebar_collapse': False}
 # Options for LaTeX output
 # ------------------------
 
