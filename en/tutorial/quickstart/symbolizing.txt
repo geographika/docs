@@ -56,7 +56,16 @@ will be rendered with the ``POINTS`` section.
 The ``FILLED`` attribute defines whether the symbol can be filled by a ``COLOR``
 attribute in a ``LAYER``.
 
+http://mapserver.org/mapfile/style.html
 
+http://mapserver.org/mapfile/symbol.html
+http://mapserver.org/mapfile/symbology/construction.html
+
+rank_max and rank_min for simple town size grading.
+
+No SVG - http://www.ms4w.com/trac/ticket/3
+
+Save either of these images
 ----
 
 :ref:`Back to tutorial index <tutorial>` | :ref:`Back to previous tutorial <qs_test_mapfiles>` | :ref:`Proceed to next tutorial <qs_labelling>`

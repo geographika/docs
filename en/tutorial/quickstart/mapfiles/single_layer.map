@@ -1,0 +1,29 @@
+MAP
+    WEB
+        METADATA
+            "ows_enable_request"  "*"
+        END
+    END
+    PROJECTION
+        "init=epsg:4326"
+    END
+
+    # START OF THE LAYER DEFINITION
+    LAYER
+        NAME 'land'
+        TYPE POLYGON
+        DATA '../data/vector/naturalearth/ne_110m_land'
+        # START OF THE CLASS DEFINITION
+        CLASS
+            # START OF THE STYLE DEFINITION
+            STYLE
+                COLOR 107 208 107
+                OUTLINECOLOR 2 2 2
+                WIDTH 1
+            END
+            # END OF THE STYLE DEFINITION
+        END
+        # END OF THE CLASS DEFINITION
+    END
+    # END OF THE LAYER DEFINITION
+END
