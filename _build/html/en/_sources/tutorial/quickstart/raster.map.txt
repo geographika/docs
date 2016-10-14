@@ -1,9 +1,0 @@
-:orphan:
-
-.. _qs_raster_map:
-
-Raster Map File
----------------------
-
-.. literalinclude:: raster.map
-	:language: mapfile

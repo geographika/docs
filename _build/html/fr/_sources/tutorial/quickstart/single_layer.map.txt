@@ -1,9 +1,0 @@
-:orphan:
-
-.. _qs_single_layer_map:
-
-Single Layer Map File
----------------------
-
-.. literalinclude:: mapfiles/single_layer.map
-	:language: mapfile
