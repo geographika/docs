@@ -1,45 +1,62 @@
 MAP
-    IMAGETYPE png
-    SIZE 500 300
-    UNITS DD
-    EXTENT -180 -90 180 90
+    MAXSIZE 4096 # allow for images greater than 2048x2048 pixels to be generated
     WEB
-        IMAGEPATH "/tmp/"
         METADATA
-            "wms_title"           "Map with two layers"
-            "wms_onlineresource"  "http://demo.mapserver.org/cgi-bin/mapserv7?"
-            "wms_srs"             "EPSG:4326"
-            "ows_enable_request"  "*"
+            'wms_enable_request'  '*'
         END
-    END
-    PROJECTION
-        "init=epsg:4326"
     END
 
-    # START OF SYMBOL DEFINITION
+    PROJECTION
+        'init=epsg:4326'
+    END
+
+    # START OF CIRCLE SYMBOL
     SYMBOL
         # Symbol name (referenced in STYLEs)
-        NAME 'circle'
+        NAME 'CIRCLE'
         TYPE ellipse # Type of symbol
-        # START SYMBOL GEOMETRY
         POINTS
             1 1
-        END
-        # END SYMBOL GEOMETRY POINTS
-        # The symbol should be filled
-        FILLED true
+        END      
+        FILLED true # The symbol should be filled
     END
-    # END OF SYMBOL
+    # END OF CIRCLE SYMBOL
+
+    # START OF IMAGE SYMBOL  
+    SYMBOL
+        NAME 'MAP_PIN'
+        TYPE pixmap
+        IMAGE 'map_pin.png'
+    END 
+    # END OF IMAGE SYMBOL
+
+    # START OF POLYGON FILL SYMBOL
+    SYMBOL 
+        NAME 'WAVES'
+        TYPE vector    
+        POINTS         
+            0 0        
+            1 1        
+            2 0        
+        END
+    END
+    # END OF POLYGON FILL SYMBOL 
 
     LAYER
         NAME 'land'
         TYPE POLYGON
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        DATA 'natural_earth/110m_physical/ne_110m_land/ne_10m_land'
+        DATA '../data/vector/naturalearth/ne_110m_land'
+        CLASSGROUP 'style1' # this is the default style to use
         CLASS
+            GROUP 'style1'
+            STYLE
+                COLOR 107 208 107
+                OUTLINECOLOR 2 2 2
+                WIDTH 1
+            END
+        END
+        CLASS
+            GROUP 'style2'
             STYLE
                 COLOR 238 236 223
                 OUTLINECOLOR 255 255 0
@@ -51,12 +68,19 @@ MAP
     LAYER
         NAME 'ocean'
         TYPE POLYGON
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        DATA 'natural_earth/110m_physical/ne_110m_ocean/ne_10m_ocean'
+        DATA '../data/vector/naturalearth/ne_10m_ocean'
+        CLASSGROUP 'style1' # this is the default style to use
         CLASS
+            GROUP 'style1'
+            STYLE
+                SYMBOL 'WAVES'
+                COLOR 198 226 242
+                SIZE 6 # the height of the symbol
+                WIDTH 1 # the width of the vector line
+            END
+        END
+        CLASS
+            GROUP 'style2'
             STYLE
                 COLOR 198 226 242
             END
@@ -67,20 +91,24 @@ MAP
     LAYER
         NAME 'places'
         TYPE POINT
-        STATUS ON
-        PROJECTION
-            'init=epsg:4326'
-        END
-        DATA 'natural_earth/110m_physical/ne_110m_places/ne_110m_populated_places'
+        DATA '../data/vector/naturalearth/ne_110m_populated_places'
+        CLASSGROUP 'style1' # this is the default style to use
         CLASS
+            GROUP 'style1'
             STYLE
-                # Choose the symbol to use. This must correspond to the NAME of a SYMBOL object.
-                SYMBOL 'circle'
-                # Set the color in which the symbol will be filled
-                COLOR 0 0 0
-                # Set the size of the symbol
-                SIZE 8
+                SYMBOL 'CIRCLE' # this must correspond to the NAME of a SYMBOL object
+                COLOR  255 153 51 # the color in which the symbol will be filled
+                SIZE 8 # the size of the symbol
+                OUTLINECOLOR 2 2 2
             END
+        END
+
+        CLASS
+            GROUP 'style2'
+            STYLE
+                SYMBOL 'MAP_PIN'
+                SIZE 16 # the size of the symbol
+            END        
         END
     END
     # END PLACES LAYER
