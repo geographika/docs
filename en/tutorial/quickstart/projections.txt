@@ -6,6 +6,30 @@
 Projections
 ==================
 
+Your mapfile should look like the one here - :ref:`symbolizing.map <qs_symbolizing_map>`.
+
+http://epsg.io/
+
+Projections are stored in ``C:\ms4w\proj\nad``
+
+Link to http://www.mapserver.org/mapfile/projection.html
+
+Only EPSG, AUTO2, CRS currently supported
+
+Mollweide: a global map projection that preserves areas, often used in the sciences for depicting global distributions on small maps.
+
+Robinson projection not supported in proj4js - https://github.com/proj4js/proj4js/issues/161
+Can see main ones in https://github.com/proj4js/proj4js/tree/master/lib/projections
+
+Example
+-------
+
+You should be able to use the appropriate HTML and mapfiles to create the example below using your local
+MapServer. 
+
+.. raw:: html
+	:file: htmlfiles/projections.html
+
 ..
    This needs to be in the same
    units as the data or, if specifying a different output projection,
