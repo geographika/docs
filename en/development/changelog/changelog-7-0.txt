@@ -7,6 +7,94 @@
 The summary of major changes for this release can be found in the `HISTORY.TXT <https://github.com/mapserver/mapserver/blob/rel-7-0-0/HISTORY.TXT>`__
 file from the source directory.
 
+.. _changelog-7-0-6:
+
+Changes from 7.0.5 to 7.0.6
+===========================
+
+* [OGR] Correctly extract BBOX from an Intersects() filter. Complementary fix to `f53fd782 <https://github.com/mapserver/mapserver/commit/f53fd782>`__ (Even Rouault) : `aae74ff <https://github.com/mapserver/mapserver/commit/aae74ff2abed3f2f8fe1f76c9b4bbccf15023dc1>`__
+* WFS: complementary fix for "wfs_use_default_extent_for_getfeature" "yes" layers (Even Rouault) : `1df03be <https://github.com/mapserver/mapserver/commit/1df03be1bbb3343f78e582ca04eb929e34f3a32c>`__
+* msResampleGDALToMap(): restrict fix done for `#1715 <https://github.com/mapserver/mapserver/issues/1715>`__ , to avoid regressions like `#5445 <https://github.com/mapserver/mapserver/issues/5445>`__  (Even Rouault) : `3e262f4 <https://github.com/mapserver/mapserver/commit/3e262f4ca736516bf303b7c9389ffbf89a5be430>`__
+* Suppress GEOS error in offsetcurve and fall back to the original behavior ( `#5442 <https://github.com/mapserver/mapserver/issues/5442>`__ ) (Tamas Szekeres) : `70cbb55 <https://github.com/mapserver/mapserver/commit/70cbb553e1a25e7341be76e505a62169c36ad9b6>`__
+* Fix rendering label shadow ( `#5438 <https://github.com/mapserver/mapserver/issues/5438>`__ ) (Tamas Szekeres) : `f495c48 <https://github.com/mapserver/mapserver/commit/f495c4874f5cd7985f7002af1e71fd62c01cff9f>`__
+* Add MSSQL support for PropertyIsLike ( `#5428 <https://github.com/mapserver/mapserver/issues/5428>`__ ) (Tamas Szekeres) : `d644c84 <https://github.com/mapserver/mapserver/commit/d644c8405e32987915c8fef8f757d4892fbccde3>`__
+* Restore error reporting for invalid attribute filters ( `#5427 <https://github.com/mapserver/mapserver/issues/5427>`__ ) (Tamas Szekeres) : `c549798 <https://github.com/mapserver/mapserver/commit/c5497982fd97cf2eba84eb5af11f19c1cf3cad7f>`__
+
+.. _changelog-7-0-5:
+
+Changes from 7.0.4 to 7.0.5
+===========================
+
+* Shape tileindex: fix issues (crash and invalid result) related with interactions between msTiledSHPNextShape() and msTiledSHPGetShape() (Even Rouault) : `1aea33a <https://github.com/mapserver/mapserver/commit/1aea33ab9a725dadf2358270570f3bf6b52d3b07>`__
+* [PostGIS] Format literal number in filter as integer when possible to avoid performance issues (Even Rouault) : `b814f93 <https://github.com/mapserver/mapserver/commit/b814f93cda0bf9b9b8ed7f32626803519d3d1571>`__
+* Forming the tag <OnlineResource> in the sld-file from the SYMBOL type MS_SYMBOL_SVG (Sergey Morev) : `48de40e <https://github.com/mapserver/mapserver/commit/48de40e61fdb56c677a9071f1b8eb5c110452601>`__
+* msResampleGDALToMap(): restrict full size acquisition in weird reprojection cases to raster of 'modest' size ( `#5402 <https://github.com/mapserver/mapserver/issues/5402>`__ ) (Even Rouault) : `bd9ff63 <https://github.com/mapserver/mapserver/commit/bd9ff630f5f02dfa4f908eeba7a391f39f4fd9b8>`__
+* msResampleGDALToMap(): amend e0a3448f3f42d20a0d271709c8629a5b40d13951 to fix regression of  `#5402 <https://github.com/mapserver/mapserver/issues/5402>`__  (Even Rouault) : `3d9f71a <https://github.com/mapserver/mapserver/commit/3d9f71ae4812efc9144546911e649bd3b03c8347>`__
+* Allow paging for msQueryByFilter(). (Steve Lime) : `761a73a <https://github.com/mapserver/mapserver/commit/761a73a5f4fcdccc5914519f786d22e24ac5a7b5>`__
+* msProjectRect(): fix when reprojecting from north polar stereographic to WGS84. (Even Rouault) : `14243fa <https://github.com/mapserver/mapserver/commit/14243fa9c605bd497d5a8aa6c725cf98045ff9f8>`__
+* msTransformMapToSource(), msNearestRasterResampler(), msBilinearRasterResampler(): fixes for lon_wrap=180 (Even Rouault) : `4c2aeb4 <https://github.com/mapserver/mapserver/commit/4c2aeb4bbd229723d8ea67c337cf02350575b2ae>`__
+* Fix memory leaks ( `#5397 <https://github.com/mapserver/mapserver/issues/5397>`__ ) (Tamas Szekeres) : `f1857d4 <https://github.com/mapserver/mapserver/commit/f1857d439eaf6de59f6df3219828ff0116fd7ed8>`__
+* Fix crash if the prj cannot be opened ( `#5395 <https://github.com/mapserver/mapserver/issues/5395>`__ ) (Tamas Szekeres) : `e85f8e3 <https://github.com/mapserver/mapserver/commit/e85f8e39b5fa2931cab42ec84758771103c90700>`__
+* Legend icon for label layers should not rotate ( `#5391 <https://github.com/mapserver/mapserver/issues/5391>`__ ) (Tamas Szekeres) : `f125a13 <https://github.com/mapserver/mapserver/commit/f125a134011b9ff3842a5a99d3592b02e82cec41>`__
+* GRID layer: fix label positioning when requesting WGS84 graticule in EPSG:3857 (Even Rouault) : `fc36c0a <https://github.com/mapserver/mapserver/commit/fc36c0aa8b0277ae10770a6c959ad25927c5306b>`__
+* Declare nLayerOrder where it's used. ( `#5387 <https://github.com/mapserver/mapserver/issues/5387>`__ ) (Landry Breuil) : `1326958 <https://github.com/mapserver/mapserver/commit/132695864b27bb6fced9a866f35365f445889a00>`__
+* Oracle Spatial: Include mapows.h ( `#5373 <https://github.com/mapserver/mapserver/issues/5373>`__ ) (Martin Icking) : `027f421 <https://github.com/mapserver/mapserver/commit/027f421ce8df06331a9cf9d61d55ebd2b1ba6005>`__
+* Fix Character type handling in WMS dimension filters ( `#5374 <https://github.com/mapserver/mapserver/issues/5374>`__ ) (Tamas Szekeres) : `e075ccb <https://github.com/mapserver/mapserver/commit/e075ccbd022bd44fdb31bdf2c9d563383c96cc7d>`__
+* [OGR] Translate as much as possible MapServer expressions to OGR SQL attribute and spatial filters (Even Rouault) : `f53fd78 <https://github.com/mapserver/mapserver/commit/f53fd782ccbe04033d4088047615f08968dcede0>`__
+* msResampleGDALToMap(): fix inappropriate cellsize computation when loading (well beyond) full source raster. (Even Rouault) : `e0a3448 <https://github.com/mapserver/mapserver/commit/e0a3448f3f42d20a0d271709c8629a5b40d13951>`__
+* msResampleGDALToMap(): fix issue that cause line pattern in image mosaic ( `#1715 <https://github.com/mapserver/mapserver/issues/1715>`__ ) (Even Rouault) : `026847b <https://github.com/mapserver/mapserver/commit/026847b1c962cdd666d28cfbe38ac40fff54ffbb>`__
+* Oracle - fixing memory handling error (Pierre Mauduit) : `bbe23e8 <https://github.com/mapserver/mapserver/commit/bbe23e8c0b9cce174dc3ff313e3e5d3560c1e62b>`__
+* Add msIO_getAndStripStdoutBufferMimeHeaders to deal with all MIME headers. (Even Rouault) : `10fe3d7 <https://github.com/mapserver/mapserver/commit/10fe3d78c3f3a3e2cbc64ede7c091a60f11a4e22>`__
+* Use include paths from php-config when include path not found. (Bas Couwenberg) : `8fd1c73 <https://github.com/mapserver/mapserver/commit/8fd1c73d75cd66caa2a04a2da5a7d0390b4b9dd6>`__
+
+.. _changelog-7-0-4:
+
+Changes from 7.0.3 to 7.0.4
+===========================
+
+* Security release for CVE-2017-5522
+* For GPKG datasources with Spatialite support, translate mapserver expressions to SQL (Even Rouault) : `60fd6de <https://github.com/mapserver/mapserver/commit/60fd6deb237f3e5f246c4f34a9832f140bdc6e7e>`__
+* Optimize msDrawRasterGDAL_16BitClassification() runtime. (Even Rouault) : `adf3383 <https://github.com/mapserver/mapserver/commit/adf3383e52a91ded988b80a4b296a88c6bdf941c>`__
+* Legend: draw icon for raster gradient classes ( `#1305 <https://github.com/mapserver/mapserver/issues/1305>`__ ) (Even Rouault) : `19d77c5 <https://github.com/mapserver/mapserver/commit/19d77c52467d445e678a291aaf0265f49c4e2176>`__
+* Fix cluster filter propagation to the source layer ( `#5364 <https://github.com/mapserver/mapserver/issues/5364>`__ ) (Tamas Szekeres) : `7dc87fe <https://github.com/mapserver/mapserver/commit/7dc87fe671930f5e191a0c3dbff4b0c75b44149a>`__
+* Update copyright date (Jeff McKenna) : `940ae5e <https://github.com/mapserver/mapserver/commit/940ae5e26f3898e56abf28bb7aaeaaf0e7d56a92>`__
+* Fix cluster with WMS dimension issue ( `#5364 <https://github.com/mapserver/mapserver/issues/5364>`__ ) (Tamas Szekeres) : `1a65c62 <https://github.com/mapserver/mapserver/commit/1a65c6209f6a1241fc3432e35d91bdde563b1d2e>`__
+* msTransformMapToSource(): fix behaviour at lon_wrap +/- 180 deg (Even Rouault) : `722716c <https://github.com/mapserver/mapserver/commit/722716c49de2399f54b275ab31437f0e8c92cd63>`__
+* WFS: avoid 'eating' the last character of WFS 2.0 stored queries stored in an external file (Even Rouault) : `b5c02b4 <https://github.com/mapserver/mapserver/commit/b5c02b4c6c485126d414cd0c4fffd05b2c28d25d>`__
+* WFS: fix taking into account of wfs_use_default_extent_for_getfeature. Logic added in 7.0.3 was inverted... (Even Rouault) : `6beab5e <https://github.com/mapserver/mapserver/commit/6beab5e455fd4d0c4292bd5cf77655617a1dae2f>`__
+* Update README.WIN32 for MapServer and PHP/MapScript ( `#5357 <https://github.com/mapserver/mapserver/issues/5357>`__ ) (Alexander Gabriel) : `1534710 <https://github.com/mapserver/mapserver/commit/153471013be25562ebb3d83f17b7312834e3a4fd>`__
+
+.. _changelog-7-0-3:
+
+Changes from 7.0.2 to 7.0.3
+===========================
+
+* Security release for CVE-2016-9839
+* Free expression tokens, which may store an index to an iteminfo, when iteminfo is freed. ( `#5161 <https://github.com/mapserver/mapserver/issues/5161>`__ ) (Martin Kofahl) : `7413952 <https://github.com/mapserver/mapserver/commit/7413952a17f826926066fa46dbc2c784117c5068>`__
+* cmake/FindICONV.cmake did not find iconv on windows ( `#5346 <https://github.com/mapserver/mapserver/issues/5346>`__ ) (Alexander Gabriel) : `14ce312 <https://github.com/mapserver/mapserver/commit/14ce31235fe9400275114666673ab7013006663c>`__
+* fix issues when compiling PHP-MapScript with VS2012 Express ( `#5346 <https://github.com/mapserver/mapserver/issues/5346>`__ ) (Alexander Gabriel) : `54d645c <https://github.com/mapserver/mapserver/commit/54d645c18d0293f7e5821e9d740542408083f955>`__
+* Fix variable declaration compilation error on Windows ( `#5346 <https://github.com/mapserver/mapserver/issues/5346>`__ ) (Alexander Gabriel) : `2f240de <https://github.com/mapserver/mapserver/commit/2f240de9ac97c1e7cc3253541b590a45271a334d>`__
+* Fix LNK2019 build error on windows ( `#5346 <https://github.com/mapserver/mapserver/issues/5346>`__ ) (Alexander Gabriel) : `bcf7e7e <https://github.com/mapserver/mapserver/commit/bcf7e7ef350abe8649b4ca1834d163912c3f5fc2>`__
+* Fix utfgrid text encoding to work with Windows ( `#5342 <https://github.com/mapserver/mapserver/issues/5342>`__ ) (geographika) : `2ab0dc0 <https://github.com/mapserver/mapserver/commit/2ab0dc0187b0a89560d5ce88c1e1208a3def6108>`__
+* Allow FEATURE->ITEMS to be set by URL ( `#5335 <https://github.com/mapserver/mapserver/issues/5335>`__ ) (Thomas Bonfort) : `93cc1ed <https://github.com/mapserver/mapserver/commit/93cc1edab40ed0e32c46beb3a22e881c08f00952>`__
+* Fix glyph orientation when switching from cairo to AGG ( `#5338 <https://github.com/mapserver/mapserver/issues/5338>`__ ) (Thomas Bonfort) : `82ec23b <https://github.com/mapserver/mapserver/commit/82ec23b2336087df94bfe41f04bec4dfb5102c2f>`__
+* Fix build issue with php >= 5.6.25 ( `#5318 <https://github.com/mapserver/mapserver/issues/5318>`__ ) (Thomas Bonfort) : `d5cc584 <https://github.com/mapserver/mapserver/commit/d5cc5840683bded229dbc2cc7d534db6d1e1f386>`__
+* Backport  `#4928 <https://github.com/mapserver/mapserver/issues/4928>`__  and  `#5356 <https://github.com/mapserver/mapserver/issues/5356>`__  (Thomas Bonfort) : `022d24b <https://github.com/mapserver/mapserver/commit/022d24bd34196b6dca67053fb797a6980210bc54>`__
+* OGR Spatialite: do not be case sensitive if DATA is a SELECT ... FROM table_name (Even Rouault) : `491397c <https://github.com/mapserver/mapserver/commit/491397c126ebec3e8a97f5c91e018546cc168fcf>`__
+* OGR: add a  "wfs_use_default_extent_for_getfeature" "yes" LAYER.METADATA (Even Rouault) : `45037eb <https://github.com/mapserver/mapserver/commit/45037eb0601e2f48ae548e2cd28b29b429644870>`__
+* add msautotest script for windows (Jeff McKenna) : `2934c6e <https://github.com/mapserver/mapserver/commit/2934c6e18774cdfcd2f9f05f1453744058bc4120>`__
+* change default max mapsize to 4096 (fixes  `#5349 <https://github.com/mapserver/mapserver/issues/5349>`__ ) (Jeff McKenna) : `1e8266b <https://github.com/mapserver/mapserver/commit/1e8266bd20e6c568a439b0b3ea7405d2217fb699>`__
+* OGR Spatialite: avoid useless CAST() in filter, and use join for spatial filtering. (Even Rouault) : `22dc081 <https://github.com/mapserver/mapserver/commit/22dc081f1060ca40e0b209e7bb3e9aa0ca8b5ac3>`__
+* Don't return verbose OGR error messages to clients ( `#5356 <https://github.com/mapserver/mapserver/issues/5356>`__ ) (Thomas Bonfort) : `3d52307 <https://github.com/mapserver/mapserver/commit/3d52307cf0033e3275975b668b7138ba1343f28d>`__
+* Fix segfault on WFS filters with empty literals (PostGIS + Spatialite). Implement PropertyIsNull for those layers ( `#5347 <https://github.com/mapserver/mapserver/issues/5347>`__ ) (Even Rouault) : `4cb057c <https://github.com/mapserver/mapserver/commit/4cb057c7ae2d141ae00c91d15c9a7d3a5fbf23b6>`__
+* Reorder spatial operator arguments for mssql ( `#5352 <https://github.com/mapserver/mapserver/issues/5352>`__ ) (Tamas Szekeres) : `51415f7 <https://github.com/mapserver/mapserver/commit/51415f75e5d6abbf162ace0401eaf4ed7552d8a3>`__
+* Filters: add whitespace between and and next part (relates to  `#5352 <https://github.com/mapserver/mapserver/issues/5352>`__ ) (Even Rouault) : `5b6ccd0 <https://github.com/mapserver/mapserver/commit/5b6ccd0f8aa672799351446d6f271015101973bf>`__
+* update copyright (Jeff McKenna) : `b695d28 <https://github.com/mapserver/mapserver/commit/b695d28e85f6035d6e28f224461a1d7e75fa84a4>`__
+* update win32 binaries link (Jeff McKenna) : `af77d43 <https://github.com/mapserver/mapserver/commit/af77d43d37de16f62b18ec4600d2ed4e3a47751b>`__
+* Add c# typemap for setLayerDrawingOrder ( `#5336 <https://github.com/mapserver/mapserver/issues/5336>`__ ) (Tamas Szekeres) : `4a988fe <https://github.com/mapserver/mapserver/commit/4a988fe1a1edf31997a0b84fdedf5756f0775a21>`__
+* Remove msCleanupOnSignal log messages ( `#5254 <https://github.com/mapserver/mapserver/issues/5254>`__ ) (Thomas Bonfort) : `51fef1b <https://github.com/mapserver/mapserver/commit/51fef1b42017e5392307182621689d453724a4a5>`__
+* Fix timestamp handling in the MSSQL driver ( `#5334 <https://github.com/mapserver/mapserver/issues/5334>`__ ) (Tamas Szekeres) : `6dbbd3b <https://github.com/mapserver/mapserver/commit/6dbbd3b780c1e5f5d42adb9438fc6b8e11a37f0a>`__
+
 .. _changelog-7-0-2:
 
 Changes from 7.0.1 to 7.0.2
