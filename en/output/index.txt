@@ -22,4 +22,5 @@
    template_output
    kml_output
    utfgrid_output
+   vectortiles
 
