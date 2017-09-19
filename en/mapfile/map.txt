@@ -134,7 +134,13 @@ CONFIG [key] [value]
    
     .. index::
        triple: MAP; CONFIG; PROJ_LIB
-    
+
+    .. index::
+       triple: MAP; CONFIG; PROJ_DEBUG
+
+    PROJ_DEBUG [ON|OFF]
+        Turn on PROJ debugging. See :ref:`debugging` for more details. 
+
     PROJ_LIB [path]
         This `CONFIG` parameter can be used to define the location of
         your EPSG files for the :term:`PROJ.4` library. Setting the
@@ -154,12 +160,6 @@ CONFIG [key] [value]
            .. code-block:: mapfile
 
              CONFIG "PROJ_LIB" "C:/somedir/proj/nad/"
-
-    .. index::
-       triple: MAP; CONFIG; PROJ_DEBUG
-
-    PROJ_DEBUG [ON|OFF]
-        Turn on PROJ debugging. See :ref:`debugging` for more details. 
 
 .. index::
    pair: MAP; DATAPATTERN
