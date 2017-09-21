@@ -9,7 +9,7 @@
     `PDF document <http://www.mapserver.org/pdf/MapServer.pdf>`__ |image|
 
     If you are upgrading from an earlier version of MapServer, be sure to
-    review the 
+    review the
     :ref:`MapServer Migration Guide <migration>`.
 
     Documentation for earlier versions of MapServer can be found on the
@@ -20,7 +20,7 @@
    :width: 15
    :alt: PDF icon
    :target: http://www.mapserver.org/pdf/MapServer.pdf  
-    
+
 Introduction
 .......................................................
 
@@ -36,6 +36,14 @@ Tutorial
   :maxdepth: 2
 
   tutorial/index
+
+Tutorial for legacy versions of MapServer
+.......................................................
+
+.. toctree::
+   :maxdepth: 2
+
+   old-tutorial/index
 
 Installation
 .......................................................
@@ -60,7 +68,7 @@ MapScript
   :maxdepth: 2
 
   mapscript/index
-  
+
 MapCache
 .......................................................
 
@@ -92,7 +100,7 @@ OGC
   :maxdepth: 2
 
   ogc/index
-  
+
 TinyOWS
 .......................................................
 
@@ -171,4 +179,4 @@ Copyright
    <!-- see https://github.com/TylerLH/github-latest-commits-widget -->
    <iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=mapserver&repo=docs&limit=10"
    allowtransparency="true" frameborder="0" scrolling="yes" width="500px" height="500px"></iframe> 
-   
+

@@ -1,0 +1,52 @@
+MAP
+    IMAGETYPE png
+    SIZE 500 300
+    UNITS DD
+    EXTENT -180 -90 180 90
+    WEB
+        IMAGEPATH "/tmp/"
+        METADATA
+            "wms_title"           "WMS Demo Server"
+            "wms_onlineresource"  "http://demo.mapserver.org/cgi-bin/mapserv7?"
+            "wms_srs"             "EPSG:4326"
+            "ows_enable_request"  "*"
+        END
+    END
+    PROJECTION
+        "init=epsg:4326"
+    END
+
+    LAYER
+        NAME 'land'
+        TYPE POLYGON
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        DATA 'natural_earth/110m_physical/ne_110m_land/ne_10m_land'
+        CLASS
+            STYLE
+                COLOR 238 236 223
+                OUTLINECOLOR 255 255 0
+                WIDTH 1.5
+            END
+        END
+    END
+
+    # START OCEAN LAYER
+    LAYER
+        NAME 'ocean'
+        TYPE POLYGON
+        STATUS ON
+        PROJECTION
+            'init=epsg:4326'
+        END
+        DATA 'natural_earth/110m_physical/ne_110m_ocean/ne_10m_ocean'
+        CLASS
+            STYLE
+                COLOR 198 226 242
+            END
+        END
+    END
+    # END OCEAN LAYER
+END

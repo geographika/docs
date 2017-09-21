@@ -1,0 +1,94 @@
+:orphan:
+
+.. _qs_symbolizing:
+
+============================
+Symbols and Symbolizing Data
+============================
+
+In this tutorial, you will see some more options on symbolizing MapServer layers. We 
+previously looked at :ref:`STYLE` and set colors and line thicknesses. In this tutorial we will 
+be using :ref:`SYMBOL`. These are shapes and signs that can be used to display data in different ways, 
+often symbols are shared between different mapfiles and projects.  
+
+The first symbol is a simple circle. Symbols require a ``NAME`` attribute, 
+so they can be referred to elsewhere in the mapfile. Its type here is ``ellipse``. The ``POINTS`` property
+defines the X and Y radius of the ellipse. In this case both are set to 1, which produces a circle
+rather than an ellipse. The ``FILLED`` property means it is a solid circle, rather than a hollow
+outline. 
+
+.. literalinclude:: mapfiles/symbolizing.map
+   :language: mapfile
+   :start-after: # START OF CIRCLE SYMBOL
+   :end-before: # END OF CIRCLE SYMBOL
+   :dedent: 4
+
+The second symbol is a based on an image file. Its type is ``pixmap`` - 
+which means it is simply a small raster image. The image file needs to be stored locally, 
+and can be either a PNG or GIF. 
+   
+.. literalinclude:: mapfiles/symbolizing.map
+   :language: mapfile
+   :start-after: # START OF IMAGE SYMBOL
+   :end-before: # END OF IMAGE SYMBOL 
+   :dedent: 4   
+
+The final symbol used is a ``vector`` symbol. This again uses a ``POINTS`` property which 
+can be used to create any shape. Here we create an inverted V shape. When this is used to fill 
+in a polygon feature it looks like a wave. 
+
+.. literalinclude:: mapfiles/symbolizing.map
+   :language: mapfile
+   :start-after: # START OF POLYGON FILL SYMBOL
+   :end-before: # END OF POLYGON FILL SYMBOL   
+   :dedent: 4
+    
+The remaining symbol types ``hatch``, ``svg``, and ``truetype`` (fonts) are not demonstrated here. 
+
+Example
+-------
+
+You should be able to use the appropriate HTML and mapfiles to create the example below using your local
+MapServer. 
+
+.. raw:: html
+	:file: htmlfiles/symbolizing.html
+
+OpenLayer is drawing a single combined image containing all the layers in the map. You can right-click on the image
+to save it locally. 
+
+Switching Styles
+----------------
+
+Your mapfile should look like the one here - :ref:`symbolizing.map <qs_symbolizing_map>`.
+There are three layers in the mapfile - land, ocean, and places. 
+
+Each layer has two classes. This allows each layer to be represented in two different ways. 
+Let's look at the layer configuration for places below:
+
+.. literalinclude:: mapfiles/symbolizing.map
+   :language: mapfile
+   :dedent: 4
+   :start-after: # START PLACES LAYER
+   :end-before: # END PLACES LAYER
+
+The :ref:`CLASSGROUP` keyword defines which of the classes to use. Each :ref:`CLASS` has a ``GROUP``
+parameter. When this matches the ``CLASSGROUP`` it will be used to style the layer. If no ``CLASSGROUP`` is 
+set, then the first ``CLASS`` defined in the layer will be used. 
+
+The client application, in this case OpenLayers, can change the setting for ``CLASSGROUP`` via
+the querystring. This is done using the ``STYLES`` option of the WMS GetMap request. When you click on the radio
+buttons above the querystring sent to MapServer includes the three layers to display in the image
+as well as the three styles to apply to the layers. 
+
+The order of style names matches the order of layer names in the ``LAYERS`` parameter: 
+
+.. code:: bat
+
+	?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ocean,land,places&STYLES=style1,style1,style1
+	?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ocean,land,places&STYLES=style2,style2,style2
+
+If no styles are sent in the URL, then the default style for the layer specified in ``CLASSGROUP``
+will be used.  
+
+:ref:`Back to tutorial index <tutorial>` | :ref:`Back to previous tutorial <qs_test_mapfiles>` | :ref:`Proceed to next tutorial <qs_labelling>`
