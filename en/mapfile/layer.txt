@@ -7,6 +7,12 @@
  LAYER
 *****************************************************************************
 
+.. image:: ../images/layer_classes.png
+    :align: center
+    :height: 248
+    :width: 1024
+    :target: ../_images/layer_classes.png
+
 .. index::
    pair: LAYER; CLASS
 
@@ -352,7 +358,7 @@ GEOMTRANSFORM [<expression>|<Javascript file>]
          triple: LAYER; GEOMTRANSFORM; buffer
 
       - *(buffer([shape],dist))*: Buffer the geometry (`[shape]`)
-        using `dist` pixels as buffer distance. For polygons, a
+        using `dist` ground units as buffer distance. For polygons, a
         negative `dist` will produce a setback.
 
       .. index::
