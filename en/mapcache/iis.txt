@@ -1,0 +1,188 @@
+Running MapCache under IIS
+==========================
+
+Installation
+------------
+
+Many of MapCache's dependencies are the same as for MapServer. The simplest way to get MapCache up and running is therefore to 
+put MapCache into the same folder as a MapServer installation. 
+
+The additional dependencies are:
+
++ Apache Portable Runtime (APR) - https://apr.apache.org/
+    + apr_crypto_openssl-1.dll
+    + apr-1.dll
+    + aprutil-1.dll
+    + libapr-1.dll
+    + libaprutil-1.dll
+
++ PCRE - Perl Compatible Regular Expressions https://www.pcre.org/
+    + pcre.dll
+    + pcreposix.dll
+
+https://github.com/mapserver/mapcache/blob/master/appveyor.yml
+
+This zips up these DLLs and makes them available to download at https://ci.appveyor.com/project/sethg/mapcache
+https://ci.appveyor.com/project/sethg/mapcache/build/artifacts
+
+This creates:
+
++ mapcache.fcgi.exe
++ mapcache_seed.exe
+
+SDK: MSVC 2017	x64	release-1911-x64-gdal-2-2-3-mapserver-7-0-7
+You must use the same MSVC version for MapServer and MapCache for these DLLs to work together. 
+
+https://www.gisinternals.com/release.php
+Compiled binaries in a single .zip package
+
+
+Copy the above into the ``C:\MapServer\bin`` folder. 
+
+
+Test using
+
+``mapcache_seed.exe``
+
+If this displays the help for the seed program, then the DLLs are compatible, otherwise check that you have the correct
+MapServer release. 
+
+IIS
+---
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <system.webServer>
+            <handlers>
+                <add name="mapcache" path="*" verb="*" modules="FastCgiModule" scriptProcessor="C:\MapServer\bin\mapcache.fcgi.exe" resourceType="Unspecified" requireAccess="Script" />
+            </handlers>
+            <rewrite>
+                <rules>
+                    <rule name="AddPathInfo">
+                        <match url=".*" />
+                        <action type="Rewrite" url="{R:0}" />
+                        <serverVariables>
+                            <set name="PATH_INFO" value="{C:1}" />
+                        </serverVariables>
+                        <conditions>
+                            <add input="{PATH_INFO}" pattern="/mapcache/(.*)" />
+                        </conditions>
+                    </rule>
+                </rules>
+            </rewrite>
+        </system.webServer>
+    </configuration>
+
+Test from the commandline
+
+.. code-block:: bat
+
+    cd /D C:\MapServer\bin
+    set MAPCACHE_CONFIG_FILE=mapcache.xml
+    set PATH_INFO="/"
+    set REQUEST_METHOD=GET
+    set QUERY_STRING="SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&FORMAT=image/png&SRS=EPSG:4326&BBOX=0,0,10,10&WIDTH=256&HEIGHT=256&LAYERS=test&TRANSPARENT=TRUE"
+    mapcache.fcgi.exe 
+
+    cache disk: host system does not support file symbolic linking
+    Status: 400 Bad Request
+    Content-Type: text/plain
+    Content-Length: 62
+
+    cache disk: host system does not support file symbolic linking
+
+.. code-block:: xml
+
+    <symlink_blank/>
+
+.. code-block:: xml
+
+    <!-- <symlink_blank/> -->
+
+.. code-block:: xml
+
+    failed to create lockfile /tmp/_gc_lock4-1-3-testWGS84.lck: The system cannot find the path specified.
+    Status: 500 Internal Server Error
+    Content-Type: application/vnd.ogc.se_xml
+    Content-Length: 366
+
+    <?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+    <!DOCTYPE ServiceExceptionReport SYSTEM "http://schemas.opengis.net/wms/1.1.1/exception_1_1_1.dtd">
+    <ServiceExceptionReport version="1.1.1">
+    <ServiceException>
+    failed to create lockfile /tmp/_gc_lock4-1-3-testWGS84.lck: The system cannot find the path specified.
+    </ServiceException>
+    </ServiceExceptionReport>
+
+
+   <cache name="disk" type="disk">
+      <base>/tmp</base>
+      <!-- <symlink_blank/> -->
+   </cache>
+
+
+   <locker type="disk">
+     <directory>/tmp</directory>
+     <timeout>300</timeout>
+    </locker>
+
+    Set to ``C:\MapServer\tmp``
+
+Grant write and modify access to the Application Pool user e.g. ``IIS AppPool\DefaultAppPool``
+
+
+The server variable "{PATH_INFO}" is not allowed to be set. Add the server variable name to the allowed server variable list.
+Server level - Allowed Server Variables, in the URLRewrite module. 
+
+
+
+Check configs at %WinDir%\System32\Inetsrv\Config
+
+applicationHost.config
+
+        <fastCgi>
+            <application fullPath="C:\MapServer\bin\mapcache.fcgi.exe">
+                <environmentVariables>
+                    <environmentVariable name="MAPCACHE_CONFIG_FILE" value="C:\MapServer\bin\mapcache.xml" />
+                </environmentVariables>
+            </application>
+        </fastCgi>
+
+
+See https://docs.microsoft.com/en-us/iis/configuration/system.webserver/fastcgi/application/environmentvariables/
+
+
+Multiple MapCache Instances
+---------------------------
+
+Need to match keys
+
+HTTP Error 500.0 - Internal Server Error
+
+
+
+fullPath is matched to 
+
+Saved to ``C:\inetpub\temp\appPools\MapServer\MapServer.config`` and not ``C:\Windows\System32\inetsrv\Config\applicationHost.config``
+
+Do through UI. 
+Otherwise
+
+<handler> scriptProcessor could not be found in <fastCGI> application configuration
+
+        <fastCgi>
+            <application fullPath="C:\MapServer\bin\mapcache.fcgi.exe" arguments="bridges" monitorChangesTo="" stderrMode="ReturnStdErrIn500" maxInstances="4" 
+            idleTimeout="300" activityTimeout="30" requestTimeout="90" instanceMaxRequests="200" protocol="NamedPipe" queueLength="1000" flushNamedPipe="false" rapidFailsPerMinute="10">
+                <environmentVariables>
+                    <environmentVariable name="MAPCACHE_CONFIG_FILE" value="C:\MapServer\bin\mapcache2.xml" />
+                </environmentVariables>
+            </application>
+        </fastCgi>
+
+
+
+IIS Supports FastCGI? Not really!
+http://blog.cppcms.com/post/86
+This basically means only one things: FastCGI support for IIS was designed to run PHP... Nothing more.
