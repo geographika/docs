@@ -16,6 +16,7 @@ solution.
    :maxdepth: 1
 
    install
+   iis
    config
    services
    seed

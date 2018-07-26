@@ -9,7 +9,7 @@ put MapCache into the same folder as a MapServer installation.
 
 The additional dependencies are:
 
-+ Apache Portable Runtime (APR) - https://apr.apache.org/
++ `Apache Portable Runtime (APR) <https://apr.apache.org/>`_ which includes the following DLLs
     + apr_crypto_openssl-1.dll
     + apr-1.dll
     + aprutil-1.dll
@@ -20,12 +20,14 @@ The additional dependencies are:
     + pcre.dll
     + pcreposix.dll
 
-https://github.com/mapserver/mapcache/blob/master/appveyor.yml
+For working build steps, see the `Appveyor script <https://github.com/mapserver/mapcache/blob/master/appveyor.yml>`_
+- this script is part of the MapCache continuous integration service, and is run on each commit to the code base
+to ensure MapCache can still build successfully on Windows. 
 
-This zips up these DLLs and makes them available to download at https://ci.appveyor.com/project/sethg/mapcache
-https://ci.appveyor.com/project/sethg/mapcache/build/artifacts
+The script also produces a zip containing MapCache DLLs and additional dependencies and makes them available 
+for download on the `build artifacts <https://ci.appveyor.com/project/mapserver/mapcache/build/artifacts>`_ page. 
 
-This creates:
+The zip file includes both the executables required to run MapCache using FastCGI in IIS. 
 
 + mapcache.fcgi.exe
 + mapcache_seed.exe
@@ -186,3 +188,6 @@ Otherwise
 IIS Supports FastCGI? Not really!
 http://blog.cppcms.com/post/86
 This basically means only one things: FastCGI support for IIS was designed to run PHP... Nothing more.
+
+..
+	install.html#test-your-mapcache-module
