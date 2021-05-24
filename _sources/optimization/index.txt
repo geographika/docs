@@ -1,0 +1,20 @@
+.. index::
+   single: Optimization
+
+.. _optimization:
+
+*****************************************************************************
+ Optimization
+*****************************************************************************
+
+.. toctree::
+   :maxdepth: 3
+
+   debugging
+   fastcgi
+   limit_mapfile_access
+   mapfile 
+   raster   
+   tileindex
+   vector   
+   
